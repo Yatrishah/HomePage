@@ -1,0 +1,321 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+
+
+width: 100%;
+height: 100%;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+.nav-link {
+ margin-top:    20px;
+height: 20px;
+text-align: right;
+letter-spacing: 0px;
+color: #FFFFFF !important   ;
+opacity: 1;
+
+}
+
+.navbar-nav > li{
+  padding-left:10px;
+  padding-right:10px;
+
+}
+
+
+.Rounded-Rectangle-0{
+ margin-top:  20px;
+ margin-left:30px;
+width: 90px;
+height: 40px;
+text-align:center!important;
+background: #29626D 0% 0% no-repeat padding-box;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
+opacity: 1;
+font-family:    Roboto-Regular;
+font-size:  17px;
+line-height: 1.41;
+float: right;
+  letter-spacing: normal;
+  text-align: right;
+  }
+
+.Rounded-Rectangle-1{
+ margin-top:  20px;
+width: 80px;
+height: 40px;
+text-align:     center  ;
+background: #29626D 0% 0% no-repeat padding-box;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
+opacity: 1;
+float: right;
+
+font-family:    Roboto-Regular;
+font-size:  17px;
+line-height: 1.41;
+  letter-spacing: normal;}
+
+.Rounded-Rectangle-2{
+ margin-top:  20px;
+width: 160px;
+height: 40px;
+text-align:     center  ;
+background: #29626D 0% 0% no-repeat padding-box;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
+opacity: 1;
+float: right;
+
+font-family:    Roboto-Regular;
+font-size:  17px;
+line-height: 1.41;
+  letter-spacing: normal;}
+
+
+  .Rounded-Rectangle-3{
+ margin-top:  20px;
+width: 160px;
+height: 40px;
+text-align:     center  ;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
+opacity: 1;
+font-family:    Roboto-Regular;
+font-size:  17px;
+float: right;
+line-height: 1.41;
+  letter-spacing: normal;}
+
+  .text{
+margin-top:  20px;
+sheight: 40px;
+text-align:     center  ;
+opacity: 1;
+font-family:    Roboto-Regular;
+font-size:  17px;
+float: right;
+line-height: 1.41;
+  letter-spacing: normal;
+  }
+
+
+  .faq{
+  margin-top: 40px;
+  height: 43px;
+  text-align: center;
+  color: #4F4F4F;
+  font-size: 36px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.67;
+  letter-spacing: normal;;
+  }
+
+
+  .faqstar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+   width: 24px;
+  height: 25px;
+  margin-top: 14px;
+  
+}
+
+/*.footer{
+  padding: 20px 0;
+}
+
+.footer .link {
+  text-align: center;
+    content:'\00a0\00a0\00a0\00a0';
+  text-decoration: line-through;
+  margin: auto 14.5em;
+
+}
+*/
+
+.faqtext{
+  max-width: 931px;
+min-height: 847px;
+border: 5px solid red;
+margin: 0 auto;
+}
+
+.text1{
+   min-width: 491px;
+  max-height: 44px;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.44;
+  letter-spacing: normal;
+  text-align: center !important;
+  color: #646464;
+}
+.box{
+  margin: auto 0;
+     max-height: 66px;
+
+}
+
+.box1{
+  width: 50%;
+  padding: 30px;
+  box-sizing: border-box;
+   float:left;
+   max-height: 66px;
+   margin-top: 66px;
+   border-bottom: 5px solid #1d7a8c;
+}
+
+
+.box1text{
+  max-width: 474px;
+  max-height: 17px;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.50;
+  text-align: center;
+  letter-spacing: normal;
+    color: #ffffff;
+}
+
+.box2text{
+  max-width: 474px;
+  max-height: 17px;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.50;
+  text-align: center;
+  letter-spacing: normal;
+    color: #646464;
+}
+
+.boxx{
+  display: flex;  
+  padding: 20px;
+font-family: Roboto;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #646464;
+
+
+}
+
+.boxx .content p{
+margin-top: 48px;
+text-align: justify;
+margin-left: 16px;
+word-spacing:1px ;
+
+
+}
+.boxx .content h6{
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #646464;
+  margin-top:20px ;
+  margin-left: 16px;
+}
+.boxx .content1 p{
+margin-top: -20px;
+  text-align: justify;
+  margin-left: 16px;
+}
+
+.mail-heading{
+
+   max-width: 390px;
+  max-height: 13px;
+  margin-top: 28px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  font-weight: bold;
+  letter-spacing: normal;
+  text-align:center;
+  color: #353548;
+
+
+}
+
+.mailBox{
+
+   max-width: 693px;
+  max-height: 40px;
+  margin-top: 20px ;
+  padding: 14px 50px 16px 22px;
+  border-radius: 20px;
+  border: solid 1px #565656;
+  background-color: #f4f5f8;
+
+}
+.mailText{
+
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #565656;
+  height:   40px;
+  width:  233px;
+  
+
+}
+
+
+
+.submit{
+  border-radius: 20px;
+width: 88px;
+  height: 40px  ;
+  background-color: #ff7b6d;
+  color:  white ;
+  border:   none  ;
+}
+
+
+.newsLetter{
+  margin-left: 300px;
+}
+
+.footer1{
+  height:   195px;
+}
