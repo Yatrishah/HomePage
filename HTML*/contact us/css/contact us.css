@@ -1,0 +1,394 @@
+body{
+
+
+width: 100%;
+height: 100%;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+/*-----------Navbar-------------------*/
+.nav-link {
+ margin-top:    20px;
+height: 20px;
+text-align: right;
+letter-spacing: 0px;
+color: #FFFFFF !important   ;
+opacity: 1;
+font-size: 17px !important;
+
+
+}
+.navbar-nav > li{
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.navtext{
+  margin-right: 20px;
+}
+
+.Rounded-Rectangle-0{
+ margin-top:  20px;
+ margin-left:30px;
+width: 90px;
+height: 40px;
+text-align:center!important;
+background: #29626D 0% 0% no-repeat padding-box;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
+opacity: 1;
+font-family:    Roboto-Regular;
+font-size:  17px;
+line-height: 1.41;
+float: right;
+  letter-spacing: normal;
+text-align: right;
+  }
+
+.Rounded-Rectangle-1{
+ margin-top:  20px;
+width: 110px;
+height: 40px;
+text-align:     center  ;
+background: #29626D 0% 0% no-repeat padding-box;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
+opacity: 1;
+float: right;
+font-family:    Roboto-Regular;
+font-size:  17px;
+line-height: 1.41;
+  letter-spacing: normal;}
+
+.Rounded-Rectangle-2{
+ margin-top:  20px;
+width: 160px;
+height: 40px;
+text-align:     center  ;
+background: #29626D 0% 0% no-repeat padding-box;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
+opacity: 1;
+float: right;
+font-family:    Roboto-Regular;
+font-size:  17px;
+line-height: 1.41;
+  letter-spacing: normal;}
+
+
+  .Rounded-Rectangle-3{
+ margin-top:  20px;
+width: 160px;
+height: 40px;
+text-align:     center  ;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
+opacity: 1;
+font-family:    Roboto-Regular;
+font-size:  17px;
+float: right;
+line-height: 1.41;
+margin-right: -10px;
+  letter-spacing: normal;}
+
+  .text{
+margin-top:  20px;
+sheight: 40px;
+text-align:     center  ;
+opacity: 1;
+font-family:    Roboto-Regular;
+font-size:  17px;
+float: right;
+line-height: 1.41;
+  letter-spacing: normal;
+  }
+  /*--------End of nav Bar-------------------*/
+
+  /*----------- line-star-line -------------------*/
+
+    .contact{
+  margin-top: 40px;
+  height: 27px;
+  text-align: center;
+  color: #4F4F4F;
+  font-size: 36px;
+  font-family: Roboto;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.67;
+  letter-spacing: normal;
+  }
+ 
+
+  .lineLeft {
+    width: 62px;
+    height: 1px;
+    margin: 26px auto 48px;
+    background-color: #ccc;
+    display: inline-block;
+}
+
+.starfaq {
+    width: 24px;
+    height: 25px;
+    margin: -54px 12px 37px 14px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lineRight {
+    width: 62px;
+    height: 1px;
+    margin: 26px auto 49px auto;
+    background-color: #ccc;
+    display: inline-block;
+}
+
+ /*----------- End of line-star-line -------------------*/
+
+   /*----------- Contact US-------------------*/
+
+.contactimg {
+    width: 100%;
+    height: 54px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    text-align: center;
+    object-fit: contain;
+}
+
+.contacttext{
+
+     width: 197px;
+    height: 39px;
+    margin: auto;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4f4f4f;
+}
+
+   /*----------- End of Contact US-------------------*/
+
+      /*----------- Contact us Form-------------------*/
+
+
+.Get-in-touch-with-us {
+    width: 100%;
+    height: auto;
+    margin: 80px auto 30px;
+    font-family: Roboto;
+    font-size: 28px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.86;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4f4f4f;
+}
+
+.user-details input {
+    margin: 5px 0px;
+    padding: 5px;
+}
+
+.input_box_1 {
+    width: 100%;
+}
+
+.input_box_1 input,
+.input_box_1 textarea {
+    width: 100%;
+}
+
+.inputtext1 {
+    width: 299px;
+    height: auto;
+    margin: 5px 0;
+    padding: 5px 0px;
+      color: #a0a0a0;
+}
+
+
+.inputtext2 {
+    width: 100%;
+    height: 146px;
+    margin: 5px auto;
+    padding: 5px 0px;
+   color: #a0a0a0;
+}
+
+.details {
+    border: 1px solid black;
+    padding: 5px 5px;
+      color: #a0a0a0;
+      border: solid 1px #c8c8c8;
+      background-color:#c8c8c8 ;
+      color: #4f4f4f;
+}
+
+.inputtext3  {
+    width: 163px;
+    height: 46px;
+    margin: 15px auto 30px;
+    margin-bottom: 20px;
+    padding: 13px 54px 17px;
+    border-radius: 23px;
+    background-color: #1d7a8c;
+    color: #ffffff;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+ /*-----------End of Contact us Form-------------------*/
+
+      /*----------Location-------------------*/
+
+
+.map {
+    width: 100%;
+}
+
+.pin {
+    width: 100%;
+    height: auto;
+}
+
+.pin_position {
+    position: absolute;
+    top: 45.5%;
+    left: 45.4%;
+    right: 51.5%;
+    bottom: 37.8%;
+    margin: auto;
+} 
+
+.flex-container-center {
+    justify-content: center;
+    align-items: center;
+}
+      /*----------End of Location-------------------*/
+
+ /*-----------Mail-------------------*/
+
+.mail-heading{
+
+   max-width: 390px;
+  max-height: 13px;
+  margin-top: 28px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  font-weight: bold;
+  letter-spacing: normal;
+  text-align:center;
+  color: #353548;
+}
+
+.user-input{
+  align-content: center;
+}
+
+.mailBox{
+max-width: 233px;
+  max-height: 40px;
+  margin-top: 20px ;
+  padding: 14px 50px 16px 22px;
+  border-radius: 20px;
+  border: solid 1px #565656;
+  background-color: #f4f5f8;
+}
+.mailText{
+
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #565656;
+  height:   40px;
+  width:  233px;
+  }
+
+.submit{
+  margin-top: 16px;
+  margin-left: 11px;
+  border-radius: 20px;
+  width: 88px;
+  height: 40px ;
+  background-color: #ff7b6d;
+  color:  white ;
+  border:   none  ;
+}
+ /*-----------End of  Mail -------------------*/
+
+/*----------- Footer -------------------*/
+
+
+footer{
+  background-color: #111111;
+  padding: 17px 120px 12px;
+  color: #fff;
+  align-content: center;
+}
+
+.footer-logo{
+   width: 106px;
+  height: 78px;
+  /*margin: 0 262px 26px 2px;*/
+  margin:  auto;
+  margin-left:  -60px;
+
+}
+
+.footer-item{  
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  margin:   auto  ;
+  color: #f1f1f1;
+margin-top:  1px;
+  margin-left: -20px ;
+text-transform: uppercase;
+}
+
+.footer-icon{
+  width: 9px;
+  height: 18px;
+  margin-right:   10px;
+}
+
+.copyright{
+  color: #737381;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+ /*----------- End of footer -------------------*/
