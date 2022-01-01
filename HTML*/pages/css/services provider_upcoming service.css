@@ -1,0 +1,247 @@
+body{
+width: 100%;
+height: 100%;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+/*-----------Navbar-------------------*/
+.nav-link {
+ margin-top:    20px;
+height: 20px;
+text-align: right;
+letter-spacing: 0px;
+color: #FFFFFF !important   ;
+opacity: 1;
+font-size: 17px !important;
+
+
+}
+.navbar-nav > li{
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.navtext{
+  margin-right: 20px;
+  height: 40px;
+  text-align: left;
+}
+
+.navtext:hover{
+  background-color: black;
+}
+
+.line1{
+    border-left:1px solid #e1e1e1!important;
+    padding-left: 9px !important;
+    margin-top: 15px;
+}
+
+.line2{
+    border-right:1px solid #e1e1e1!important;
+    padding-right: 9px !important;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 150px;
+    overflow-x: hidden;
+}
+
+@media (max-width: 1100px) {
+  
+  .dropdown1{
+    width: 50px;
+  }             
+}
+/*-----------End of Navbar-------------------*/
+
+/*-----------Head text-------------------*/
+
+.text{
+
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.8;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4f4f4f;
+}
+
+.textdiv{
+  height: 119px;
+  margin: 1px 0 30px;
+  padding: 44px 0 0;
+  background-color: #f9f9f9;
+}
+/*-----------End of Head text-------------------*/
+
+/*-----------Left table-------------------*/
+
+.menu_table {
+    width: 100%;
+    background-color: #1d7a8c;
+}
+
+
+.left-menu tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-collapse: collapse;
+    width: 70%;
+}
+.left-menu tr.active {
+    background-color: #146371;
+}
+
+.left-menu tr:hover {
+    background-color: #146371;
+}
+
+.left-menu tr td a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+td a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.left-menu td {
+    padding: 18px 10px 14px 15px;
+}
+
+.left-menu {
+    width: 100%;
+    padding-right: 31px !important;
+}
+
+th {
+    /* padding: 16px 46px 16px 14px; */
+    padding: 16px 37px 16px 23px;
+}/*-----------End of Left table-------------------*/
+
+/*-----------Right table-------------------*/
+
+
+  .right_service_list_section {
+    overflow-x: auto;
+}
+
+.right_service_list tr {
+    border: 1px solid #e1e1e1;
+    width: 100%;
+}
+
+.right_service_list tr th{
+    background-color: #f9f9f9;
+}
+
+.right_service_list tr th p {
+    margin-bottom: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #646464;
+}
+
+.right_service_list tr td {
+    padding: 4px 20px 4px 14px;
+}
+
+.right_service_list tr td p {
+    margin: 5px 20px 5px 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.right_service_list tr:hover{
+    background-color: #f9f9f9;
+}
+
+
+.buttoncancel button{
+    width: 80px;
+    font-size: 16px;
+    background-color: #ff6b6b;
+    color: white;
+    border-radius: 17px;
+    padding: 5px 10px;
+    box-shadow: none;
+    border: none;
+    margin-top: 8px;
+}
+
+.buttoncancel button:hover{
+    opacity:1;  transform: scale(1.2);
+}
+
+@media screen and (max-width: 1000px) {
+    .right_service_list_section {
+        border: 1px solid #e1e1e1;
+        border-collapse: collapse;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .right_service_list_section {
+        margin-top: 30px;
+    }
+}
+/*-----------End of Right table-------------------*/
+
+/*-----------Footer-------------------*/
+
+footer{
+  background-color: #111111;
+  padding: 17px 120px 12px;
+  color: #fff;
+  align-content: center;
+}
+
+.footer-logo{
+   width: 106px;
+  height: 78px;
+  /*margin: 0 262px 26px 2px;*/
+  margin:  auto;
+  margin-left:  -60px;
+}
+
+.footer-item{  
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  margin:   auto  ;
+  color: #f1f1f1;
+margin-top: 5px;
+  margin-left: -20px ;
+text-transform: uppercase;
+}
+
+.footer-icon{
+  width: 9px;
+  height: 18px;
+  margin-left: 5px;
+  
+}
+
+.copyright{
+  color: #737381;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+/*-----------End of Footer-------------------*/
