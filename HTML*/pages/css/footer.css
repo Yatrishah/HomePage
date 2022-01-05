@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+*{
+    font-family: "Roboto", sans-serif;
+}
+/*################ Newsseltter ################*/
+
+
+
+
+
+.f-sub{
+    color: #9ba0a3;
+    text-align: center;
+}
+.f-sub p a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+/*############### footer ##############*/
+
+#section-footer {
+    margin-bottom: auto;
+    padding: 2% 6%;
+    color:#F1F1F1;
+    background-color: #111111f5;
+}
+.footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-nav ul{
+    margin-bottom: 0;
+}
+
+.footer-logo img{
+    width: 106px;
+    height: 78px;
+    margin-left: 100px;
+}
+.footer-social {
+    margin: auto 0;
+}
+
+.footer-social img {
+    margin-left: 10px;
+    float: right;
+}
+
+.footer-nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.footer-nav ul li {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.footer-nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+.footer-nav li:hover{
+    background-color:black;
+}
+
+
+@media screen and (max-width:1202px) {
+
+    .footer-nav ul {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        flex-wrap: wrap;
+    }
+
+    .footer-logo {
+        text-align: center;
+    }
+
+    .footer-social {
+        text-align: center;
+    }
+
+    .footer-social img {
+        float: none;
+    }
+}
+
