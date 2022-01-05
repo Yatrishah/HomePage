@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/customer-service history.css">   
+     <link rel="stylesheet" type="text/css" href="css/footer.css">   
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Customer-Service History</title>
+</head>
+        
+<body>
+ <!-- --------------------------------------------------Navigation Bar ------------------------------------------------------------  -->
+  
+   <div class="wrapper">
+<!-- header -->
+<header class="site-header fixed-top">
+        <div class="header-wrapper d-flex justify-content-between align-items-center">
+            <a href="index.html" title="Helper hand" class="logo-block">
+                <img src="image/logo.png" alt="Helper hand logo">
+            </a>
+            <div class="header-right-block">
+                <div class="right-block-inner d-flex align-items-center">
+                    <nav class="navbar navbar-expand-lg align-items-center ">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalnavbartoggle" data-bs-dismiss="modal"  >
+                        <span class="navbar-toggler-icon" style="background-image:url(image/toogle.svg);"></span>
+                    </button>
+                        <div class="collapse navbar-collapse" id="navbarNav" >
+                            <ul class="navbar-nav align-items-center">
+                                 <li class="nav-item">
+                                    <a class="nav-link Rounded-Rectangle-0" href="" title="book now"><p class="textround">Book now</p></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="price.html" title="Prices">Prices & Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" title="Blog">Warranty</a>
+                                </li>
+                              
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" title="Login" >Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact us.html" title="Contact us">Contact</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link"><div class="seprator"><div class="counter">2</div><img src="image/notification.png"></div></a>
+                                </li>
+                                <li class="dropdown">
+                                    <button class="btn  dropdown-toggle dropdown1" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" >
+                                        <img src="image/login.png" alt="">
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                        <li>Welcome ,<br>Yatri Shah!</li>
+                                        <li><hr class="dropdown-divider"></li>
+                                      <li><a class="dropdown-item active" href="#">My Dashboard</a></li>
+                                      <li><a class="dropdown-item" href="#"> My Settings</a></li>
+                                      <li><a class="dropdown-item" href="#">Log out</a></li>
+                                    </ul>
+                                  
+                                </li>
+                             </ul>
+                            </div>
+                    </nav>
+                   </div>
+                 </div>
+        </div>
+</header>
+ <!-- -------------------------------------------------- End of Navigation Bar ------------------------------------------------------------  -->
+
+ <!-- --------------------------------------------------modal for tabs with navbar ------------------------------------------------------------  -->
+<div class="modal fade navbar-tmodel" id="exampleModalnavbartoggle" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-center" style="float: right;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="">Welcome, <br><b>Yatri!</b> </h4>
+                </div>
+                <div class="modal-body tab">
+                    <a href="#dashboard" class="" onclick="dashboard();" role="button">Dashboard</a>
+                    <a href="#servicehistory"  class="" onclick="history();" role="button">Service History</a>
+                    <a href="#serviceschedule"  class="" onclick="schedule();" role="button">Service Schedule</a>
+                    <a href="#favouriteprones" class="" onclick="favprons();" role="button">Favourite Prons</a>
+                    <a href="#invoices" class="" onclick="invoice()" role="button">Invoices</a>
+                    <a href="#notifications" class="" onclick="notification();" role="button">Notifications</a>
+                   
+                    <a href="#mysetting">My Setting</a>
+                    <a href="#logout">Logout</a>
+                </div>
+                <div class="modal-footer tab">
+                    <a href="#"> Book Now </a>
+                    <a href="price.html">Prices & Services</a>
+                    <a href="#">Warranty</a>
+                    <a href="#">Blog</a>
+                    <a href="contact us.html">Contact</a>
+                </div>
+                <hr>
+                <div class ="footer-social col-xl-2">
+                    <img src="image/instagram.png">
+                    <img src="image/facebook.png">
+                </div>
+            </div>
+        </div>
+</div>
+ <!-- --------------------------------------------------End of modal for tabs with navbar ------------------------------------------------------------  -->
+
+  <!-- -------------------------------------------------- Head Text ------------------------------------------------------------  -->
+
+<div class="textdiv">
+    <p class="text">Welcome, <b>Yatri!</b></p>
+</div>
+ <!-- --------------------------------------------------End of Head Text ------------------------------------------------------------  -->
+   <!-- --------------------------------------------------Left Table ------------------------------------------------------------  -->
+
+    <section id="tab-section">
+        <div class="div-main container-fluild" >
+            <div class="div-tab" >
+                <a href="#dashboard" id="dashboard1" class="" onclick="dashboard();" role="button">Dashboard</a>
+                <a href="#servicehistory" id="history" class="active" onclick="history();" role="button">Service History</a>
+                <a href="#serviceschedule" id="schedule" class="" onclick="schedule();" role="button">Service Schedule</a>
+                <a href="#favouritepros" id="favpros" class="" onclick="favouritepros();" role="button" >Favourite Pros</a>
+                <a href="#invoices" id="invoice" class="" onclick="invoice();" role="button">Invoices</a>
+                <a href="#notifications" id="notification" class="" onclick="notification();" role="button">Notifications</a>
+                
+            </div>
+<div class="content-section">
+            <div class="divContent" id="dashboard">
+                <!-- --------------------------------------------------End of Left Table ------------------------------------------------------------  -->
+ <!-- --------------------------------------------------Right Table ------------------------------------------------------------  -->
+
+            </div>
+            <div class="divContent" id="serviceschedule">
+             </div>
+            <div class="divContent" id="servicehistory">
+             <div>
+                    <h2> Service History
+                    <span class="buttonexport" ><button     style="float: right;">Export</button></span> 
+                </h2>
+                </div>
+                <div>
+                    <table  id="tblCustomers"  class="current-services">
+                        <thead>
+                            <tr>
+                                <th>Service Id<img src="image/both_arrow.png"></th>
+                                <th>Service Date<img src="image/both_arrow.png"></th>
+                                <th>Service Provider <img src="image/both_arrow.png"></th>
+                                <th>Payment<img src="image/both_arrow.png"></th>
+                                <th>Status<img src="image/both_arrow.png"></th>
+                                <th>Rate SP<img src="image/both_arrow.png"></th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>31/03/2018</b></div>
+                                    <div>12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="buttoncompleted"> Completed </button>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="RateSP" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalRateSP"> Rate SP </button>
+                                 </td>
+                               
+                            </tr>
+                              <tr>
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>15/03/2018  </b></div>
+                                    <div>12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="buttoncompleted"> Completed </button>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="RateSP" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalRateSP"> Rate SP </button>
+                                 </td>
+                               
+                            </tr>
+                            <tr>
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>10/03/2018  </b></div>
+                                    <div>12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="buttoncompleted"> Completed </button>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="RateSP" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalRateSP"> Rate SP </button>
+                                 </td>
+                               
+                            </tr>
+                             <tr>
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>28/02/2018  </b></div>
+                                    <div>12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="buttoncancel"> Cancelled </button>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="RateSP" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalRateSP"> Rate SP </button>
+                                 </td>
+                               
+                            </tr>
+                           
+                            
+                             <tr>
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>15/02/2018  </b></div>
+                                    <div>12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="buttoncompleted"> Completed </button>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="RateSP"data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalRateSP"> Rate SP </button>
+                                 </td>
+                               
+                            </tr>
+                            <tr>
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>31/01/2018  </b></div>
+                                    <div>12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="buttoncancel"> Cancelled </button>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="RateSP"data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalRateSP"> Rate SP </button>
+                                 </td>
+                               
+                            </tr>
+                            <tr>
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>31/01/2018  </b></div>
+                                    <div>12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="buttoncompleted"> Completed </button>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="RateSP " data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalRateSP"> Rate SP </button>
+                                 </td>
+                               
+                            </tr>
+                             <tr>
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>19/01/2018  </b></div>
+                                    <div>12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="buttoncompleted"> Completed </button>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="RateSP" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalRateSP"> Rate SP </button>
+                                 </td>
+                               
+                            </tr>
+                            <tr>
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>05/01/2018  </b></div>
+                                    <div>12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="buttoncancel">Cancelled </button>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="RateSP"data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalRateSP"> Rate SP </button>
+                                 </td>
+                               
+                            </tr>
+                             <tr>
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>01/01/2018  </b></div>
+                                    <div>12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="buttoncancel"> Cancelled </button>
+                                </td>
+                                <td class="centerbutton">
+                                    <button class="RateSP" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalRateSP"> Rate SP </button>
+                                 </td>
+                               
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+               <div class="history-pagination">
+                        <div class="show-page">
+                            show 
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                            entries Total Record : 7
+                        </div>
+                        <div class="paginations">
+                            <div class="jump-left"><img src="image/jump-left.png" alt=""></div>
+                            <div class="next-left"><img src="image/next-left.png" alt=""></div>
+                            <div class="current-page">1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                            <div class="next-right"><img src="image/next-left.png" alt=""></div>
+                            <div class="jump-right"><img src="image/jump-left.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+               
+            </div>
+            <div class="divContent" id="favouritepros">
+               
+            </div>
+            <div class="divContent" id="history">
+                
+            </div>
+            <div class="divContent" id="notifications">
+               
+            </div>
+
+            
+
+</div>            
+</div>
+</section>
+
+
+ <!-- --------------------------------------------------End of Right Table ------------------------------------------------------------  -->
+
+ <!-- --------------------------------------------------Footer ------------------------------------------------------------  -->
+
+
+  <section id="section-footer" class="container-fluid">
+        <div class="f-main row">
+            <div class="footer-logo col-xl-2">
+                <img src="image/logo.png"
+                     class=" ">
+            </div>
+            <div class="footer-nav col-xl-8">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about us.html">ABOUT</a></li>
+                    <li><a href="#">TESTIMONIALS</a></li>
+                    <li><a href="faqpage.html">FAQS</a></li>
+                    <li><a href="#">INSURANCE</a></li>
+                    <li><a href="contact us.html">POLICY</a></li>
+                    <li><a href="#">IMPRESSUM</a></li>
+                </ul>
+            </div>
+            <div class="footer-social col-xl-2">
+                <img src="image/instagram.png" alt="">
+                <img src="image/facebook.png" alt="">
+            </div>
+        </div>
+        <hr class="hr">
+        <div class="f-sub">
+            <p>©2018 Helperland. All rights reserved. Terms and Conditions | Privacy Policy</p>
+        </div>
+    </section>
+
+ <!-- -------------------------------------------------- End of Footer ------------------------------------------------------------  -->
+
+
+</main>
+</div>
+ <!--Model For SP Rating-->
+    <div class="modal fade navbar-tmodel" id="exampleModalRateSP" tabindex="-1"
+        aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="td-rating">
+                        <div class="rating-img"><img src="image/image_table.png" alt="">
+                        </div>
+                        <div class="info ">
+                            <div class="name">Lyum Watson</div>
+                            <div class="ratings">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star-o"></span>
+                                4
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="m-heading">
+                        Rate Your Service Provider
+                    </div>
+                   
+                    <hr style="width:400px; height: 1px;">
+                    <div class="m-form">
+                        <form action="#">
+                            <div class="m-ratings">
+                                <p>On Time Arrival</p> 
+                                <div class="ratings">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star-o"></span>
+                                </div>
+                            </div>
+                            <div class="m-ratings">
+                                <p>Friendy</p> 
+                                <div class="ratings">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star-o"></span>
+                                </div>
+                            </div>
+                            <div class="m-ratings">
+                                <p>Quality of Service</p> 
+                                <div class="ratings">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star-o"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="feedback">Feedback on Service Provider</label>
+                                <textarea name="" id="" class="form-control" rows="2" style="width:400px"></textarea>
+                            </div>
+                            <div class="m-button">
+                                 <button>Submit</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------------End Model---------------------------------------------------->
+
+
+  
+   
+
+
+  </body>
+<script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="css/script1.js"></script>
+       
+
+</html>
