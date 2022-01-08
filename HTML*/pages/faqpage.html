@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/faq.css">
+   <link rel="stylesheet" type="text/css" href="css/model.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/Registration.css"> 
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">  
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+    <title>FAQs Page</title>
+</head>
+
+<body>
+
+         <!-- ------------------------------------------------------------Model For Login ------------------------------------------------>
+    <div class="modal fade" id="exampleModallogin" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title" id="staticBackdropLabel">Login to your account</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+                            <img alt="email" src="image/user.png">
+                        </div>
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="password" class="form-control" id="exampleFormControlInput2"
+                                placeholder="Password">
+                            <img alt="Password" src="image/lock.png">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Remember Me
+                            </label>
+                        </div>
+                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalfpwd" data-bs-dismiss="modal">Forgot Password</a></div>
+                        <div class="text-center">Don't have an account? <a href="Registration.html" >Create an account</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------------- End Model for Login --------------------------------------------------------------->
+
+    <!--------------------------------------------------------- Model For Forgot Password ----------------------------------------------------->
+    <div class="modal fade" id="exampleModalfpwd" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel">Forgot Password</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+                            <img alt="email" src="image/user.png">
+                        </div>
+                        
+                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModallogin" data-bs-dismiss="modal">Login now</a></div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------- End Model ---------------------------------------------------------------------->
+
+
+<!-- --------------------------------------------------modal for tabs with navbar ------------------------------------------------------------  -->
+
+<div class="modal fade navbar-tmodel" id="exampleModalnavbartoggle" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-center" style="float: right;">
+            <div class="modal-content">
+            
+        <div class="modal-body tab">
+                    <a href="index.html">HomePage</a>
+                     <a href="#"> Book Now </a>
+                    <a href="price.html">Prices & Services</a>
+                    <a href="#">Warranty</a>
+                    <a href="#">Blog</a>
+                    <a href="contact us.html">Contact</a>
+                    <a href="#"data-bs-toggle="modal"
+                     data-bs-target="#exampleModallogin" data-bs-dismiss="modal">Login</button></a>                    
+                     <a href="#">Become a Helper</a>
+
+            </div>
+
+                <hr>
+                <div class ="footer-social1">
+                    <img src="image/instagram.png" class="insta">
+                    <img src="image/facebook.png" class="fb">
+                </div>
+            </div>
+        </div>
+</div>
+ <!-- --------------------------------------------------End of modal for tabs with navbar ------------------------------------------------------------  -->
+      <!-- --------------------------------------------------Navigation Bar ------------------------------------------------------------  -->
+  <heder>
+    <nav class="navbar navbar-default sticky-top navbar-expand-lg navbar-dark " id="navbar">
+  <div class="container-fluid">
+    <a href="index.html">
+    <img class="navbar-brand" src="image/logo.png" style="width: 75px;height: 55px;"></a>
+    <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalnavbartoggle" data-bs-dismiss="modal">
+     <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-end ">
+      <ul class="navbar-nav ms-auto mb-4 mb-lg-0 " style="margin-top:  -20px;">
+    
+      <li class="nav-item">
+        <a class="nav-link Rounded-Rectangle-2" href="#">Book now</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link Rounded-Rectangle-2" href="price.html">Prices & services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text " href="#">Warranty</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text " href="#">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text" href="contact us.html">Contact</a>
+      </li>
+      <li class="nav-item">
+         <button class="nav-link btn btn-outline-light nav-btn Rounded-Rectangle-2" href="#" data-bs-toggle="modal"
+        data-bs-target="#exampleModallogin" data-bs-dismiss="modal">Login</button>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link Rounded-Rectangle-2" >Become a Helper</a>
+      </li>
+      
+    </ul>
+  </div>
+
+</nav> 
+</header> 
+ <!-- -------------------------------------------------- End of Navigation Bar ------------------------------------------------------------  -->
+
+ <!-- -------------------------------------------------- FAQ Image--------------------------------------------------------------------  -->
+<div>
+    <img src="image/faqbanner.png"class="img-fluid"style="width:100%;">
+</div>       
+ </section>
+
+ <section id="section-faqs">
+            <div class="faqs-header">
+                <h1>FAQs</h1>
+                 <div>
+        <div style="text-align: center;">
+            <div class="lineLeft"></div>
+            <img src="image/faqstar.png" class="starfaq">
+            <div class="lineRight"></div>
+        </div>
+                <div class="content">
+                    Whether you are Customer or Service provider,<br>
+                    We have tried our best to solve all your queries and questions.
+                </div>
+            </div>
+            <div class="division">
+                <div class="button">
+                    <button class="customer active">For Customer</button>
+                    <button class="serviceprovider">For Service Provider</button>
+                </div>
+                <div class="faqs">
+                    <div class="faq for-customer">
+
+                        <div class="quetions">
+                            <div class="quetion">
+                                <button type="button" class="btn btn-col" data-toggle="collapse" data-target="#demo1">
+                                    <img src="image/arrow-right.png">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc,
+                                        iaculis
+                                        mattis tellus ac ut non imperdiet velit?</p>
+
+                                </button>
+                            </div>
+                            <div id="demo1" class="answer collapse show">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt,
+                                fringilla
+                                ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit
+                                tortor.
+                                Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel
+                                lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in
+                                libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante
+                                ipsum
+                                primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam
+                                risus
+                                justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit
+                                amet
+                                congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget
+                                nisl.
+                                Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                            </div>
+                        </div>
+
+                        <div class="quetions">
+                            <div class="quetion">
+                                <button type="button" class="btn btn-col" data-toggle="collapse" data-target="#demo2">
+                                    <img src="image/arrow-right.png">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc,
+                                        iaculis
+                                        mattis tellus ac ut non imperdiet velit?</p>
+                                </button>
+                            </div>
+                            <div id="demo2" class="answer collapse in">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt,
+                                fringilla
+                                ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit
+                                tortor.
+                                Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel
+                                lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in
+                                libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante
+                                ipsum
+                                primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam
+                                risus
+                                justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit
+                                amet
+                                congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget
+                                nisl.
+                                Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                            </div>
+                        </div>
+
+                        <div class="quetions">
+                            <div class="quetion">
+                                <button type="button" class="btn btn-col" data-toggle="collapse" data-target="#demo3">
+                                    <img src="image/arrow-right.png">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc,
+                                        iaculis
+                                        mattis tellus ac ut non imperdiet velit?</p>
+
+                                </button>
+                            </div>
+                            <div id="demo3" class="answer collapse in">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt,
+                                fringilla
+                                ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit
+                                tortor.
+                                Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel
+                                lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in
+                                libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante
+                                ipsum
+                                primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam
+                                risus
+                                justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit
+                                amet
+                                congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget
+                                nisl.
+                                Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                            </div>
+                        </div>
+
+                        <div class="quetions">
+                            <div class="quetion">
+                                <button type="button" class="btn btn-col" data-toggle="collapse" data-target="#demo4">
+                                    <img src="image/arrow-right.png">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc,
+                                        iaculis
+                                        mattis tellus ac ut non imperdiet velit?</p>
+                                </button>
+                            </div>
+                            <div id="demo4" class="answer collapse in">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt,
+                                fringilla
+                                ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit
+                                tortor.
+                                Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel
+                                lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in
+                                libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante
+                                ipsum
+                                primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam
+                                risus
+                                justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit
+                                amet
+                                congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget
+                                nisl.
+                                Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                            </div>
+                        </div>
+
+                        <div class="quetions">
+                            <div class="quetion">
+                                <button type="button" class="btn btn-col" data-toggle="collapse" data-target="#demo5">
+                                    <img src="image/arrow-right.png">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc,
+                                        iaculis
+                                        mattis tellus ac ut non imperdiet velit?</p>
+                                </button>
+                            </div>
+                            <div id="demo5" class="answer collapse in">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt,
+                                fringilla
+                                ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit
+                                tortor.
+                                Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel
+                                lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in
+                                libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante
+                                ipsum
+                                primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam
+                                risus
+                                justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit
+                                amet
+                                congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget
+                                nisl.
+                                Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                            </div>
+                        </div>
+
+                        <div class="quetions">
+                            <div class="quetion">
+                                <button type="button" class="btn btn-col" data-toggle="collapse" data-target="#demo6">
+                                    <img src="image/arrow-right.png">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc,
+                                        iaculis
+                                        mattis tellus ac ut non imperdiet velit?</p>
+                                </button>
+                            </div>
+                            <div id="demo6" class="answer collapse in">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt,
+                                fringilla
+                                ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit
+                                tortor.
+                                Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel
+                                lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in
+                                libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante
+                                ipsum
+                                primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam
+                                risus
+                                justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit
+                                amet
+                                congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget
+                                nisl.
+                                Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                            </div>
+                        </div>
+
+                        <div class="quetions">
+                            <div class="quetion">
+                                <button type="button" class="btn btn-col" data-toggle="collapse" data-target="#demo7">
+                                    <img src="image/arrow-right.png">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc,
+                                        iaculis
+                                        mattis tellus ac ut non imperdiet velit?</p>
+                                </button>
+                            </div>
+                            <div id="demo7" class="answer collapse in">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt,
+                                fringilla
+                                ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit
+                                tortor.
+                                Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel
+                                lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in
+                                libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante
+                                ipsum
+                                primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam
+                                risus
+                                justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit
+                                amet
+                                congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget
+                                nisl.
+                                Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                            </div>
+                        </div>
+
+                        <div class="quetions">
+                            <div class="quetion">
+                                <button type="button" class="btn btn-col" data-toggle="collapse" data-target="#demo8">
+                                    <img src="image/arrow-right.png">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc,
+                                        iaculis
+                                        mattis tellus ac ut non imperdiet velit?</p>
+                                </button>
+                            </div>
+                            <div id="demo8" class="answer collapse in">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt,
+                                fringilla
+                                ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit
+                                tortor.
+                                Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel
+                                lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in
+                                libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante
+                                ipsum
+                                primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam
+                                risus
+                                justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit
+                                amet
+                                congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget
+                                nisl.
+                                Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                            </div>
+                        </div>
+
+                        <div class="quetions">
+                            <div class="quetion">
+                                <button type="button" class="btn btn-col" onclick="changed(this)" data-toggle="collapse"
+                                    data-target="#demo9">
+                                    <img src="image/arrow-right.png">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc,
+                                        iaculis
+                                        mattis tellus ac ut non imperdiet velit?</p>
+                                </button>
+                            </div>
+                            <div id="demo9" class="answer collapse in">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt,
+                                fringilla
+                                ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit
+                                tortor.
+                                Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel
+                                lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in
+                                libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante
+                                ipsum
+                                primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam
+                                risus
+                                justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit
+                                amet
+                                congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget
+                                nisl.
+                                Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="faq for-service" style="display: none;">
+
+                        <div class="quetions">
+                            <div class="quetion">
+                                <button type="button" class="btn btn-col" data-toggle="collapse" data-target="#demo-1">
+                                    <img src="image/arrow-down.png">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc,
+                                        iaculis
+                                        mattis tellus ac ut non imperdiet velit?</p>
+                                </button>
+                            </div>
+                            <div id="demo-1" class="answer collapse show">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt,
+                                fringilla
+                                ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit
+                                tortor.
+                                Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel
+                                lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in
+                                libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante
+                                ipsum
+                                primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam
+                                risus
+                                justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit
+                                amet
+                                congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget
+                                nisl.
+                                Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                            </div>
+                        </div>
+
+                        <div class="quetions">
+                            <div class="quetion">
+                                <button type="button" class="btn btn-col" data-toggle="collapse" data-target="#demo-2">
+                                    <img src="image/arrow-right.png">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc,
+                                        iaculis
+                                        mattis tellus ac ut non imperdiet velit?</p>
+                                </button>
+                            </div>
+                            <div id="demo-2" class="answer collapse in">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt,
+                                fringilla
+                                ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit
+                                tortor.
+                                Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel
+                                lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in
+                                libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante
+                                ipsum
+                                primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam
+                                risus
+                                justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit
+                                amet
+                                congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget
+                                nisl.
+                                Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                            </div>
+                        </div>
+
+                        <div class="quetions">
+                            <div class="quetion">
+                                <button type="button" class="btn btn-col" data-toggle="collapse" data-target="#demo-3">
+                                    <img src="image/arrow-right.png">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc,
+                                        iaculis
+                                        mattis tellus ac ut non imperdiet velit?</p>
+
+                                </button>
+                            </div>
+                            <div id="demo-3" class="answer collapse in">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt,
+                                fringilla
+                                ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit
+                                tortor.
+                                Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel
+                                lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in
+                                libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante
+                                ipsum
+                                primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam
+                                risus
+                                justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit
+                                amet
+                                congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget
+                                nisl.
+                                Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+   <!-- -------------------------------------------------End of FAQ------------------------------------------------------------  -->
+
+    
+   <!-- -------------------------------------------------Mail------------------------------------------------------------  -->
+<section id="mail">
+ <div class="newsletter d-flex justify-content-center  row">
+    <div class="mail-heading">GET OUR NEWSLETTER</div>        
+            <p class="user-input newsletter d-flex justify-content-center  row">
+                <input type="mail" name="mail" placeholder="YOUR EMAIL" class="mailBox ">
+                <input type="submit" value="Submit" class="submit">
+            </p>
+          </div>
+    </div>
+</section>
+
+ <!-- --------------------------------------------------End of Mail------------------------------------------------------------  -->
+
+            <a href="#"  class="toptoback" id="backtotop" ><img src="image/up.png" ></a>
+
+  <!-- --------------------------------------------------Footer ------------------------------------------------------------  -->
+    <section id="section-footer" class="container-fluid">
+        <div class="f-main row">
+            <div class="footer-logo col-xl-2">
+                <img src="image/logo.png"
+                    srcset="image/logo.png" class="footer1-logo " style="width:100px;">
+            </div>
+            <div class="footer-nav col-xl-8">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about us.html">ABOUT</a></li>
+                    <li><a href="#">TESTIMONIALS</a></li>
+                    <li><a href="faqpage.html">FAQS</a></li>
+                    <li><a href="#">INSURANCE</a></li>
+                    <li><a href="contact us.html">POLICY</a></li>
+                    <li><a href="#">IMPRESSUM</a></li>
+                </ul>
+            </div>
+            <div class="footer-social col-xl-2">
+                <img src="image/facebook.png" alt="">
+                <img src="image/instagram.png" alt="">
+            </div>
+        </div>
+        <hr class="hr">
+        <div class="f-sub">
+            <p>©2018 Helperland. All rights reserved. Terms and Conditions | Privacy Policy</p>
+        </div>
+    </section>
+  
+ <!-- --------------------------------------------------End of Footer ------------------------------------------------------------  -->
+ 
+
+
+  </body>
+<script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="css/faq.js"></script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
