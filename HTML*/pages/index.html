@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">    
+       <link rel="stylesheet" type="text/css" href="css/model.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/Registration.css"> 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Homepage</title>
+</head>
+<body>
+    <!-- --------------------------------------------------  Navigation ------------------------------  -->
+
+<body>
+
+   
+         <!-- ------------------------------------------------------------Model For Login ------------------------------------------------>
+    <div class="modal fade" id="exampleModallogin" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title" id="staticBackdropLabel">Login to your account</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+                            <img alt="email" src="image/user.png">
+                        </div>
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="password" class="form-control" id="exampleFormControlInput2"
+                                placeholder="Password">
+                            <img alt="Password" src="image/lock.png">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Remember Me
+                            </label>
+                        </div>
+                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalfpwd" data-bs-dismiss="modal">Forgot Password</a></div>
+                        <div class="text-center">Don't have an account? <a href="Registration.html" >Create an account</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------------- End Model for Login --------------------------------------------------------------->
+
+    <!--------------------------------------------------------- Model For Forgot Password ----------------------------------------------------->
+    <div class="modal fade" id="exampleModalfpwd" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel">Forgot Password</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+                            <img alt="email" src="image/user.png">
+                        </div>
+                        
+                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModallogin" data-bs-dismiss="modal">Login now</a></div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------- End Model ---------------------------------------------------------------------->
+
+
+<!-- --------------------------------------------------modal for tabs with navbar ------------------------------------------------------------  -->
+
+<div class="modal fade navbar-tmodel" id="exampleModalnavbartoggle" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-center" style="float: right;">
+            <div class="modal-content">
+            
+        <div class="modal-body tab">
+                    <a href="index.html">HomePage</a>
+                     <a href="#"> Book Now </a>
+                    <a href="price.html">Prices & Services</a>
+                    <a href="#">Warranty</a>
+                    <a href="#">Blog</a>
+                    <a href="contact us.html">Contact</a>
+                    <a href="#"data-bs-toggle="modal"
+                     data-bs-target="#exampleModallogin" data-bs-dismiss="modal">Login</button></a>                    
+                     <a href="#">Become a Helper</a>
+                 </div>
+
+                <hr>
+                <div class ="footer-social1">
+                    <img src="image/instagram.png" class="insta">
+                    <img src="image/facebook.png" class="fb">
+                </div>
+            </div>
+        </div>
+</div>
+ <!-- --------------------------------------------------End of modal for tabs with navbar ------------------------------------------------------------  -->
+
+    <header class="header">
+    <heder>
+    <nav class="navbar navbar-default sticky-top navbar-expand-lg navbar-dark " id="navbar">
+  <div class="container-fluid">
+    <a href="index.html">
+    <img class="navbar-brand" src="image/logo.png" style="width: 75px;height: 55px;"></a>
+    <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalnavbartoggle" data-bs-dismiss="modal">
+     <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-end ">
+      <ul class="navbar-nav ms-auto mb-4 mb-lg-0 " style="margin-top:  -20px;">
+    
+      <li class="nav-item">
+        <a class="nav-link Rounded-Rectangle-2" href="#">Book a Cleaner</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link Rounded-Rectangle-2" href="price.html">Prices</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text " href="#">Our Gaurantee</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text " href="#">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text" href="contact us.html">Contact Us</a>
+      </li>
+      <li class="nav-item">
+         <button class="nav-link btn btn-outline-light nav-btn Rounded-Rectangle-2" href="#" data-bs-toggle="modal"
+        data-bs-target="#exampleModallogin" data-bs-dismiss="modal">Login</button>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link Rounded-Rectangle-2" >Become a Helper</a>
+      </li>
+     <li class="nav-item dropdown1 Rounded-Rectangle-1">
+         <a class="nav-link me-3 me-lg-12 dropdown-toggle " href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+       <img src="image/flag.png">
+      </a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown1  scrollable-menu " role="menu" aria-labelledby="navbarDropdown" style="background-color: ;">
+            <li>
+              <a class="dropdown-item " href="#"><img src="image/india.svg">India</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><img src="image/australia.svg">Australia</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><img src="image/united-states.svg">Uniter States</a>
+            </li>
+          </ul>
+        </li>       
+        </ul>
+                    
+        </div>
+      </div>
+    </ul>
+  </div>
+
+</nav> 
+</header> 
+            
+            
+     
+ 
+
+    <div class="main" id="main">
+
+        <section id="section-home">
+            <div class="home-content">
+                <div class="home-heading">
+                    <h1>Lorem ipsum text</h1>
+                </div>
+                <ul class="list">
+                    <li><i class="fa fa-check"></i> Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    <li><i class="fa fa-check"></i> Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    <li><i class="fa fa-check"></i> Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                </ul>
+            </div>
+            <div class="btn-lets">
+                <div>
+                    <button class="btn btn-outline-light text-light">Let’s Book a Cleaner</button>
+                </div>
+            </div>
+            <div class="all-steps">
+                <div class="step">
+                    <div class="step-img">
+                        <img src="image/postcode.png" alt="">
+                    </div>
+                    <div class="step-text">
+                        Enter Your Postcode
+                    </div>
+                    <div class="step-arrow">
+                        <img src="image/step-down-arrow.png" alt="">
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-img">
+                        <img src="image/plan.png" alt="">
+                    </div>
+                    <div class="step-text">
+                        Select your plan
+                    </div>
+                    <div class="step-arrow">
+                        <img src="image/step-up-arrow.png" alt="">
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-img">
+                        <img src="image/security.png" alt="">
+                    </div>
+                    <div class="step-text">
+                        Pay securely online
+                    </div>
+                    <div class="step-arrow">
+                        <img src="image/step-down-arrow.png" alt="">
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-img">
+                        <img src="image/services.png" alt="">
+                    </div>
+                    <div class="step-text">
+                        Enjoy Amazing Service
+                    </div>
+                </div>
+            </div>
+            <div class="btn-down">
+                   <img src="image/circle_arrow.png" alt="">
+               
+            </div>
+        </section>
+
+           <!-- --------------------------------------------Why Helper-----------------------------------------------  -->
+
+        <section id="section-whyhelper">
+
+            <div class="head">
+                <h2 class="whyhelper-title">Why Helperland</h2>
+            </div>
+            <div class="whyhelpers">
+                <div class="whyhelper">
+                    <div class="whyhelper-image"><img class="image-rounded" src="image/helperland1.png" alt=""></div>
+                    <div class="whyhelper-title">
+                        <h3>Experience & Vetted Professionals</h3>
+                    </div>
+                    <div class="content">
+                        <p>Dominate the industry in scale and scope with an adaptable, extensive network that
+                            consistently delivers exceptional results.</p>
+                    </div>
+                </div>
+                <div class="whyhelper">
+                    <div class="whyhelper-image"><img src="image/helperland2.png" alt=""></div>
+                    <div class="whyhelper-title">
+                        <h3>Secure Online Payment</h3>
+                    </div>
+                    <div class="content">
+                        <p>Payment is processed securely online. Customers pay safely online and
+                            manage the booking.</p>
+                    </div>
+                </div>
+                <div class="whyhelper">
+                    <div class="whyhelper-image"><img src="image/helperland3.png" alt=""></div>
+                    <div class="whyhelper-title">
+                        <h3>Dedicated Customer
+                            Service</h3>
+                    </div>
+                    <div class="content">
+                        <p>To our customers and are guided in all we do by their needs. The team is always happy
+                            to support you and offer all the information.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+           <!-- --------------------------------------------End of Why Helper-----------------------------------------------  -->
+           <!----------------------------------------------------------------------------------------------------- --> 
+        <section id="section-blog">
+
+            <div class="lorem">
+                <div class="col1">
+                    <div class="title">
+                        <h2 class="heading">Lorem ipsum dolor sit amet,
+                            consectetur</h2>
+                    </div>
+                    <div class="content">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi sapien, suscipit ut
+                            accumsan
+                            vitae, pulvinar ac libero.<br><br>
+
+                            Aliquam erat volutpat. Nullam quis ex odio. Nam bibendum cursus purus, vel efficitur
+                            urna
+                            finibus<br>
+                            vitae. Nullam finibus aliquet pharetra. Morbi in sem dolor. Integer pretium hendrerit
+                            ante
+                            quis
+                            vehicula.<br><br>
+
+                            Mauris consequat ornare enim, sed lobortis quam ultrices sed.
+                        </p>
+                    </div>
+                </div>
+                <div class="col2 helper4">
+                    <img src="image/helper456.png" alt="">
+                </div>
+            </div>
+
+            <!----------------------------------------------------------------------------------------------------- --> 
+            <!----------------------------------------------------Our BLog------------------------------------------------- --> 
+
+
+            <div class="sub-blog">
+                <div class="blog-title text-center">
+                    <h2>Our Blog</h2>
+                </div>
+                <div class="helpers">
+                    <div class="blog card">
+                        <img class="card-img-top" src="image/blog1_.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor sit amet<br><span class="card-date">January 28,
+                                    2019</span></h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum
+                                metus pulvinar aliquet.</p>
+
+                            <div class="help-more">Read The Post 
+                             <img src="image\rightarrow.png"> 
+ 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog card">
+                        <img class="card-img-top" src="image/blog2_.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor sit amet<br><span class="card-date">January 28,
+                                    2019</span></h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum
+                                metus pulvinar aliquet.</p>
+
+                            <div class="help-more">Read The Post 
+                            <img src="image\rightarrow.png"> 
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog card">
+                        <img class="card-img-top" src="image/blog3_.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor sit amet<br><span class="card-date">January 28,
+                                    2019</span></h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum
+                                metus pulvinar aliquet.</p>
+
+                            <div class="help-more">Read The Post 
+                                <img src="image\rightarrow.png"> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                    <!----------------------------------------------------Our BLog------------------------------------------------- --> 
+
+            <!----------------------------------------------------Customer------------------------------------------------- --> 
+
+        <section id="section-customer">
+            <div class="say-heading">
+                <h2>What Our Customers Say</h2>
+            </div>
+            <div class="says">
+                <div class="say">
+                    <div class="say-about">
+                        <div class="say-profile">
+                            <img src="image/customer1.png" alt="">
+                        </div>
+                        <div class="say-name">
+                            <div>
+                                <h3 class="name">Lary Waston</h3>
+                            </div>
+                            <div>
+                                <p class="city">Manchester</p>
+                            </div>
+                        </div>
+                        <div class="say-msg">
+                            <img src="image/mess.png" alt="">
+                        </div>
+                    </div>
+                    <div class="say-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum metus pulvinar
+                            aliquet consequat. Praesent nec malesuada nibh.<br><br>
+
+                            Nullam et metus congue, auctor augue sit amet, consectetur tortor. </p>
+                    </div>
+                    <div class="say-more">
+                        Read More <img src="image\rightarrow.png">
+                    </div>
+                </div>
+                <div class="say">
+                    <div class="say-about">
+                        <div class="say-profile">
+                            <img src="image/customer2.png" alt="">
+                        </div>
+                        <div class="say-name">
+                            <div>
+                                <h3 class="name">John Smith</h3>
+                            </div>
+                            <div>
+                                <p class="city">Manchester</p>
+                            </div>
+                        </div>
+                        <div class="say-msg">
+                            <img src="image/mess.png" alt="">
+                        </div>
+                    </div>
+                    <div class="say-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum metus pulvinar
+                            aliquet consequat. Praesent nec malesuada nibh.<br><br>
+
+                            Nullam et metus congue, auctor augue sit amet, consectetur tortor. </p>
+                    </div>
+                    <div class="say-more">
+                        Read More <img src="image\rightarrow.png">
+                    </div>
+                </div>
+                <div class="say">
+                    <div class="say-about">
+                        <div class="say-profile">
+                            <img src="image/customer3.png" alt="">
+                        </div>
+                        <div class="say-name">
+                            <div>
+                                <h3 class="name">Lars Johnson</h3>
+                            </div>
+                            <div>
+                                <p class="city">Manchester</p>
+                            </div>
+                        </div>
+                        <div class="say-msg">
+                            <img src="image/mess.png" alt="">
+                        </div>
+                    </div>
+                    <div class="say-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum metus pulvinar
+                            aliquet consequat. Praesent nec malesuada nibh.<br><br>
+
+                            Nullam et metus congue, auctor augue sit amet, consectetur tortor. </p>
+                    </div>
+                    <div class="say-more">
+                        Read More <img src="image\rightarrow.png">
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+              <!----------------------------------------------------End of Customer------------------------------------------------- --> 
+              <!---------------------------------------------------- Footer------------------------------------------------- --> 
+
+
+    <section id="section-footer" class="container-fluid">
+        <div class="f-main row">
+            <div class="footer-logo col-xl-2">
+                <img src="image/logo.png"
+                    srcset="image/logo.png" class="footer1-logo " style="width:100px;">
+            </div>
+            <div class="footer-nav col-xl-8">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about us.html">ABOUT</a></li>
+                    <li><a href="#">TESTIMONIALS</a></li>
+                    <li><a href="faqpage.html">FAQS</a></li>
+                    <li><a href="#">INSURANCE</a></li>
+                    <li><a href="contact us.html">POLICY</a></li>
+                    <li><a href="#">IMPRESSUM</a></li>
+                </ul>
+            </div>
+            <div class="footer-social col-xl-2">
+                <img src="image/facebook.png" alt="">
+                <img src="image/instagram.png" alt="">
+            </div>
+        </div>
+        <hr class="hr">
+        <div class="f-sub">
+            <p>©2018 Helperland. All rights reserved. Terms and Conditions | Privacy Policy</p>
+        </div>
+            <a href="#"  class="toptoback" id="backtotop" ><img src="image/up.png" ></a>
+
+  
+              <!----------------------------------------------------End of Footer------------------------------------------------- --> 
+
+   
+</body>
+<script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script>
+<script src="css/stickynav.js"></script>    
+</html>
