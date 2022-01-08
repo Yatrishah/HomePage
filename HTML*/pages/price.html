@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/price.css"> 
+      <link rel="stylesheet" type="text/css" href="css/footer.css">
+     <link rel="stylesheet" type="text/css" href="css/model.css">
+    <link rel="stylesheet" type="text/css" href="css/Registration.css"> 
+        <link rel="stylesheet" type="text/css" href="css/navbar.css">     
+
+    <title>Price Page</title>
+</head>
+
+<body>
+   <!-- ------------------------------------------------------------Model For Login ------------------------------------------------>
+  <div class="modal fade" id="exampleModallogin" tabindex="-1" aria-labelledby="exampleModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title" id="staticBackdropLabel">
+                        Login to your account
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Email" />
+                            <img alt="email" src="image/user.png" />
+                        </div>
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="password" class="form-control" id="exampleFormControlInput2"
+                                placeholder="Password" />
+                            <img alt="Password" src="image/lock.png" />
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Remember Me
+                            </label>
+                        </div>
+                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <div class="text-center mb-2">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalfpwd"
+                                data-bs-dismiss="modal">Forgot Password</a>
+                        </div>
+                        <div class="text-center">
+                            Don't have an account?
+                            <a href="Registration.html">Create an account</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   <!------------------------------------------------------- End Model for Login --------------------------------------------------------------->
+
+    <!--------------------------------------------------------- Model For Forgot Password ----------------------------------------------------->
+    <div class="modal fade" id="exampleModalfpwd" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel">
+                        Forgot Password
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Email" />
+                            <img alt="email" src="image/user.png" />
+                        </div>
+
+                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <div class="text-center mb-2">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModallogin"
+                                data-bs-dismiss="modal">Login now</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------- End Model ---------------------------------------------------------------------->
+
+
+<!-- --------------------------------------------------modal for tabs with navbar ------------------------------------------------------------  -->
+
+<div class="modal fade navbar-tmodel" id="exampleModalnavbartoggle" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-center" style="float: right;">
+            <div class="modal-content">
+            
+        <div class="modal-body tab">
+                    <a href="index.html">HomePage</a>
+                     <a href="#"> Book Now </a>
+                    <a href="price.html">Prices & Services</a>
+                    <a href="#">Warranty</a>
+                    <a href="#">Blog</a>
+                    <a href="contact us.html">Contact</a>
+                    <a href="#"data-bs-toggle="modal"
+        data-bs-target="#exampleModallogin" data-bs-dismiss="modal">Login</button></a>
+                    <a href="#">Become a Helper</a>
+
+            </div>
+
+                <hr>
+                <div class ="footer-social1">
+                    <img src="image/instagram.png" class="insta">
+                    <img src="image/facebook.png" class="fb">
+                </div>
+            </div>
+        </div>
+</div>
+ <!-- --------------------------------------------------End of modal for tabs with navbar ------------------------------------------------------------  -->
+
+ <!-- --------------------------------------------------Navigation Bar ------------------------------------------------------------  -->
+  <heder>
+    <nav class="navbar navbar-default sticky-top navbar-expand-lg navbar-dark " id="navbar">
+  <div class="container-fluid">
+    <a href="index.html">
+    <img class="navbar-brand" src="image/logo.png" style="width: 75px;height: 55px;"></a>
+    <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalnavbartoggle" data-bs-dismiss="modal">
+     <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-end ">
+      <ul class="navbar-nav ms-auto mb-4 mb-lg-0 " style="margin-top:  -20px;">
+    
+      <li class="nav-item">
+        <a class="nav-link Rounded-Rectangle-2" href="#">Book now</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link Rounded-Rectangle-2" href="price.html">Prices & services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text " href="#">Warranty</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text " href="#">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text" href="contact us.html">Contact</a>
+      </li>
+      <li class="nav-item">
+         <button class="nav-link btn btn-outline-light nav-btn Rounded-Rectangle-2" href="#" data-bs-toggle="modal"
+        data-bs-target="#exampleModallogin" data-bs-dismiss="modal">Login</button>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link Rounded-Rectangle-2" >Become a Helper</a>
+      </li>
+      
+    </ul>
+  </div>
+
+</nav> 
+</header> 
+ <!-- -------------------------------------------------- End of Navigation Bar ------------------------------------------------------------  -->
+
+
+ <!-- -------------------------------------------------- Price Image--------------------------------------------------------------------  -->
+<div>
+    <img src="image/pricebackground.png"class="img-fluid"style="width:100%">
+</div>
+ <!-- -------------------------------------------------- End of Price Image--------------------------------------------------------------------  -->
+
+ <!-- --------------------------------------------------Price Box ------------------------------------------------------------  -->
+
+<div class="price">
+
+        <p class="">Price</p>
+</div>
+ <div>
+        <div style="text-align: center;">
+            <div class="lineLeft"></div>
+            <img src="image/faqstar.png" class="starfaq">
+            <div class="lineRight"></div>
+        </div>
+
+
+<section class="container" id="pricelist">
+  <div class="card card1">
+<div class="header">  <p class="text1">One Time</p>  </div>  
+<p class="text2">€20<small class="text-muted">/hr</small>
+</p>
+
+<img src="image/tick.png" style=" width: 25px;height: 24px;margin: 37px 8px 19px 151px;">
+<p class="text4">Lower prices</p>
+
+<img src="image/tick.png" style=" width: 25px;height: 24px;margin: 19px 8px 19px 151px;">
+<p class="text4">Easy online & secure payment </p>
+
+<img src="image/tick.png" style=" width: 25px;height: 24px;margin: 19px 8px 19px 151px;">
+<p class="text4">Easy amendment</p>
+
+
+</section>
+
+ <!-- -------------------------------------------------- End of Price Box ------------------------------------------------------------  -->
+
+  <!-- -------------------------------------------------Extra Services------------------------------------------------------------  -->
+
+<section id="extraservice">
+<div>
+<hr style="width:80%; margin:auto;margin-top: 51px;" />
+
+</div> 
+
+<div class="price">
+
+        <p class="">Extra services</p>
+</div>
+ <div>
+        <div style="text-align: center;">
+            <div class="lineLeft"></div>
+            <img src="image/faqstar.png" class="starfaq">
+            <div class="lineRight"></div>
+        </div>
+
+<section class="container text-center " style="margin:auto;">
+
+    <div class="row ">
+         
+        <div class="col-lg col-6 ">
+         <div class=" circle "> <img src="image/extraservice1.png"> </div>
+         <h2 class="servicetxt1">Inside cabinets</h2>
+         <p class="servicetxt2">30 minutes </p>
+          </div>
+<div class="col-lg col-6 ">
+         <div class=" circle "> <img src="image/extraservice2.png">  </div>
+         <h2 class="servicetxt1" >Inside fridge</h2>
+         <p class="servicetxt2">30 minutes </p>
+          </div>
+    
+     <div class="col-lg col-6 ">
+         <div class=" circle "> <img src="image/extraservice3.png"style="margin-top:5px ;margin-left: -10px;">  </div>
+         <h2 class="servicetxt1">Inside oven</h2>
+         <p class="servicetxt2">30 minutes  </p>
+          </div>
+
+
+ <div class="col-lg col-6 ">
+         <div class=" circle "> <img src="image/extraservice4.png" >  </div>
+         <h2 class="servicetxt1">Laundry wash & dry</h2>
+         <p class="servicetxt2">30 minutes </p>
+          </div>
+
+          <div class="col-lg col-6 ">
+         <div class=" circle "> <img src="image/extraservice5.png"style="margin-top:1px ;margin-left: -7px;">  </div>
+         <h2 class="servicetxt1">Interior windows</h2>
+         <p class="servicetxt2">30 minutes</p>
+          </div>
+
+       </section>  
+
+  <!-- -------------------------------------------------End of Extra Services------------------------------------------------------------  -->
+
+  <!-- ------------------------------------------------Cleaning ------------------------------------------------------------  -->
+
+    <section id="s-cleaning">
+            <div class="services">
+                <div class="c-header">
+                    <h1>What we include in cleaning</h1>
+                    <div class="h-line">
+                          <div class="lineLeft"></div>
+                         <img src="image/faqstar.png" class="starfaq">
+                        <div class="lineRight"></div>
+                    </div>
+                </div>
+   
+                <div class="row ">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="c-img">
+                            <img src="image/cleaning1.png" alt="">
+                        </div>
+                        <div class="c-content">
+                            <div class="content-title">Badroom And Living Room</div>
+                            <div class="content-includes">
+                                <ul class="list">
+                                    <li><img src="image/arrow-right.png" alt=""> Dust all accessible surfaces
+                                    </li>
+                                    <li><img src="image/arrow-right.png" alt=""> Wipe down all mirrors and
+                                        glass fixtures</li>
+                                    <li><img src="image/arrow-right.png" alt=""> Clean all floor surfaces</li>
+                                    <li><img src="image/arrow-right.png" alt=""> Take out garbage and
+                                        recycling</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="c-img">
+                            <img src="image/cleaning2.png" alt="">
+                        </div>
+                        <div class="c-content">
+                            <div class="content-title">Bathrooms</div>
+                            <div class="content-includes">
+                                <ul class="list">
+                                    <li><img src="image/arrow-right.png" alt=""> Wash and sanitize the toilet,
+                                        shower, tub, sink</li>
+                                    <li><img src="image/arrow-right.png" alt=""> Dust all accessible surfaces
+                                    </li>
+                                    <li><img src="image/arrow-right.png" alt=""> Wipe down all mirrors and
+                                        glass fixtures</li>
+                                    <li><img src="image/arrow-right.png" alt=""> Clean all floor surfaces</li>
+                                    <li><img src="image/arrow-right.png" alt=""> Take out garbage and
+                                        recycling</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="c-img">
+                            <img src="image/cleaning3.png" alt="">
+                        </div>
+                        <div class="c-content">
+                            <div class="content-title">Kitchen</div>
+                            <div class="content-includes">
+                                <ul class="list">
+                                    <li><img src="image/arrow-right.png" alt=""> Dust all accessible surfaces
+                                    </li>
+                                    <li><img src="image/arrow-right.png" alt=""> Empty sink and load up
+                                        dishwasher</li>
+                                    <li><img src="image/arrow-right.png" alt=""> Wipe down all mirrors and
+                                        glass fixtures</li>
+                                    <li><img src="image/arrow-right.png" alt=""> Clean all floor surfaces</li>
+                                    <li><img src="image/arrow-right.png" alt=""> Take out garbage and
+                                        recycling</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+  <!-- -------------------------------------------------End of Cleaning-----------------------------------------------------------  -->
+
+  <!-- -------------------------------------------------Helperland------------------------------------------------------------  -->
+
+
+ <section id="section-whyhelper">
+            <div class="whyhelper">
+                <div class="whyhelper-head">
+                    <h1>Why Helperland</h1>
+                      <div class="lineLeft"></div>
+                         <img src="image/faqstar.png" class="starfaq">
+                        <div class="lineRight"></div>
+                    </div>
+
+                <div class="row ">
+                    <div class="col-lg-4 leftside">
+                        <div class="gap">
+                            <h2>Experienced and vetted professionals</h2>
+                            <p>dominate the industry in scale and scope with an adaptable, extensive network that
+                                consistently delivers exceptional results.</p>
+                        </div>
+                            <h2>Dedicated customer service</h2>
+                            <p>to our customers and are guided in all we do by their needs. The team is always happy to
+                                support you and offer all the information. you need.</p>
+                    </div>
+                    <div class="col-lg-4 whyhelperimg text-center">
+                        <img src="image/cleaning4.png" alt="">
+                    </div>
+                    <div class="col-lg-4 rightside">
+                        <div class="gap">
+                            <h2>Every cleaning is insured</h2>
+                            <p>and seek to provide exceptional service and engage in proactive behavior. We‘d be happy
+                                to clean your homes.</p>
+                        </div>
+                        <div class="d-second">
+                            <h2>Secure online payment</h2>
+                            <p>Payment is processed securely online. Customers pay safely online and manage the booking.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>     
+
+
+
+ <!-- --------------------------------------------------End of Mail------------------------------------------------------------  -->
+            <a href="#"  class="toptoback" id="backtotop" ><img src="image/up.png" ></a>
+
+
+   <!-- --------------------------------------------------Footer ------------------------------------------------------------  -->
+
+  <section id="section-footer" class="container-fluid">
+        <div class="f-main row">
+            <div class="footer-logo col-xl-2">
+                <img src="image/logo.png"
+                    srcset="image/logo.png" class="footer1-logo " style="width:100px;">
+            </div>
+            <div class="footer-nav col-xl-8">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about us.html">ABOUT</a></li>
+                    <li><a href="#">TESTIMONIALS</a></li>
+                    <li><a href="faqpage.html">FAQS</a></li>
+                    <li><a href="#">INSURANCE</a></li>
+                    <li><a href="contact us.html">POLICY</a></li>
+                    <li><a href="#">IMPRESSUM</a></li>
+                </ul>
+            </div>
+            <div class="footer-social col-xl-2">
+                <img src="image/facebook.png" alt="">
+                <img src="image/instagram.png" alt="">
+            </div>
+        </div>
+        <hr class="hr">
+        <div class="f-sub">
+            <p>©2018 Helperland. All rights reserved. Terms and Conditions | Privacy Policy</p>
+        </div>
+    </section>
+  
+ <!-- -------------------------------------------------- End of about us Image--------------------------------------------------------------------  -->
+
+ </body>
+<script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script>
+</html>
+
+
+

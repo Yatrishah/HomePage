@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/contact us.css">    
+    <link rel="stylesheet" type="text/css" href="css/contact us.css">   
+    <link rel="stylesheet" type="text/css" href="css/model.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/Registration.css"> 
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">  
 
     <title>Contact Us Page</title>
 </head>
@@ -13,32 +17,140 @@
 <body>
  <!-- --------------------------------------------------Navigation Bar ------------------------------------------------------------  -->
   
-    <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark " id="navbar" style="background-color:#525252;opacity:0.8;  padding: 6px 15px 4px;">
+         <!-- ------------------------------------------------------------Model For Login ------------------------------------------------>
+    <div class="modal fade" id="exampleModallogin" tabindex="-1" aria-labelledby="exampleModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title" id="staticBackdropLabel">
+                        Login to your account
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Email" />
+                            <img alt="email" src="image/user.png" />
+                        </div>
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="password" class="form-control" id="exampleFormControlInput2"
+                                placeholder="Password" />
+                            <img alt="Password" src="image/lock.png" />
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Remember Me
+                            </label>
+                        </div>
+                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <div class="text-center mb-2">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalfpwd"
+                                data-bs-dismiss="modal">Forgot Password</a>
+                        </div>
+                        <div class="text-center">
+                            Don't have an account?
+                            <a href="Registration.html">Create an account</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!------------------------------------------------------- End Model for Login --------------------------------------------------------------->
+
+    <!--------------------------------------------------------- Model For Forgot Password ----------------------------------------------------->
+    <div class="modal fade" id="exampleModalfpwd" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel">
+                        Forgot Password
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Email" />
+                            <img alt="email" src="image/user.png" />
+                        </div>
+
+                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <div class="text-center mb-2">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModallogin"
+                                data-bs-dismiss="modal">Login now</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------- End Model for forgot password ---------------------------------------------------------------------->
+
+
+<!-- --------------------------------------------------modal for tabs with navbar ------------------------------------------------------------  -->
+
+<div class="modal fade navbar-tmodel" id="exampleModalnavbartoggle" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-center" style="float: right;">
+            <div class="modal-content">
+            
+        <div class="modal-body tab">
+                    <a href="index.html">HomePage</a>
+                     <a href="#"> Book Now </a>
+                    <a href="price.html">Prices & Services</a>
+                    <a href="#">Warranty</a>
+                    <a href="#">Blog</a>
+                    <a href="contact us.html">Contact</a>
+                     <a href="#"data-bs-toggle="modal"
+                     data-bs-target="#exampleModallogin" data-bs-dismiss="modal">Login</button></a>
+                    <a href="#">Become a Helper</a>
+
+            </div>
+
+                <hr>
+                <div class ="footer-social1">
+                    <img src="image/instagram.png" class="insta">
+                    <img src="image/facebook.png" class="fb">
+                </div>
+            </div>
+        </div>
+</div>
+ <!-- --------------------------------------------------End of modal for tabs with navbar ------------------------------------------------------------  -->
+ <!-- --------------------------------------------------Navigation Bar ------------------------------------------------------------  -->
+  <heder>
+    <nav class="navbar navbar-default sticky-top navbar-expand-lg navbar-dark " id="navbar">
   <div class="container-fluid">
-    <img class="navbar-brand" src="image/logo.png" style="width: 75px;height: 55px;">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation ">
-      <span class="navbar-toggler-icon "></span>
+    <a href="index.html">
+    <img class="navbar-brand" src="image/logo.png" style="width: 75px;height: 55px;"></a>
+    <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalnavbartoggle" data-bs-dismiss="modal">
+     <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-end " id="navbarSupportedContent" style="font-family:     Roboto-Regular; font-size:  50px ;">
+    <div class="collapse navbar-collapse justify-end ">
       <ul class="navbar-nav ms-auto mb-4 mb-lg-0 " style="margin-top:  -20px;">
     
       <li class="nav-item">
-        <a class="nav-link Rounded-Rectangle-0" href="#">Book now</a>
+        <a class="nav-link Rounded-Rectangle-2" href="#">Book now</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link Rounded-Rectangle-3" href="#">Prices & services</a>
+        <a class="nav-link Rounded-Rectangle-2" href="price.html">Prices & services</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text navtext" href="#">Warranty</a>
+        <a class="nav-link text " href="#">Warranty</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text navtext" href="#">Blog</a>
+        <a class="nav-link text " href="#">Blog</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text navtext " href="#">Contact</a>
+        <a class="nav-link text" href="contact us.html">Contact</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link Rounded-Rectangle-1" href="#">Login</a>
+         <button class="nav-link btn btn-outline-light nav-btn Rounded-Rectangle-2" href="#" data-bs-toggle="modal"
+        data-bs-target="#exampleModallogin" data-bs-dismiss="modal">Login</button>
       </li>
       <li class="nav-item">
         <a class="nav-link Rounded-Rectangle-2" >Become a Helper</a>
@@ -47,12 +159,12 @@
     </ul>
   </div>
 
-</nav>  
+</nav> 
+</header> 
  <!-- -------------------------------------------------- End of Navigation Bar ------------------------------------------------------------  -->
-
  <!-- -------------------------------------------------- COntact Us  Image--------------------------------------------------------------------  -->
 <div>
-    <img src="image/contactuscoverpage.png"class="img-fluid"style="width:100%;height:370px;">
+    <img src="image/contactuscoverpage.png"class="img-fluid"style="width:100%;">
 </div>
  <!-- -------------------------------------------------- End of Contact us Image--------------------------------------------------------------------  -->
 
@@ -72,24 +184,37 @@
 
 
 
-<section class="container text-center " style="margin:auto;">
+<section class="container" style="margin:auto;">
 
-    <div class="row ">
-         
-        <div class="col-lg col-6" >
-         <img src="image/location.png" class="contactimg"> 
-         <p class="contacttext">1111 Lorem ipsum text 100,<br> Lorem ipsum AB </p>
-          </div>
+      <div class="contact-list row">
+                    <div class="list col-xl-4 col-md-4">
+                        <div class="img">
+                            <img src="image/location.png">
+                        </div>
+                        <div class="title">
+                            <p>1111 Lorem ipsum text 100,<br> Lorem ipsum AB</p>
+                        </div>
+                    </div>
+                    <div class="list col-xl-4 col-md-4">
+                        <div class="img">
+                            <img src="image/phone.png" alt="">
+                        </div>
+                        <div class="title">
+                            <p>+49 (40) 123 56 7890<br>+49 (40) 987 56 0000</p>
+                        </div>
+                    </div>
+                    <div class="list col-xl-4 col-md-4">
+                        <div class="img">
+                            <img src="image/message.png" alt="">
+                        </div>
+                        <div class="title">
+                            <p>info@helperland.com</p>
+                        </div>
+                    </div>
 
-  <div class="col-lg col-6 ">
-         <img src="image/phone.png" class="contactimg">  
-         <p class="contacttext">+49 (40) 123 56 7890 <br>+49 (40) 987 56 0000</p>
-          </div>
+                </div>
+            </div>
 
-          <div class="col-lg col-6 ">
-         <img src="image/message.png" class="contactimg"> 
-         <p class="contacttext">info@helperland.com</p>
-          </div>
 
        </section>  
  <!-- -------------------------------------------------- End of Contact us --------------------------------------------------------------------  -->
@@ -106,72 +231,68 @@
   <!-- --------------------------------------------------Contact us form-------------------------------------------------------------------  -->
 
 
-<section>
-        <div class="container-fluid">
-            <p class="Get-in-touch-with-us">
-                Get in touch with us
-            </p>
-
-            
-            <div class="flex-container" style="justify-content: center; align-items: center;">
-                <form action="#">
-                    <div class="user-details" style="width: 100%;">
-
-                        <div class="flex-container">
-                            <div class="inputtext1">
-                                <input type="text" placeholder="First Name" required style="width: 90%; border: solid 1px #c8c8c8;">
+        <section id="contactform" class="contact-form">
+            <div class="form-title">
+                <h1>Get in touch with us</h1>
+            </div>
+            <div class="c-form">
+                <form action="#" method="post" accept-charset="utf-8">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                                <input class="form-control" name="firstname" placeholder="Firstname" type="text"
+                                    required autofocus />
                             </div>
-                            <div class="inputtext1">
-                                <input type="text" placeholder="Last Name" required style="width: 91%;border: solid 1px #c8c8c8;">
+                            <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                                <input class="form-control" name="lastname" placeholder="Lastname" type="text"
+                                    required />
                             </div>
                         </div>
-
-                        <div class="flex-container">
-                            <div class="inputtext1">
-                                <span class="details">+49</span>
-                                <input type="number" name="mobile_number" placeholder="Mobile number" required style="width: 75%;border: solid 1px #c8c8c8;">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">+49</div>
+                                    </div>
+                                    <input type="number" class="form-control" id="inlineFormInputGroup"
+                                        placeholder="Mobile number">
+                                </div>
                             </div>
-                            <div class="inputtext1">
-                                <input type="email" placeholder="Email Address" required style="width: 91%;border: solid 1px #c8c8c8;">
+                            <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                                <input class="form-control" name="email" placeholder="Email address" type="email"
+                                    required />
                             </div>
                         </div>
-
-
-                        <div class="input_box_1">
-                            <input type="text" placeholder="Subject" required style="width: 96%;border: solid 1px #c8c8c8;">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                             <input class="form-control" name="subject" placeholder="Subject" type="subject"
+                                    required />
+                            </div>
                         </div>
-
-                        <div class="inputtext2">
-                            <!-- <input type="text" placeholder="Message"> -->
-                            <textarea placeholder="Message" style="width: 96%; height: inherit;border: solid 1px #c8c8c8;"></textarea>
+                        <div class="row">
+                            <div class="">
+                                <textarea  class="form-control" placeholder="Message"
+                                    rows="60" name="mess" required ></textarea>
+                            </div>
                         </div>
-
-                        <div class="inputtext3">
-                            <span class="Submit">
-                                Submit
-                            </span>
-                            
-                        </div>
-
+                        
+                    </div>
+                    <div class="submit-btn">
+                        <button>Submit</button>
                     </div>
                 </form>
             </div>
-
-
-        </div>
-
-    </section>
+        </section>
+        
+    </div>
 
   <!-- --------------------------------------------------End of Contact us form-------------------------------------------------------------------  -->
 
     <!-- --------------------------------------------------Location Image-------------------------------------------------------------------  -->
 
 
-     <div style="position: relative; margin-top: 40px;">
-        <img src="image/map.png" class="map">
-        <div class="pin_position" >
-            <img src="image/locationmap.png" class="pin">
-        </div>
+     <div style=" margin-top: 40px;" class="img-fluid">
+     <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=tatvasoft%20ahmedababd+(Your%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/sport-gps/">fitness tracker</a></iframe></div>
     </div>
     <!-- --------------------------------------------------End of Location Image-------------------------------------------------------------------  -->
 
@@ -193,51 +314,39 @@
  <!-- --------------------------------------------------End of Mail------------------------------------------------------------  -->
 
 
+           <a href="#"  class="toptoback" id="backtotop" ><img src="image/up.png" ></a>
+
   <!-- --------------------------------------------------Footer ------------------------------------------------------------  -->
-
- <footer >
-    <div class="row">
-        <div class="col col-lg-2">
-          <img src="./image/logo.png" class="footer-logo">
+    <section id="section-footer" class="container-fluid">
+        <div class="f-main row">
+            <div class="footer-logo col-xl-2">
+                <img src="image/logo.png"
+                    srcset="image/logo.png" class="footer1-logo " style="width:100px;">
+            </div>
+            <div class="footer-nav col-xl-8">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about us.html">ABOUT</a></li>
+                    <li><a href="#">TESTIMONIALS</a></li>
+                    <li><a href="faqpage.html">FAQS</a></li>
+                    <li><a href="#">INSURANCE</a></li>
+                    <li><a href="contact us.html">POLICY</a></li>
+                    <li><a href="#">IMPRESSUM</a></li>
+                </ul>
+            </div>
+            <div class="footer-social col-xl-2">
+                <img src="image/facebook.png" alt="">
+                <img src="image/instagram.png" alt="">
+            </div>
         </div>
-        <div class="col col-lg-auto footer-item ">
-          <ul class="nav ">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Testimonials</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">FAQS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Insurance</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Impressum</a>
-              </li>
-            </ul>
+        <hr class="hr">
+        <div class="f-sub">
+            <p>©2018 Helperland. All rights reserved. Terms and Conditions | Privacy Policy</p>
         </div>
-        <div class="col col-lg-auto "style="text-align:     center      ;margin-top:    20px;">
-          <span class="footer-icon"> <img src="./image/facebook.png" ></span>
-          <span class="footer-icon"> <img src="./image/instagram.png" ></span>
-        </div>
-      
-    </div>
-
-    <div>
-        <hr/>
-    </div>
-
-    <div class="copyright">
-        &copy;2018 Helperland. All rights reserved.     Terms and Conditions  |  Privacy Policy
-    </div>
-  </footer>
-  <!-- --------------------------------------------------End of Footer ------------------------------------------------------------  -->
+    </section>
+  
+ <!-- --------------------------------------------------End of Footer ------------------------------------------------------------  -->
+ 
 
  </body>
 <script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script>
