@@ -14,40 +14,37 @@ background-attachment: fixed;
 }
  .Rectangle{
       background-color: #525252;
-      
-  }
+      }
+
 .Rounded-Rectangle{
-   border: 1px solid #fff;
-    border-radius: 22px;
-    line-height: 20px; 
-    margin-right: 10px;
-    width: 150px;
-    text-align: center;
-    margin-left: 10px;
-    letter-spacing: 0.2px;
+margin-top:  20px;
+text-align:     center  ;
 }
 
 .Rounded-Rectangle-1{
-    margin-right: 5px;
-    margin-left: 20px; 
-    letter-spacing: 0.2px;
-    
-}
+ margin-top:  20px;
+width: 140px;
+height: 40px;
+text-align:     center  ;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
+opacity: 1;
+float: right;
+font-family:    Roboto-Regular;
+font-size:  17px;
+line-height: 1.41;
+  letter-spacing: normal;}
 
-.Rounded-Rectangle-2{
-    border: 1px solid #fff;
-    border-radius: 22px;
-    line-height: 20px; 
-    width:60px ;
-    margin-right: 10px;
-    margin-left: 10px; 
-    text-align: center;
-    letter-spacing: 0.2px;
-}
+
 .Rounded-Rectangle:hover{
-  background-color: #29626d;
+margin-top:  20px;
+width: 140px;
+height: 40px;
+text-align:     center  ;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
 }
-.Rounded-Rectangle-2:hover{
+.Rounded-Rectangle-1:hover{
   background-color: #29626d;
 }
 .scrollable-menu {
@@ -68,9 +65,6 @@ background-attachment: fixed;
     width: 50px;
   }             
 }
-
-
-
 
 /*-----------End of Navigation Bar----------- */
 
@@ -184,8 +178,7 @@ background-attachment: fixed;
 
 .section-container
 {
---bs-gutter-x: 1.5rem;
---bs-gutter-y: 0;
+
 display: flex;
 flex-wrap: wrap;
 
@@ -204,7 +197,6 @@ min-height: 260px;
 
 margin: auto;
 max-width: 400px;
- /* Animation */
 
 }
 
@@ -228,6 +220,10 @@ padding:40px 50px;
   margin: auto;
   margin-left: 50px;
   width:auto;
+}
+
+.bodytext1:hover{
+  color: #29626D;
 }
 .bodytext2
 {
@@ -275,7 +271,9 @@ height:250px;
 display:block;
 order:2;
 width:100%;
+
 }
+
 .section-container .columns.content .content-container
 {
 padding:20px 35px;
