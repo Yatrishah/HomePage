@@ -5,19 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/services provider_upcoming service.css">    
+    <link rel="stylesheet" type="text/css" href="css/services provider_upcoming service.css"> 
+       <link rel="stylesheet" type="text/css" href="css/footer.css">
+     <link rel="stylesheet" type="text/css" href="css/model.css">
+    <link rel="stylesheet" type="text/css" href="css/Registration.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Service Provider_Upcoming</title>
 </head>
         
 <body>
+
+  <!------------------------------------------------------------------- Model For Login ---------------------------------------------------->
+
+    <div class="modal fade" id="exampleModallogin" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title" id="staticBackdropLabel" title="Login to Your Account">Login to your account</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" title="Email">
+                            <img alt="email" src="image/user.png" >
+                        </div>
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="password" class="form-control" id="exampleFormControlInput2"
+                                placeholder="Password" title="Password  ">
+                            <img alt="Password" src="image/lock.png">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Remember Me
+                            </label>
+                        </div>
+                        <button class="submit-button mb-3" type="submit" title="Login">Login</button>
+                        <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalfpwd" data-bs-dismiss="modal" title="Forgot Password   ">Forgot Password</a></div>
+                        <div class="text-center">Don't have an account? <a href="./Registration.html">Create an account</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------- End Model --------------------------------------------------------------->
+
+    <!---------------------------------------------- Model For Forgot Password ------------------------------------------------------>
+
+    <div class="modal fade" id="exampleModalfpwd" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel" title="Forgot  Password">Forgot Password</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" title="Email ">
+                            <img alt="email" src="image/user.png">
+                        </div>
+                        
+                        <button class="submit-button mb-3" type="submit" title="Login">Login</button>
+                        <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModallogin" data-bs-dismiss="modal" title="Login Now">Login now</a></div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -----------------------------------------------End Model ----------------------------------------------------------------------->
+  
+
+  <!------------------------------------------------------ Model For Service Cancel ------------------------------->
+    <div class="modal fade" id="exampleModalServiceCancel" tabindex="-1" aria-labelledby="exampleModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-7 modal-body">
+                                <div class="row">
+                                    <p class="head">Service Details</p>
+                                    <p class="time">07/10/2021 08:00 -11:00 </p>
+                                    <p>Duration: 3 Hrs </p>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <p class="head">Service Id: 8488.</p>
+                                    <p>Extras:</p>
+                                    <p>Total Payment: <span class="currency">56,25 €</p>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <p class="head">Customer Name: Gaurang Patel.</p>
+                                    <p>Service Address: Koenigstrasse 112,99897 Tambach-Dietharz</p>
+                                    <p>Distance: 296,76</p>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <p class="head">Comments</p>
+                                    <p><span class="fa fa-times-circle-o"></span> I dont't have pets at home</p>
+                                </div>
+                                <hr>
+                                <div class="row modal-button">
+                                    <div class="col">
+                                        <button class="modal-button-cancel" title="Cancel"><i class="fa fa-times"></i> Cancel</button>
+                                        <button class="modal-button-complete" title="Complete"><i class="fa fa-check"></i>
+                                            Complete</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 modal-map">
+                                <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=tatvasoft%20ahmedababd+(Your%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/sport-gps/">fitness tracker</a></iframe>
+                            </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------------------- End of Service cancel Model ----------------------------------------------->
+
  <!-- --------------------------------------------------Navigation Bar ------------------------------------------------------------  -->
   
    <div class="wrapper">
 <!-- header -->
 <header class="site-header fixed-top">
         <div class="header-wrapper d-flex justify-content-between align-items-center">
-            <a href="#" title="Helper hand" class="logo-block">
+            <a href="index.html" title="Helperland" class="logo-block">
                 <img src="image/logo.png" alt="Helper hand logo">
             </a>
             <div class="header-right-block">
@@ -29,21 +152,21 @@
                         <div class="collapse navbar-collapse" id="navbarNav" >
                             <ul class="navbar-nav align-items-center">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="" title="Prices">Prices and Services</a>
+                                    <a class="nav-link " href="price.html" title="Prices and Services">Prices and Services</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" title="Blog">Warranty</a>
+                                    <a class="nav-link" href="#" title="Warranty">Warranty</a>
                                 </li>
                               
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" title="Login" >Blog</a>
+                                    <a class="nav-link" href="#" title="Blog" >Blog</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="" title="Contact us">Contact</a>
+                                    <a class="nav-link " href="contact us.html" title="Contact us">Contact</a>
                                 </li>
                                 
-                                <li class="nav-item line100  ">
-                                    <a class="nav-link"><img src="image/notification.png"></a>
+                                <li class="nav-item ">
+                                    <a class="nav-link"><div class="seprator"><div class="counter">2</div><img src="image/notification.png"></div></a>
                                 </li>
                                 <li class="dropdown">
                                     <button class="btn  dropdown-toggle dropdown1" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" >
@@ -67,68 +190,94 @@
 </header>
 
  <!-- -------------------------------------------------- End of Navigation Bar ------------------------------------------------------------  -->
- <!-- --------------------------------------------------modal for tabs with navba ------------------------------------------------------------  -->
-<div class="modal fade navbar-tmodel" id="exampleModalnavbartoggle" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+<!-- ------------------------------------ Nav MOdel ---------------------------------------------- -->
+ <div class="modal fade navbar-tmodel" id="exampleModalnavbartoggle" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
         <div class="modal-dialog modal-dialog-center">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" id="staticBackdropLabel">Welcome, <br><b>Yatri!</b> </h4>
                 </div>
-                <div class="modal-body">
-                    <a href="#dashboard" class="" onclick="dashboard();" role="button">Dashboard</a>
-                    <a href="#newservicerequests" class="" onclick="newservice();" role="button">New Service Requests</a>
-                    <a href="#upcomingservice" class="" onclick="upcoming();" role="button">Upcoming Service</a>
-                    <a href="#serviceschedule"  class="" onclick="schedule();" role="button">Service Schedule</a>
-                    <a href="#servicehistory"  class="" onclick="history();" role="button">Service History</a>
-                    <a href="#myratings" class="" onclick="ratings();" role="button">My Ratings</a>
-                    <a href="#blockcustomer" class="" onclick="bookcustomer();" role="button">Block Customer</a>
+                <div class="modal-body tab">
+                    <a href="#dashboard"  class="" onclick="dashboard();" role="button" title="Dashboard">Dashboard</a>
+                    <a href="#newservicerequests" class="" onclick="newservice();" role="button" title="New Service Requests">New Service Requests</a>
+                    <a href="#upcomingservice"   class="active" onclick="upcoming();" role="button" title="Upcoming Service">Upcoming Service</a>
+                    <a href="#serviceschedule" class="" onclick="schedule();" role="button" title="Service Schedule">Service Schedule</a>
+                    <a href="#servicehistory"  class="" onclick="history();" role="button" title="Service History">Service History</a>
+                    <a href="#myratings"  class="" onclick="ratings();" role="button" title="My Ratings">My Ratings</a>
+                    <a href="#blockcustomer"   class="" onclick="bookcustomer();" role="button" title="Block Customer">Block Customer</a>
                     <a href="#invoice">Invoices</a>
                     <a href="#mysetting">My Setting</a>
                     <a href="#logout">Logout</a>
                 </div>
-                <div class="modal-footer">
-                    <a href="">Prices & Services</a>
-                    <a href="#">Warranty</a>
-                    <a href="#">Blog</a>
-                    <a href="">Contact</a>
+                <div class="modal-footer tab">
+                    <a href="price.html" title="Prices & Services">Prices & Services</a>
+                    <a href="#" title="Warranty">Warranty</a>
+                    <a href="#" title="Blog">Blog</a>
+                    <a href="contact us.html" title="Contact">Contact</a>
+                </div>
+               <hr>
+                <div class ="footer-social1">
+                    <img src="image/instagram.png" class="insta">
+                    <img src="image/facebook.png" class="fb">
                 </div>
             </div>
         </div>
 </div>
- <!-- --------------------------------------------------End of modal for tabs with navba ------------------------------------------------------------  -->
-  <!-- -------------------------------------------------- Head Text ------------------------------------------------------------  -->
+<!------------------------------------------End of navbar Model----------------------------------------------------->
+    
 
+<!-----------------------------------------Left table----------------------------------------------------->
+
+<main style="min-height:100vh;">
 <div class="textdiv">
     <p class="text">Welcome, <b>Yatri!</b></p>
 </div>
- <!-- --------------------------------------------------End of Head Text ------------------------------------------------------------  -->
-
- <!-- --------------------------------------------------Left Table ------------------------------------------------------------  -->
- <section id="tab-section">
+  
+    <section id="tab-section">
         <div class="div-main container-fluild" >
-            <div class="div-tab" >
-                <a href="#dashboard" id="dashboard1" class="" onclick="dashboard();" role="button">Dashboard</a>
-                <a href="#newservicerequests" id="newservice" class="" onclick="newservice();" role="button" >New Service Requests</a>
-                <a href="#upcomingservice" id="upcoming" class="active" onclick="upcoming();" role="button">Upcoming Service</a>
-                <a href="#serviceschedule" id="schedule" class="" onclick="schedule();" role="button">Service Schedule</a>
-                <a href="#servicehistory" id="history" class="" onclick="history();" role="button">Service History</a>
-                <a href="#myratings" id="ratings" class="" onclick="ratings();" role="button">My Ratings</a>
-                <a href="#bookcustomer" id="customer" class="" onclick="bookcustomer();" role="button">Block Customer</a>
+            <div class="div-tab">
+                <a href="#dashboard" id="dashboard1" class="" onclick="dashboard();" role="button" title="Dashboard">Dashboard</a>
+                <a href="#newservicerequests" id="newservice" class="" onclick="newservice();" role="button" title="New Service Requests">New Service Requests</a>
+                <a href="#upcomingservice" id="upcoming" class="active" onclick="upcoming();" role="button" title="Upcoming Service">Upcoming Service</a>
+                <a href="#serviceschedule" id="schedule" class="" onclick="schedule();" role="button" title="Service Schedule">Service Schedule</a>
+                <a href="#servicehistory" id="history" class="" onclick="history();" role="button" title="Service History"> Service History</a>
+                <a href="#myratings" id="ratings" class="" onclick="ratings();" role="button" title="My Ratings">My Ratings</a>
+                <a href="#bookcustomer" id="customer" class="" onclick="bookcustomer();" role="button" title="Block Customer">Block Customer</a>
             </div>
+
+            <!-----------------------------------------End of Left table----------------------------------------------------->
+
 <div class="content-section">
             <div class="divContent" id="dashboard">
                
- </div>
-<!-- --------------------------------------------------End of Left Table ------------------------------------------------------------  -->
- <!-- --------------------------------------------------Right Table ------------------------------------------------------------  -->
- <div class="divContent" id="serviceschedule">
+            </div>
+            <div class="divContent" id="serviceschedule">
+               
+
+            </div>
+            <div class="divContent" id="servicehistory">
                 <div>
-                    <table>
-                        <thead>
+                    <p style="color: black;">Payment Status:
+                    <select name="mySelect" id="mySelect" onchange="setValue();">
+                        <option value="1" selected="">All</option>
+                        <option value="2"> All 1</option>
+                        <option value="3"> All 2</option>
+                        <option value="4">All 3</option>
+                        <option value="3"> All 4</option>
+                        <option value="4">All 5</option>
+                    </select>
+                    <span class="buttonaccept"><button   style="float: right;">Export</button></span> 
+
+                   
+                </p>
+                 </div>
+                <div>
+                    <table  class="services" id="mytable">
+                      <thead>
                             <tr>
-                                <th>Service ID <img src="image/both_arrow.png"></th>
-                                <th>Service date <img src="image/both_arrow.png"></th>
-                                <th>Cutomer details <img src="image/both_arrow.png"></th>
+                                <th title="Service Id">Service ID <img src="image/both_arrow.png"></th>
+                                <th title="Service Date">Service date <img src="image/both_arrow.png"></th>
+                                <th title="Customer Details">Cutomer details <img src="image/both_arrow.png"></th>
                                 
                             </tr>
                         </thead>
@@ -209,15 +358,21 @@
                             </tr>
                         </tbody>
                     </table>
+
                 </div>
                
             </div>
+
+
+
             <div class="divContent" id="myratings">
                
             </div>
             <div class="divContent" id="bookcustomer">
                 
             </div>
+
+
 
             <div class="divContent" id="newservicerequests">
                 <div>
@@ -234,17 +389,45 @@
                 </p>
                  </div>
                 <div>
-                    <table>
+                    <table class="services" id="mytable1" > 
                         <thead>
                             <tr>
-                                <th>Service ID <img src="image/both_arrow.png"></th>
-                                <th>Service date <img src="image/both_arrow.png"></th>
-                                <th>Cutomer details <img src="image/both_arrow.png"></th>
-                                <th>Distance <img src="image/both_arrow.png"></th>
-                                <th>Actions</th>
+                                <th title="Service ID">Service ID <img src="image/both_arrow.png"></th>
+                                <th title="Service Date">Service date <img src="image/both_arrow.png"></th>
+                                <th title="Customer Details">Cutomer details <img src="image/both_arrow.png"></th>
+                                <th title="Distance">Distance <img src="image/both_arrow.png"></th>
+                                <th title="Actions">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
+                           <tr>
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calendar.png"><b>09/04/2018</b></div>
+                                    <div><img src="image/clock1.png" >12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div>David Bough</div>
+                                    <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
+                                </td>
+                                <td>15 km</td>
+                                <td class="buttonaccept" title="Accept"><button>Accept</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calendar.png"><b>09/04/2018</b></div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div>David Bough</div>
+                                    <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
+                                </td>
+                                <td>15 km</td>
+                                <td class="buttonaccept" title="Accept"><button>Accept</button>
+                                </td>
+                            </tr>
                             <tr>
                                 <td>323436</td>
                                 <td>
@@ -256,7 +439,7 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttonaccept"><button>Accept</button>
+                                <td class="buttonaccept" title="Accept"><button>Accept</button>
                                 </td>
                             </tr>
                             <tr>
@@ -270,21 +453,7 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttonaccept"><button>Accept</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>323436</td>
-                                <td>
-                                    <div><img src="image/calendar.png"><b>09/04/2018</b></div>
-                                    <div><img src="image/clock1.png" >12:00 - 18:00</div>
-                                </td>
-                                <td>
-                                    <div>David Bough</div>
-                                    <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
-                                </td>
-                                <td>15 km</td>
-                                <td class="buttonaccept"><button>Accept</button>
+                                <td class="buttonaccept" title="Accept"><button>Accept</button>
                                 </td>
                             </tr>
                             <tr>
@@ -298,21 +467,7 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttonaccept"><button>Accept</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>323436</td>
-                                <td>
-                                    <div><img src="image/calendar.png"><b>09/04/2018</b></div>
-                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
-                                </td>
-                                <td>
-                                    <div>David Bough</div>
-                                    <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
-                                </td>
-                                <td>15 km</td>
-                                <td class="buttonaccept"><button>Accept</button>
+                                <td class="buttonaccept" title="Accept"><button>Accept</button>
                                 </td>
                             </tr>
                            
@@ -328,7 +483,7 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttonaccept">
+                                <td class="buttonaccept" title="Accept">
                                     <button>Accept</button>
                                 </td>
                             </tr>
@@ -336,27 +491,20 @@
                     </table>
                 </div>
                 <div>
-                <p style="color: black;">Size :
-                <select name="mySelect" id="mySelect" onchange="setValue();">
-                    <option value="1" selected="">10</option>
-                    <option value="2"> 20</option>
-                    <option value="3"> 50</option>
-                    <option value="4">100</option>
-                </select>
-            </p>
-             </div>
-            </div>
 
+                 </div></div></div> 
+
+                 </div>  
             <div class="divContent" id="upcomingservice">
                 <div>
-                    <table>
-                        <thead>
+                    <table class="services" id="mytable2">
+                         <thead>
                             <tr>
-                                <th>Service ID <img src="image/both_arrow.png"></th>
-                                <th>Service date <img src="image/both_arrow.png"></th>
-                                <th>Cutomer details <img src="image/both_arrow.png"></th>
-                                <th>Distance <img src="image/both_arrow.png"></th>
-                                <th>Actions</th>
+                                <th title="Service ID">Service ID <img src="image/both_arrow.png"></th>
+                                <th title="Service Date">Service date <img src="image/both_arrow.png"></th>
+                                <th title="Customer Details">Cutomer details <img src="image/both_arrow.png"></th>
+                                <th title="Distance">Distance <img src="image/both_arrow.png"></th>
+                                <th title="Actions">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -371,7 +519,9 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttoncancel"><button>Cancel</button>
+                                <td class="buttoncancel" title="Cancel"><button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceCancel"
+                                            data-bs-dismiss="modal">Cancel</button>
                                 </td>
                             </tr>
                             <tr>
@@ -385,7 +535,9 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttoncancel"><button>Cancel</button>
+                                <td class="buttoncancel" title="Cancel"><button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceCancel"
+                                            data-bs-dismiss="modal">Cancel</button>
                                 </td>
                             </tr>
                             <tr>
@@ -399,7 +551,9 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttoncancel"><button>Cancel</button>
+                                <td class="buttoncancel" title="Cancel"><button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceCancel"
+                                            data-bs-dismiss="modal">Cancel</button>
                                 </td>
                             </tr>
                             <tr>
@@ -413,7 +567,9 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttoncancel"><button>Cancel</button>
+                                <td class="buttoncancel" title="Cancel"><button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceCancel"
+                                            data-bs-dismiss="modal">Cancel</button>
                                 </td>
                             </tr>
                             <tr>
@@ -427,7 +583,9 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttoncancel"><button>Cancel</button>
+                                <td class="buttoncancel" title="Cancel"><button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceCancel"
+                                            data-bs-dismiss="modal">Cancel</button>
                                 </td>
                             </tr>
                             <tr>
@@ -441,8 +599,10 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttoncancel">
-                                    <button>Cancel</button>
+                                <td class="buttoncancel"title="Cancel">
+                                    <button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceCancel"
+                                            data-bs-dismiss="modal">Cancel</button>
                                 </td>
                             </tr>
                             <tr>
@@ -456,8 +616,10 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttoncancel">
-                                    <button>Cancel</button>
+                                <td class="buttoncancel"title="Cancel">
+                                  <button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceCancel"
+                                            data-bs-dismiss="modal">Cancel</button>
                                 </td>
                             </tr>
                             <tr>
@@ -471,9 +633,10 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttoncancel">
-                                    <button>Cancel</button>
-                                </td>
+                                <td class="buttoncancel" title="Cancel">
+                                            <button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceCancel"
+                                            data-bs-dismiss="modal">Cancel</button>  </td>
                             </tr>
                             <tr>
                                 <td>323436</td>
@@ -486,9 +649,10 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttoncancel">
-                                    <button>Cancel</button>
-                                </td>
+                                <td class="buttoncancel"title="Cancel">
+                                            <button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceCancel"
+                                            data-bs-dismiss="modal">Cancel</button> </td>
                             </tr>
                             <tr>
                                 <td>323436</td>
@@ -501,15 +665,18 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttoncancel">
-                                    <button>Cancel</button>
-                                </td>
+                                <td class="buttoncancel" title="Cancel">
+                                        <button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceCancel"
+                                            data-bs-dismiss="modal">Cancel</button> </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div>
-                <p style="color: black;">Size :
+                      <div class="history-pagination">
+                        <div class="show-page">
+                             <p style="color: black;">Size :
                 <select name="mySelect" id="mySelect" onchange="setValue();">
                     <option value="1" selected="">10</option>
                     <option value="2"> 20</option>
@@ -517,61 +684,62 @@
                     <option value="4">100</option>
                 </select>
             </p>
+                        </div>
+                        <div class="paginations">
+                            <div class="jump-left"><img src="image/jump-left.png" alt=""></div>
+                            <div class="next-left"><img src="image/next-left.png" alt=""></div>
+                            <div class="current-page">1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                            <div class="next-right"><img src="image/next-left.png" alt=""></div>
+                            <div class="jump-right"><img src="image/jump-left.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+               
+            </div>
+               
              </div>
             </div>
         </div>
     </div>
 </section>
 
-
-    <!-- --------------------------------------------------End of Right Table ------------------------------------------------------------  -->
+</main>
+</div>
+<!-----------------------------------------End of table----------------------------------------------------->
 
  <!-- --------------------------------------------------Footer ------------------------------------------------------------  -->
 
-
- <footer >
-    <div class="row">
-        <div class="col col-lg-2">
-          <img src="./image/logo.png" class="footer-logo">
+ <section id="section-footer" class="container-fluid">
+        <div class="f-main row">
+            <div class="footer-logo col-xl-2">
+                <img src="image/logo.png"
+                    srcset="image/logo.png" class="footer1-logo " title="Helperland" style="width:100px;">
+            </div>
+            <div class="footer-nav col-xl-8">
+                <ul>
+                    <li><a href="index.html" title="home">HOME</a></li>
+                    <li><a href="about us.html" title="About">ABOUT</a></li>
+                    <li><a href="#" title="Testimonials">TESTIMONIALS</a></li>
+                    <li><a href="faqpage.html" title=Faqs>FAQS</a></li>
+                    <li><a href="#" title=Insurance>INSURANCE</a></li>
+                    <li><a href="contact us.html"title="Policy">POLICY</a></li>
+                    <li><a href="#"title="Impressum">IMPRESSUM</a></li>
+                </ul>
+            </div>
+            <div class="footer-social col-xl-2">
+                <img src="image/facebook.png" alt="">
+                <img src="image/instagram.png" alt="">
+            </div>
         </div>
-        <div class="col col-lg-auto footer-item " >
-          <ul class="nav ">
-              <li class="nav-item">
-                <a class="nav-link" href="#" style="color:#f1f1f1">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" style="color:#f1f1f1">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"style="color:#f1f1f1">Testimonials</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"style="color:#f1f1f1">FAQS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"style="color:#f1f1f1">Insurance</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"style="color:#f1f1f1">Impressum</a>
-              </li>
-            </ul>
+        <hr class="hr">
+        <div class="f-sub">
+            <p>©2018 Helperland. All rights reserved. Terms and Conditions | Privacy Policy</p>
         </div>
-        <div class="col col-lg-auto "style="text-align:     center      ;margin-top:    20px;">
-          <span class="footer-icon"> <img src="./image/facebook.png" ></span>
-          <span class="footer-icon"> <img src="./image/instagram.png" ></span>
-        </div>
-      
-    </div>
-
-    <div>
-        <hr/>
-    </div>
-
-    <div class="copyright">
-        &copy;2018 Helperland. All rights reserved.     Terms and Conditions  |  Privacy Policy
-    </div>
-
-  </footer>
+    </section>
 
  <!-- -------------------------------------------------- End of Footer ------------------------------------------------------------  -->
 
