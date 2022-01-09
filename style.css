@@ -1,0 +1,526 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+*{
+    font-family: "Roboto", sans-serif;
+}
+.header{
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+.navbar{
+    display: flex;
+    padding: 10px;
+    transition: all 0.5s ease;
+}
+.navbar.sticky{
+    background-color: rgb(85, 85, 85);
+}
+.navbar-brand img{
+    width: 175px;
+    height: 130px;
+}
+.navbar.sticky .navbar-brand{
+    height: 50px;
+}
+.navbar.sticky .navbar-brand img{
+    height: 50px;
+    width: 70px;
+}
+.nav-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar.sticky .nav-list{
+    margin-bottom: 0;
+}
+.nav-list li{
+    list-style: none;
+    padding-left: 30px;
+}
+.nav-list li a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+.nav-list .nav-btn{
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid white;
+}
+.nav-list .nav-btn:hover{
+    background-color: #006072;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+.hero-image:hover{
+  opacity:1;  transform: scale(1.1);
+}
+
+@media (max-width: 1100px) {
+  .navbar-scroll {
+    background-color:black;
+  }
+  .dropdown1{
+    width: 50px;
+  }             
+}
+
+.Rounded-Rectangle{
+margin-top:  20px;
+text-align:     center  ;
+}
+
+.Rounded-Rectangle-1{
+ margin-top:  20px;
+width: 140px;
+height: 40px;
+text-align:     center  ;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
+opacity: 1;
+float: right;
+font-family:    Roboto-Regular;
+font-size:  17px;
+line-height: 1.41;
+  letter-spacing: normal;}
+
+
+.Rounded-Rectangle:hover{
+margin-top:  20px;
+width: 140px;
+height: 40px;
+text-align:     center  ;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
+}
+.Rounded-Rectangle-1:hover{
+  background-color: #29626d;
+}
+
+/* Section HomePage */
+#section-home {
+    height: 930px;
+  background:url(../image/background.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 55px;
+}
+
+.home-heading {
+    margin-bottom: 16px;
+}
+
+.home-heading h1 {
+    color: white;
+}
+
+.home-content {
+    margin-top: 280px;
+    margin-left: 20px;
+}
+
+.btn-lets div {
+    width: 250px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.btn-lets button {
+    font-size: 18px;
+    border-radius: 25px;
+    padding: 12px 25px;
+    background-color: rgb(5, 115, 119);
+}
+
+.btn-lets button:hover {
+    background-color: rgb(5, 115, 119);
+}
+
+.all-steps {
+    margin: 109px 100px 0px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step {
+    position: relative;
+    margin: auto;
+}
+
+.step-text {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.step-arrow {
+    position: absolute;
+    top: 10%;
+    left: 115%;
+}
+
+.step-img {
+    width: 51px;
+    height: 55px;
+    margin: 0 auto;
+}
+
+ .step-img:hover{
+   color: #29626D;
+opacity:1;  transform: scale(1.5);
+
+}
+
+.btn-down {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.circle {
+    border: 1px solid white;
+    width: fit-content;
+    border-radius: 100%;
+    padding: 10px 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.list {
+    padding-left: 0;
+    list-style: none;
+    color: white;
+}
+
+.list li {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.fa-check {
+    color: white;
+}
+
+@media screen {
+    .steps {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1310px) {
+    #section-home {
+        height: 100%;
+    }
+
+    .step-arrow {
+        position: absolute;
+        top: 10%;
+        left: 100%;
+        display: none;
+    }
+
+    .all-steps {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .all-steps .step {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    #section-home {
+        padding: 55px 15px 10px 15px;
+    }
+
+    .btn-lets {
+        margin-top: 150px;
+    }
+
+    .all-steps {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+/*------------- Why helperland------------*/
+
+.head {
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.whyhelpers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.whyhelper {
+    width: 355px;
+    margin: 11px 25px;
+    text-align: center;
+    padding: 10px;
+}
+  
+.whyhelper-image img {
+    width: 320px;
+    height: 320px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.whyhelper-image img:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+.whyhelper-title {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: Roboto;
+}
+ .head:hover{
+    color: #29626D; 
+    opacity:1;  transform: scale(1.2);
+ }
+
+.whyhelper-title h3 {
+    height: 30px;
+    margin-bottom: 20px;
+        font-family: Roboto;
+      }
+
+.whyhelper-title:hover{
+    color: #29626D; 
+ }
+
+ .whyhelper-title h3:hover{
+    color: #29626D; 
+ }
+
+.helpers4 img {
+    height: 230px;
+    width: 63px;
+}
+
+.help-more{
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.content {
+    font-size: 18px;
+        font-family: Roboto;
+      }
+
+/*-------------End of Why helperland------------*/
+
+/*-------------Blog------------*/
+
+.helpers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#section-blog {
+    height: 995px;
+    position: relative;
+    margin-top: 40px;
+    padding: 75px 10px;
+}
+
+
+.helper4{
+    transition: all 0.3s ease;
+}
+.helper4:hover{
+    transform:scale(0.9);
+}
+
+.lorem {
+    display: flex;
+    flex-wrap: wrap;
+    width: 73%;
+    margin: auto;
+}
+
+.col1 .title h2 {
+    width: 60%;
+    font-family: Roboto;
+}
+
+ .col1 .title h2:hover{
+    color: #29626D; 
+    opacity:1;  transform: scale(1.2);
+ }
+.col1 .content {
+    width: 630px;
+    font-family: Roboto;
+
+}
+
+.sub-blog {
+    margin-top: 70px;
+}
+
+.card-body, .card-footer {
+    padding: 15px;
+}
+
+.blog-title {
+    margin-bottom: 60px;
+}
+
+.blog-title h2:hover{
+    color: #29626D; 
+    opacity:1;  transform: scale(1.2);
+ }
+
+.blog {
+    width: 357px;
+    margin: 30px 20px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 30px #E4EBF0;
+    transition: all 0.3s ease;
+}
+.blog:hover{
+    transform: translateY(-14px);
+}
+
+.card-img-top {
+    width: 356px;
+}
+
+.card-date {
+    color: grey;
+    font-size: 12px;
+}
+
+@media screen and (max-width:1500px) {
+    #section-blog {
+        height: 100%;
+    }
+
+    .col1 {
+        width: 100%;
+    }
+
+    .col1 .content {
+        width: fit-content;
+    }
+
+    .helper4 {
+        margin: 10px auto;
+    }
+}
+
+
+
+/*-------------End of Blog------------*/
+
+/* ------------Customer Say -------------------*/
+
+#section-customer {
+    height: 100%;
+    background-color: #f4f5f8;
+}
+
+.says {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.say {
+    padding: 31px;
+    width: 355px;
+    margin: auto 20px;
+    height: 370px;
+    background-color: #ffffff;
+    border-left: 4px solid #1d7a8c;
+    margin-bottom: 70px;
+    transition: all 0.3s ease;
+}
+.say:hover{
+    border-left-color: #1d7a8c;
+    border-width: 6px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.say-about {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.say-profile {
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.say-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.say-msg {
+    margin: auto;
+    cursor: pointer;
+}
+
+.say-content {
+    font-size: 16px;
+}
+
+.say-more {
+    cursor: pointer;
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+.say-heading {
+    text-align: center;
+    padding: 50px;
+}
+
+ .say-heading h2:hover{
+    color: #29626D; 
+    opacity:1;  transform: scale(1.2);
+ }
+
+@media screen and (max-width:1200px) {
+    #section-customer {
+        height: 100%;
+    }
+}
+/* ------------End of Customer Say -------------------*/
+
+.toptoback{
+    position:fixed; 
+    left:20px; 
+    bottom:200px;
+     background-color:rgb(105, 104, 104); 
+     border-radius: 50%;
+      z-index: 100;
+      padding:10px;
+      margin-top: 20px;  
+      border:1px solid white;
+  }
+
