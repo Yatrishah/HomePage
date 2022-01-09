@@ -25,23 +25,25 @@
 
 <body>
 
-         <!-- ------------------------------------------------------------Model For Login ------------------------------------------------>
+     
+               <!------------------------------------------------------------------- Model For Login ---------------------------------------------------->
+
     <div class="modal fade" id="exampleModallogin" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header text-center">
-                    <h4 class="modal-title" id="staticBackdropLabel">Login to your account</h4>
+                    <h4 class="modal-title" id="staticBackdropLabel" title="Login to Your Account">Login to your account</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="#">
                         <div class="mb-3 form-group icon-textbox">
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
-                            <img alt="email" src="image/user.png">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" title="Email">
+                            <img alt="email" src="image/user.png" >
                         </div>
                         <div class="mb-3 form-group icon-textbox">
                             <input type="password" class="form-control" id="exampleFormControlInput2"
-                                placeholder="Password">
+                                placeholder="Password" title="Password  ">
                             <img alt="Password" src="image/lock.png">
                         </div>
                         <div class="form-check">
@@ -50,41 +52,42 @@
                                 Remember Me
                             </label>
                         </div>
-                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <button class="submit-button mb-3" type="submit" title="Login">Login</button>
                         <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
-                            data-bs-target="#exampleModalfpwd" data-bs-dismiss="modal">Forgot Password</a></div>
-                        <div class="text-center">Don't have an account? <a href="Registration.html" >Create an account</a></div>
+                            data-bs-target="#exampleModalfpwd" data-bs-dismiss="modal" title="Forgot Password   ">Forgot Password</a></div>
+                        <div class="text-center">Don't have an account? <a href="./Registration.html">Create an account</a></div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <!------------------------------------------------------- End Model for Login --------------------------------------------------------------->
+    <!-------------------------------------------------- End Model --------------------------------------------------------------->
 
-    <!--------------------------------------------------------- Model For Forgot Password ----------------------------------------------------->
+    <!---------------------------------------------- Model For Forgot Password ------------------------------------------------------>
+
     <div class="modal fade" id="exampleModalfpwd" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="staticBackdropLabel">Forgot Password</h4>
+                    <h4 class="modal-title" id="staticBackdropLabel" title="Forgot  Password">Forgot Password</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="#">
                         <div class="mb-3 form-group icon-textbox">
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" title="Email ">
                             <img alt="email" src="image/user.png">
                         </div>
                         
-                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <button class="submit-button mb-3" type="submit" title="Login">Login</button>
                         <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
-                            data-bs-target="#exampleModallogin" data-bs-dismiss="modal">Login now</a></div>
+                            data-bs-target="#exampleModallogin" data-bs-dismiss="modal" title="Login Now">Login now</a></div>
                         </form>
                 </div>
             </div>
         </div>
     </div>
-    <!------------------------------------------------- End Model ---------------------------------------------------------------------->
+    <!-- -----------------------------------------------End Model ----------------------------------------------------------------------->
 
 
 <!-- --------------------------------------------------modal for tabs with navbar ------------------------------------------------------------  -->

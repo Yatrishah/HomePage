@@ -19,25 +19,24 @@
     <!-- --------------------------------------------------  Navigation ------------------------------  -->
 
 <body>
+  <!------------------------------------------------------------------- Model For Login ---------------------------------------------------->
 
-   
-         <!-- ------------------------------------------------------------Model For Login ------------------------------------------------>
     <div class="modal fade" id="exampleModallogin" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header text-center">
-                    <h4 class="modal-title" id="staticBackdropLabel">Login to your account</h4>
+                    <h4 class="modal-title" id="staticBackdropLabel" title="Login to Your Account">Login to your account</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="#">
                         <div class="mb-3 form-group icon-textbox">
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
-                            <img alt="email" src="image/user.png">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" title="Email">
+                            <img alt="email" src="image/user.png" >
                         </div>
                         <div class="mb-3 form-group icon-textbox">
                             <input type="password" class="form-control" id="exampleFormControlInput2"
-                                placeholder="Password">
+                                placeholder="Password" title="Password  ">
                             <img alt="Password" src="image/lock.png">
                         </div>
                         <div class="form-check">
@@ -46,41 +45,43 @@
                                 Remember Me
                             </label>
                         </div>
-                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <button class="submit-button mb-3" type="submit" title="Login">Login</button>
                         <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
-                            data-bs-target="#exampleModalfpwd" data-bs-dismiss="modal">Forgot Password</a></div>
-                        <div class="text-center">Don't have an account? <a href="Registration.html" >Create an account</a></div>
+                            data-bs-target="#exampleModalfpwd" data-bs-dismiss="modal" title="Forgot Password   ">Forgot Password</a></div>
+                        <div class="text-center">Don't have an account? <a href="./Registration.html">Create an account</a></div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <!------------------------------------------------------- End Model for Login --------------------------------------------------------------->
+    <!-------------------------------------------------- End Model --------------------------------------------------------------->
 
-    <!--------------------------------------------------------- Model For Forgot Password ----------------------------------------------------->
+    <!---------------------------------------------- Model For Forgot Password ------------------------------------------------------>
+
     <div class="modal fade" id="exampleModalfpwd" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="staticBackdropLabel">Forgot Password</h4>
+                    <h4 class="modal-title" id="staticBackdropLabel" title="Forgot  Password">Forgot Password</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="#">
                         <div class="mb-3 form-group icon-textbox">
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" title="Email ">
                             <img alt="email" src="image/user.png">
                         </div>
                         
-                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <button class="submit-button mb-3" type="submit" title="Login">Login</button>
                         <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
-                            data-bs-target="#exampleModallogin" data-bs-dismiss="modal">Login now</a></div>
+                            data-bs-target="#exampleModallogin" data-bs-dismiss="modal" title="Login Now">Login now</a></div>
                         </form>
                 </div>
             </div>
         </div>
     </div>
-    <!------------------------------------------------- End Model ---------------------------------------------------------------------->
+    <!-- -----------------------------------------------End Model ----------------------------------------------------------------------->
+
 
 
 <!-- --------------------------------------------------modal for tabs with navbar ------------------------------------------------------------  -->
@@ -126,28 +127,28 @@
       <ul class="navbar-nav ms-auto mb-4 mb-lg-0 " style="margin-top:  -20px;">
     
       <li class="nav-item">
-              <a class="nav-link   Rounded-Rectangle a " href="#" title="Book a Cleaner">Book a Cleaner</a>
+              <a class="nav-link   Rounded-Rectangle-1 text-white" href="#" title="Book a Cleaner">Book a Cleaner</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link Rounded-Rectangle" href="price.html" title="Prices">Prices</a>
+              <a class="nav-link Rounded-Rectangle text-white" href="price.html" title="Prices">Prices</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link  Rounded-Rectangle" href="#" title="Our Guarantee">Our Guarantee</a>
+              <a class="nav-link  Rounded-Rectangle text-white" href="#" title="Our Guarantee">Our Guarantee</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link  Rounded-Rectangle" href="" title="Blog">Blog</a>
+              <a class="nav-link  Rounded-Rectangle text-white" href="" title="Blog">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link  Rounded-Rectangle " href="contact us.html" title="Contact Us">Contact Us</a>
+              <a class="nav-link  Rounded-Rectangle text-white " href="contact us.html" title="Contact Us">Contact Us</a>
             </li>
              <li class="nav-item" title="Login">
-               <a href="#"data-bs-toggle="modal" data-bs-target="#exampleModallogin" data-bs-dismiss="modal" class="Rounded-Rectangle nav-link">Login</button></a> 
+               <a href="#"data-bs-toggle="modal" data-bs-target="#exampleModallogin" data-bs-dismiss="modal" class="Rounded-Rectangle-1 text-white nav-link">Login</button></a> 
             </li>
              <li class="nav-item">
-              <a class="nav-link text-white Rounded-Rectangle" href="#" title="Become a Helper">Become a Helper</a>
+              <a class="nav-link text-white Rounded-Rectangle-1" href="#" title="Become a Helper">Become a Helper</a>
             </li>
      <li class="nav-item dropdown1">
-         <a class="nav-link me-3 me-lg-12 dropdown-toggle " href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+         <a class="nav-link me-3 me-lg-12 dropdown-toggle Rounded-Rectangle " href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
        <img src="image/flag.png">
       </a>
           <ul class="dropdown-menu dropdown-menu-end dropdown1  scrollable-menu " role="menu" aria-labelledby="navbarDropdown" style="background-color: ;">

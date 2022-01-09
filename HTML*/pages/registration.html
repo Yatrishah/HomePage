@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/registration.css">    
-        <link rel="stylesheet" type="text/css" href="css/footer.css">    
+        <link rel="stylesheet" type="text/css" href="css/footer.css"> 
+        <link rel="stylesheet" type="text/css" href="css/navbar.css">    
+   
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -13,24 +15,24 @@
 </head>
  <body>
 
-     <!-- Model For Login -->
+     <!------------------------------------------------------------------- Model For Login ---------------------------------------------------->
 
     <div class="modal fade" id="exampleModallogin" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header text-center">
-                    <h4 class="modal-title" id="staticBackdropLabel">Login to your account</h4>
+                    <h4 class="modal-title" id="staticBackdropLabel" title="Login to Your Account">Login to your account</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="#">
                         <div class="mb-3 form-group icon-textbox">
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
-                            <img alt="email" src="image/user.png">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" title="Email">
+                            <img alt="email" src="image/user.png" >
                         </div>
                         <div class="mb-3 form-group icon-textbox">
                             <input type="password" class="form-control" id="exampleFormControlInput2"
-                                placeholder="Password">
+                                placeholder="Password" title="Password  ">
                             <img alt="Password" src="image/lock.png">
                         </div>
                         <div class="form-check">
@@ -39,42 +41,42 @@
                                 Remember Me
                             </label>
                         </div>
-                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <button class="submit-button mb-3" type="submit" title="Login">Login</button>
                         <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
-                            data-bs-target="#exampleModalfpwd" data-bs-dismiss="modal">Forgot Password</a></div>
+                            data-bs-target="#exampleModalfpwd" data-bs-dismiss="modal" title="Forgot Password   ">Forgot Password</a></div>
                         <div class="text-center">Don't have an account? <a href="./Registration.html">Create an account</a></div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Model -->
+    <!-------------------------------------------------- End Model --------------------------------------------------------------->
 
-    <!-- Model For Forgot Password -->
+    <!---------------------------------------------- Model For Forgot Password ------------------------------------------------------>
 
     <div class="modal fade" id="exampleModalfpwd" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="staticBackdropLabel">Forgot Password</h4>
+                    <h4 class="modal-title" id="staticBackdropLabel" title="Forgot  Password">Forgot Password</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="#">
                         <div class="mb-3 form-group icon-textbox">
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" title="Email ">
                             <img alt="email" src="image/user.png">
                         </div>
                         
-                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <button class="submit-button mb-3" type="submit" title="Login">Login</button>
                         <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
-                            data-bs-target="#exampleModallogin" data-bs-dismiss="modal">Login now</a></div>
+                            data-bs-target="#exampleModallogin" data-bs-dismiss="modal" title="Login Now">Login now</a></div>
                         </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Model -->
+    <!-- -----------------------------------------------End Model ----------------------------------------------------------------------->
     <!-- --------------------------------------------------Navigation Bar ------------------------------------------------------------  -->
   
     <nav class="navbar fixed-top navbar-default  navbar-expand-lg navbar-dark " id="navbar" style="background-color:#646464;">
@@ -130,7 +132,7 @@
               <div class="hero-image" >
                         <div id="form">
                             <div class="form">
-                                <div class="text-center">
+                                <div class="text-center" title="Create  an Account  ">
                                     <span >Create an Account</span>
                                 </div>
                                  <div>
@@ -143,19 +145,19 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 15px;">
                                             <input class="form-control" name="firstname" placeholder="First name" type="text"
-                                                required autofocus />
+                                                required autofocus title="First Name" />
 
                                         </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 15px;">
                                     
                                             <input class="form-control" name="lastname" placeholder="Last name" type="text"
-                                                required />
+                                                required title="Last Name" />
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-6"  style="padding-bottom: 15px;">
                                             <input class="form-control" name="email" placeholder="Email Address" type="email"
-                                                required />
+                                                required title="Email Address   " />
                                         </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6"  style="padding-bottom: 15px;">
 
@@ -164,7 +166,7 @@
                                                     <div class="input-group-text">+46</div>
                                                 </div>
                                                 <input type="number" class="form-control" id="inlineFormInputGroup"
-                                                    placeholder="Phone number">
+                                                    placeholder="Phone number" title="Phone number  ">
                                             </div>
                                         </div>
                                     </div>
@@ -177,7 +179,7 @@
                                              <div class="col-lg-6 col-md-6 col-sm-6"  style="padding-bottom: 15px;">
   
                                             <input class="form-control" name="cpsw" placeholder="Confirm Password" type="text"
-                                                required />
+                                                required title="Conirm Password " />
                                         </div>
                                     </div>
                                       <div class="form-check">
@@ -201,7 +203,7 @@
                         </label>
                     </div>
                                 
-                                <div class="get-started text-center row">
+                                <div class="get-started text-center row" title="Login Now">
                                         <button>Get Started <img src="image/whiterightarrow.png" alt=""></button>
                                         <p>Already registered? <a href="#" data-bs-toggle="modal"
                             data-bs-target="#exampleModallogin">Login now</a></p>
@@ -212,27 +214,28 @@
                     </div>
 </div></div></section>
     <!------------------------------------------------------------ End of Form  --------------------------------------------------------------------------->
+    <!------------------------------------------------------------Footer--------------------------------------------------------------------------->
 
-     <section id="section-footer" class="container-fluid">
+      <section id="section-footer" class="container-fluid">
         <div class="f-main row">
             <div class="footer-logo col-xl-2">
                 <img src="image/logo.png"
-                    class="footer1-logo ">
+                    srcset="image/logo.png" class="footer1-logo " title="Helperland" style="width:100px;">
             </div>
             <div class="footer-nav col-xl-8">
                 <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="about us.html">ABOUT</a></li>
-                    <li><a href="#">TESTIMONIALS</a></li>
-                    <li><a href="Faqpage .html">FAQS</a></li>
-                    <li><a href="#">INSURANCE</a></li>
-                    <li><a href="contact us.html">POLICY</a></li>
-                    <li><a href="#">IMPRESSUM</a></li>
+                    <li><a href="index.html" title="home">HOME</a></li>
+                    <li><a href="about us.html" title="About">ABOUT</a></li>
+                    <li><a href="#" title="Testimonials">TESTIMONIALS</a></li>
+                    <li><a href="faqpage.html" title=Faqs>FAQS</a></li>
+                    <li><a href="#" title=Insurance>INSURANCE</a></li>
+                    <li><a href="contact us.html"title="Policy">POLICY</a></li>
+                    <li><a href="#"title="Impressum">IMPRESSUM</a></li>
                 </ul>
             </div>
             <div class="footer-social col-xl-2">
-                <img src="image/instagram.png" alt="">
                 <img src="image/facebook.png" alt="">
+                <img src="image/instagram.png" alt="">
             </div>
         </div>
         <hr class="hr">
@@ -240,6 +243,7 @@
             <p>©2018 Helperland. All rights reserved. Terms and Conditions | Privacy Policy</p>
         </div>
     </section>
+    <!------------------------------------------------------------ End of Footer  --------------------------------------------------------------------------->
 
       <script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script>
 
