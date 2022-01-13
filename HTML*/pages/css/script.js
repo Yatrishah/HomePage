@@ -10,11 +10,8 @@
 
             document.getElementById("blockcustomer").style.display="none";
             document.getElementById("dashboard1").classList.add("active");
-            if(document.getElementById("newservice").classList.contains("active")){
+         if(document.getElementById("newservice").classList.contains("active")){
                 document.getElementById("newservice").classList.remove("active");
-            }
-            if(document.getElementById("upcoming").classList.contains("active")){
-                document.getElementById("upcoming").classList.remove("active");
             }
             if(document.getElementById("schedule").classList.contains("active")){
                 document.getElementById("schedule").classList.remove("active");
@@ -28,7 +25,8 @@
             if(document.getElementById("customer").classList.contains("active")){
                 document.getElementById("customer").classList.remove("active");
             }
-        }
+            }
+        
         function newservice(){
             document.getElementById("newservicerequests").style.display="block";
             document.getElementById("upcomingservice").style.display="none";

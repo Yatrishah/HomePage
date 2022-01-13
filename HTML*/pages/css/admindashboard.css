@@ -36,7 +36,6 @@ opacity: 1;
 .nav-item {
     font-size: 16px;
     margin-left: 0;
-    margin-top: -45px;
 }
 
 .user {
@@ -158,6 +157,20 @@ opacity: 1;
 
 
 /*-----------Right Table -------------------*/
+.form-control {
+    background: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    color: #646464;
+    max-width:200px;
+    height: 46px;
+    padding: 12px 10px;
+    box-shadow: none;
+    border: 1px solid #dedddd;
+    resize: vertical;
+    height: 46px;
+    resize: none;
+}
 
 
 .search-bar {
@@ -197,6 +210,21 @@ opacity: 1;
     margin-top: 10px;
 }
 
+.modal-body .time{
+    font-size: 26px;
+}
+
+ .currency{
+    font-size: 30px;
+    color: #348588;
+    font-weight: 700;
+}
+.modal-section-body hr{
+    margin: 5px 0;
+}
+.head{
+    font-weight: 500;
+}
 @media screen and (max-width:1223px) {
     .row{
         flex-direction: row;
