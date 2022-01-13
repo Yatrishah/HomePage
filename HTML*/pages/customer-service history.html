@@ -6,28 +6,95 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/customer-service history.css">   
-     <link rel="stylesheet" type="text/css" href="css/footer.css">   
+     <link rel="stylesheet" type="text/css" href="css/footer.css">  
+      <link rel="stylesheet" type="text/css" href="css/Registration.css">
+    <link rel="stylesheet" type="text/css" href="css/model.css">
 
+
+
+
+   
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Customer-Service History</title>
 </head>
         
 <body>
+
+           <!------------------------------------------------------------------- Model For Login ---------------------------------------------------->
+
+    <div class="modal fade" id="exampleModallogin" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title" id="staticBackdropLabel" title="Login to Your Account">Login to your account</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" title="Email">
+                            <img alt="email" src="image/user.png" >
+                        </div>
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="password" class="form-control" id="exampleFormControlInput2"
+                                placeholder="Password" title="Password  ">
+                            <img alt="Password" src="image/lock.png">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Remember Me
+                            </label>
+                        </div>
+                        <button class="submit-button mb-3" type="submit" title="Login">Login</button>
+                        <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalfpwd" data-bs-dismiss="modal" title="Forgot Password   ">Forgot Password</a></div>
+                        <div class="text-center">Don't have an account? <a href="./Registration.html">Create an account</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------- End Model --------------------------------------------------------------->
+
+    <!---------------------------------------------- Model For Forgot Password ------------------------------------------------------>
+
+    <div class="modal fade" id="exampleModalfpwd" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel" title="Forgot  Password">Forgot Password</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" title="Email ">
+                            <img alt="email" src="image/user.png">
+                        </div>
+                        
+                        <button class="submit-button mb-3" type="submit" title="Login">Login</button>
+                        <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModallogin" data-bs-dismiss="modal" title="Login Now">Login now</a></div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -----------------------------------------------End Model ----------------------------------------------------------------------->
  <!-- --------------------------------------------------Navigation Bar ------------------------------------------------------------  -->
   
-   <div class="wrapper">
-<!-- header -->
-<header class="site-header fixed-top">
-        <div class="header-wrapper d-flex justify-content-between align-items-center">
+<header class="navheader fixed-top">
+        <div class="header-navbar1 d-flex justify-content-between align-items-center">
             <a href="index.html" title="Helper hand" class="logo-block">
                 <img src="image/logo.png" alt="Helper hand logo">
             </a>
             <div class="header-right-block">
                 <div class="right-block-inner d-flex align-items-center">
                     <nav class="navbar navbar-expand-lg align-items-center ">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalnavbartoggle" data-bs-dismiss="modal"  >
-                        <span class="navbar-toggler-icon" style="background-image:url(image/toogle.svg);"></span>
-                    </button>
+                   <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalnavbartoggle" data-bs-dismiss="modal">
+                             <span class="navbar-toggler-icon"></span>
+                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav" >
                             <ul class="navbar-nav align-items-center">
                                  <li class="nav-item">
@@ -58,8 +125,8 @@
                                         <li>Welcome ,<br>Yatri Shah!</li>
                                         <li><hr class="dropdown-divider"></li>
                                       <li><a class="dropdown-item active" href="#">My Dashboard</a></li>
-                                      <li><a class="dropdown-item" href="#"> My Settings</a></li>
-                                      <li><a class="dropdown-item" href="#">Log out</a></li>
+                                      <li><a class="dropdown-item" href="#mySettings" id="mysettings"  onclick="mysettings();" role="button"> My Settings</a></li>
+                                      <li><a class="dropdown-item" href="index.html">Logout</a></li>
                                     </ul>
                                   
                                 </li>
@@ -69,6 +136,8 @@
                    </div>
                  </div>
         </div>
+
+
 </header>
  <!-- -------------------------------------------------- End of Navigation Bar ------------------------------------------------------------  -->
 
@@ -83,12 +152,12 @@
                     <a href="#dashboard" class="" onclick="dashboard();" role="button">Dashboard</a>
                     <a href="#servicehistory"  class="" onclick="history();" role="button">Service History</a>
                     <a href="#serviceschedule"  class="" onclick="schedule();" role="button">Service Schedule</a>
-                    <a href="#favouriteprones" class="" onclick="favprons();" role="button">Favourite Prons</a>
+                <a href="#favouritepros"  class="" onclick="favouritepros();" role="button" >Favourite Pros</a>
                     <a href="#invoices" class="" onclick="invoice()" role="button">Invoices</a>
                     <a href="#notifications" class="" onclick="notification();" role="button">Notifications</a>
                    
-                    <a href="#mysetting">My Setting</a>
-                    <a href="#logout">Logout</a>
+                    <a href="#mySettings" id="mysettings"  onclick="mysettings();" role="button">My Settings</a>
+                    <a href="index.html">Logout</a>
                 </div>
                 <div class="modal-footer tab">
                     <a href="#"> Book Now </a>
@@ -105,6 +174,8 @@
             </div>
         </div>
 </div>
+
+
  <!-- --------------------------------------------------End of modal for tabs with navbar ------------------------------------------------------------  -->
 
   <!-- -------------------------------------------------- Head Text ------------------------------------------------------------  -->
@@ -126,14 +197,566 @@
                 <a href="#notifications" id="notification" class="" onclick="notification();" role="button">Notifications</a>
                 
             </div>
-<div class="content-section">
-            <div class="divContent" id="dashboard">
                 <!-- --------------------------------------------------End of Left Table ------------------------------------------------------------  -->
  <!-- --------------------------------------------------Right Table ------------------------------------------------------------  -->
+             
+              <!-- ----------------------------------------End of Dashboard ------------------------------------------------ --> 
 
+<div class="content-section">
+                  <!-- ----------------------------------------Settings ------------------------------------------------ --> 
+
+  <div class="divContent" id="mySettings">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"  data-bs-target="#nav-details" type="button" role="tab" aria-controls="nav-home" aria-selected="true">My Details</button>
+                      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-address" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">My Addresses</button>
+                      <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-password" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Change Password</button>
+                    </div>
+                  </nav>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-details" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="row ">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>First name</label>
+                                    <input type="text" class="form-control" placeholder="Yatri">
+                                </div>
+
+                            </div>
+                            <div class="col-sm-4 ">
+                                <div class="form-group">
+                                    <label>Last name</label>
+                                    <input type="text" class="form-control" placeholder="Shah">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" class="form-control" placeholder="yatri@gmail.com">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label>Mobile Number</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" >+49</span>
+                                    <input type="text" class="form-control" placeholder="Phone Number" aria-label="Username">
+                                  </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Date of Birth</label>
+                                    <input type="date" class="form-control" placeholder="26/03/2000">
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                       
+                        <a href="#" ><button class="buttonaccept">Save</button></a>
+                 <!-- ------------------------------------------------------End of Settings ------------------------------------------------ --> 
+                  <!-- ----------------------------------------------------------------Settings ------------------------------------------------ --> 
+                  <!-- ----------------------------------------Address ------------------------------------------------ --> 
+
+                    </div>
+                    <div class="tab-pane fade" id="nav-address" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <table  class="services">
+                            <thead>
+                                <tr>
+                                    <th>Address</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                       <div><b>Address:</b> Second Street 23, 53225 Bonn</div> 
+                                        <div><b>Phone number:</b> 9988556644</div>
+                                    </td>
+                                    <td>
+                                        <button class="buttonaccept"  data-bs-toggle="modal"
+                                    data-bs-target="#editAddress" data-bs-dismiss="modal"> Edit </button>
+                                    <button class="buttoncancel1" data-bs-toggle="modal"
+                                    data-bs-target="#deleteAddress" data-bs-dismiss="modal"> Delete </button> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       <div><b>Address:</b> Second Street 23, 53225 Bonn</div> 
+                                        <div><b>Phone number:</b> 9988556644</div>
+                                    </td>
+                                    <td >
+                                        <button class="buttonaccept"  data-bs-toggle="modal"
+                                    data-bs-target="#editAddress" data-bs-dismiss="modal"> Edit </button>
+                                    <button class="buttoncancel1" data-bs-toggle="modal"
+                                    data-bs-target="#deleteAddress" data-bs-dismiss="modal"> Delete </button> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       <div><b>Address:</b> Second Street 23, 53225 Bonn</div> 
+                                        <div><b>Phone number:</b> 9988556644</div>
+                                    </td>
+                                    <td >
+                                        <button class="buttonaccept"  data-bs-toggle="modal"
+                                    data-bs-target="#editAddress" data-bs-dismiss="modal"> Edit </button>
+                                    <button class="buttoncancel1" data-bs-toggle="modal"
+                                    data-bs-target="#deleteAddress" data-bs-dismiss="modal"> Delete </button> 
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="buttonaccept" data-bs-toggle="modal"
+                                    data-bs-target="#addNewAddress" data-bs-dismiss="modal"> Add New Address </button>
+                    </div>
+                 <!-- -------------------------------------------------------End of Addrerss ------------------------------------------------ --> 
+
+                  <!-- ----------------------------------------Password ------------------------------------------------ --> 
+
+                    <div class="tab-pane fade" id="nav-password" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <div class="form-group col-sm-4">
+                            <label>Old Password</label>
+                            <input type="password" class="form-control" placeholder="Old password ">
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label>New Password</label>
+                            <input type="password" class="form-control" placeholder="New password">
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label>Confirm Password</label>
+                            <input type="password" class="form-control" placeholder="Confirm password">
+                        </div>
+                        <div class="">
+                            <button class="buttonaccept"> Save </button>
+                        </div>
+                    </div>
+                  </div>
+
+            </div>
+                  <!-- ----------------------------------------End of Password ------------------------------------------------ --> 
+                 
+                  <!-- ----------------------------------------Dashboard ------------------------------------------------ --> 
+
+
+ <div  class="divContent" id="dashboard">
+                <div class="row">
+                    <div class="col-sm-6 title-filter">
+                        <h3 class="medium-title"> Current Service Request </h3>
+                    </div>
+                    <div class="col-sm-6 ">
+                    <span class="buttonexport" ><button     style="float: right;">Add New Service Request</button></span> 
+                         
+                    </div>
+                    
+                </div>
+                <div>
+                   
+                         <table  id="tblCustomers"  class="services">
+                        <thead>
+                            <tr>
+                                <th>Service Id<img src="image/both_arrow.png"></th>
+                                <th>Service Date<img src="image/both_arrow.png"></th>
+                                <th>Service Provider <img src="image/both_arrow.png"></th>
+                                <th>Payment<img src="image/both_arrow.png"></th>
+                                <th>Actions<img src="image/both_arrow.png"></th>
+                                
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceRequest"
+                                            data-bs-dismiss="modal">
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>31/03/2018</b></div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                                <td >
+                                <button class="buttonaccept"  data-bs-toggle="modal"
+                                    data-bs-target="#RescheduleRequest" data-bs-dismiss="modal"> Reschedule </button>
+                                    <button class="buttoncancel1"  data-bs-toggle="modal"
+                                    data-bs-target="#cancelRequest" data-bs-dismiss="modal"> Cancel </button>   
+                                                                    </td>
+                               
+                               
+                            </tr>
+                              <tr data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceRequest"
+                                            data-bs-dismiss="modal">
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>15/03/2018  </b></div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                                
+                              <td >
+                                    <button class="buttonaccept"  data-bs-toggle="modal"
+                                    data-bs-target="#RescheduleRequest" data-bs-dismiss="modal"> Reschedule </button>
+                                    <button class="buttoncancel1"  data-bs-toggle="modal"
+                                    data-bs-target="#cancelRequest" data-bs-dismiss="modal"> Cancel </button>   
+                                                                    </td>
+                               
+                            </tr>
+                            <tr data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceRequest"
+                                            data-bs-dismiss="modal">
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>10/03/2018  </b></div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                               
+                              <td >
+                                    <button class="buttonaccept"  data-bs-toggle="modal"
+                                    data-bs-target="#RescheduleRequest" data-bs-dismiss="modal"> Reschedule </button>
+                                    <button class="buttoncancel1"  data-bs-toggle="modal"
+                                    data-bs-target="#cancelRequest" data-bs-dismiss="modal"> Cancel </button>   
+                                                                    </td>
+                               
+                            </tr>
+                             <tr data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceRequest"
+                                            data-bs-dismiss="modal">
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>28/02/2018  </b></div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                               
+                               <td >
+                                    <button class="buttonaccept"  data-bs-toggle="modal"
+                                    data-bs-target="#RescheduleRequest" data-bs-dismiss="modal"> Reschedule </button>
+                                    <button class="buttoncancel1"  data-bs-toggle="modal"
+                                    data-bs-target="#cancelRequest" data-bs-dismiss="modal"> Cancel </button>   
+                                                                    </td>
+                               
+                            </tr >
+                           
+                            
+                             <tr data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceRequest"
+                                            data-bs-dismiss="modal">
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>15/02/2018  </b></div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                               
+                                <td >
+                                    <button class="buttonaccept"  data-bs-toggle="modal"
+                                    data-bs-target="#RescheduleRequest" data-bs-dismiss="modal"> Reschedule </button>
+                                    <button class="buttoncancel1"  data-bs-toggle="modal"
+                                    data-bs-target="#cancelRequest" data-bs-dismiss="modal"> Cancel </button>   
+                                                                    </td>
+                               
+                            </tr>
+                            <tr data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceRequest"
+                                            data-bs-dismiss="modal">
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>31/01/2018  </b></div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                              
+                                <td >
+                                    <button class="buttonaccept"  data-bs-toggle="modal"
+                                    data-bs-target="#RescheduleRequest" data-bs-dismiss="modal"> Reschedule </button>
+                                    <button class="buttoncancel1"  data-bs-toggle="modal"
+                                    data-bs-target="#cancelRequest" data-bs-dismiss="modal"> Cancel </button>                               
+                                        </td>
+                               
+                            </tr>
+                            <tr data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceRequest"
+                                            data-bs-dismiss="modal">
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>31/01/2018  </b></div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                                 <td >
+                                    <button class="buttonaccept"  data-bs-toggle="modal"
+                                    data-bs-target="#RescheduleRequest" data-bs-dismiss="modal"> Reschedule </button>
+                                    <button class="buttoncancel1"  data-bs-toggle="modal"
+                                    data-bs-target="#cancelRequest" data-bs-dismiss="modal"> Cancel </button>                              
+                                         </td>
+                               
+
+                            </tr>
+                             <tr data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceRequest"
+                                            data-bs-dismiss="modal">
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>19/01/2018  </b></div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                                <td >
+                                    <button class="buttonaccept"  data-bs-toggle="modal"
+                                    data-bs-target="#RescheduleRequest" data-bs-dismiss="modal"> Reschedule </button>
+                                    <button class="buttoncancel1"  data-bs-toggle="modal"
+                                    data-bs-target="#cancelRequest" data-bs-dismiss="modal"> Cancel </button>
+                                </td>
+                               
+                            </tr>
+                            <tr data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceRequest"
+                                            data-bs-dismiss="modal">
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>05/01/2018  </b></div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                                <td >
+                                    <button class="buttonaccept"  data-bs-toggle="modal"
+                                    data-bs-target="#RescheduleRequest" data-bs-dismiss="modal"> Reschedule </button>
+                                    <button class="buttoncancel1"  data-bs-toggle="modal"
+                                    data-bs-target="#cancelRequest" data-bs-dismiss="modal"> Cancel </button>                                 
+                                      </td>
+                               
+                            </tr>
+                             <tr data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceRequest"
+                                            data-bs-dismiss="modal">
+                                <td>323436</td>
+                                <td>
+                                    <div><img src="image/calender_c.png"><b>01/01/2018  </b></div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
+                                </td>
+                                <td>
+                                    <div class="td-rating">
+                                        <div class="rating-img"><img src="image/image_table.png"></div>
+                                        <div class="info">
+                                            <div class="name">Lyum Watson</div>
+                                            <div class="ratings">
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star-o"></span>
+                                                4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                        <div class="td-curr">€<span>63</span></div>
+                                </td>
+                               <td >
+                                    <button class="buttonaccept"  data-bs-toggle="modal"
+                                    data-bs-target="#RescheduleRequest" data-bs-dismiss="modal"> Reschedule </button>
+                                    <button class="buttoncancel1"  data-bs-toggle="modal"
+                                    data-bs-target="#cancelRequest" data-bs-dismiss="modal"> Cancel </button>                                
+                                </td>
+                               
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+               <div class="history-pagination">
+                        <div class="show-page">
+                            show 
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                            entries Total Record : 7
+                        </div>
+                        <div class="paginations">
+                            <div class="jump-left"><img src="image/jump-left.png" alt=""></div>
+                            <div class="next-left"><img src="image/next-left.png" alt=""></div>
+                            <div class="current-page">1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                            <div class="next-right"><img src="image/next-left.png" alt=""></div>
+                            <div class="jump-right"><img src="image/jump-left.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <!-- ----------------------------------------End of Dashboard ------------------------------------------------ --> 
             </div>
             <div class="divContent" id="serviceschedule">
              </div>
+                           <!-- -----------------------------------------------Service History ------------------------------------------------ --> 
+
             <div class="divContent" id="servicehistory">
              <div>
                     <h2> Service History
@@ -141,7 +764,7 @@
                 </h2>
                 </div>
                 <div>
-                    <table  id="tblCustomers"  class="current-services">
+                    <table  id="tblCustomers"  class="services">
                         <thead>
                             <tr>
                                 <th>Service Id<img src="image/both_arrow.png"></th>
@@ -158,7 +781,7 @@
                                 <td>323436</td>
                                 <td>
                                     <div><img src="image/calender_c.png"><b>31/03/2018</b></div>
-                                    <div>12:00 - 18:00</div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
                                 </td>
                                 <td>
                                     <div class="td-rating">
@@ -192,7 +815,7 @@
                                 <td>323436</td>
                                 <td>
                                     <div><img src="image/calender_c.png"><b>15/03/2018  </b></div>
-                                    <div>12:00 - 18:00</div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
                                 </td>
                                 <td>
                                     <div class="td-rating">
@@ -226,7 +849,7 @@
                                 <td>323436</td>
                                 <td>
                                     <div><img src="image/calender_c.png"><b>10/03/2018  </b></div>
-                                    <div>12:00 - 18:00</div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
                                 </td>
                                 <td>
                                     <div class="td-rating">
@@ -260,7 +883,7 @@
                                 <td>323436</td>
                                 <td>
                                     <div><img src="image/calender_c.png"><b>28/02/2018  </b></div>
-                                    <div>12:00 - 18:00</div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
                                 </td>
                                 <td>
                                     <div class="td-rating">
@@ -296,7 +919,7 @@
                                 <td>323436</td>
                                 <td>
                                     <div><img src="image/calender_c.png"><b>15/02/2018  </b></div>
-                                    <div>12:00 - 18:00</div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
                                 </td>
                                 <td>
                                     <div class="td-rating">
@@ -330,7 +953,7 @@
                                 <td>323436</td>
                                 <td>
                                     <div><img src="image/calender_c.png"><b>31/01/2018  </b></div>
-                                    <div>12:00 - 18:00</div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
                                 </td>
                                 <td>
                                     <div class="td-rating">
@@ -364,7 +987,7 @@
                                 <td>323436</td>
                                 <td>
                                     <div><img src="image/calender_c.png"><b>31/01/2018  </b></div>
-                                    <div>12:00 - 18:00</div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
                                 </td>
                                 <td>
                                     <div class="td-rating">
@@ -398,7 +1021,7 @@
                                 <td>323436</td>
                                 <td>
                                     <div><img src="image/calender_c.png"><b>19/01/2018  </b></div>
-                                    <div>12:00 - 18:00</div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
                                 </td>
                                 <td>
                                     <div class="td-rating">
@@ -432,7 +1055,7 @@
                                 <td>323436</td>
                                 <td>
                                     <div><img src="image/calender_c.png"><b>05/01/2018  </b></div>
-                                    <div>12:00 - 18:00</div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
                                 </td>
                                 <td>
                                     <div class="td-rating">
@@ -467,7 +1090,7 @@
                                 <td>323436</td>
                                 <td>
                                     <div><img src="image/calender_c.png"><b>01/01/2018  </b></div>
-                                    <div>12:00 - 18:00</div>
+                                    <div><img src="image/clock1.png">12:00 - 18:00</div>
                                 </td>
                                 <td>
                                     <div class="td-rating">
@@ -526,12 +1149,87 @@
             </div>
                
             </div>
+                 <!-- ------------------------------------------------------End of Service History ------------------------------------------------ --> 
+
+                 <!-- ------------------------------------------------------Favourite ------------------------------------------------ --> 
+
             <div class="divContent" id="favouritepros">
-               
-            </div>
-            <div class="divContent" id="history">
-                
-            </div>
+                <div class="row" >
+                 <div class="col-sm-5 ">
+                      <div class="card">
+                        <div class="card-body text-center">
+                         <div class="td-rating" style="justify-content: center;">
+                          <div class="rating-img"><img src="image/image_table.png"></div></div>
+                          <h5 class="card-title">Kavan Patel</h5>
+                          <div class="td-rating" style="justify-content: center;">
+                            <div class="rating-info">
+                                <div class="info-ratings">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    4
+                                </div>
+                            </div>
+                        </div>
+                          <p class="card-text">1 Cleanings</p>
+                          <button class="buttonaccept">Remove</a>
+                          <button class="buttonblock">Block</button>
+                        </div>
+                      </div>
+                    </div>
+                     <div class="col-sm-5 ">
+                      <div class="card">
+                        <div class="card-body text-center">
+                         <div class="td-rating" style="justify-content: center;">
+                          <div class="rating-img"><img src="image/image_table.png"></div></div>
+                          <h5 class="card-title">Kavan Patel</h5>
+                          <div class="td-rating" style="justify-content: center;">
+                            <div class="rating-info">
+                                <div class="info-ratings">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    4
+                                </div>
+                            </div>
+                        </div>
+                          <p class="card-text">1 Cleanings</p>
+                          <button class="buttonaccept">Remove</a>
+                          <button class="buttonblock">Block</button>
+                        </div>
+                      </div>
+                    </div>
+                     <div class="col-sm-5 ">
+                      <div class="card">
+                        <div class="card-body text-center">
+                         <div class="td-rating" style="justify-content: center;">
+                          <div class="rating-img"><img src="image/image_table.png"></div></div>
+                          <h5 class="card-title">Kavan Patel</h5>
+                          <div class="td-rating" style="justify-content: center;">
+                            <div class="rating-info">
+                                <div class="info-ratings">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    4
+                                </div>
+                            </div>
+                        </div>
+                          <p class="card-text">1 Cleanings</p>
+                          <button class="buttonaccept">Remove</a>
+                          <button class="buttonblock">Block</button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- ------------------------------------------------------End of Favourite ------------------------------------------------ --> 
+
+         <div class="divContent" id="invoices"> </div>
             <div class="divContent" id="notifications">
                
             </div>
@@ -548,7 +1246,7 @@
  <!-- --------------------------------------------------Footer ------------------------------------------------------------  -->
 
 
-  <section id="section-footer" class="container-fluid">
+  <section id="section-footer" class="container-fluid" style="margin-top:100px;">
         <div class="f-main row">
             <div class="footer-logo col-xl-2">
                 <img src="image/logo.png"
@@ -581,7 +1279,7 @@
 
 </main>
 </div>
- <!--Model For SP Rating-->
+ <!----------------------------------------------Model For SP ratings---------------------------------------------------------->
     <div class="modal fade navbar-tmodel" id="exampleModalRateSP" tabindex="-1"
         aria-labelledby="exampleModalLabel2" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -658,13 +1356,259 @@
             </div>
         </div>
     </div>
-    <!--------------------------------------------End Model---------------------------------------------------->
+
+ <!----------------------------------------------End of Model For SP ratings---------------------------------------------------------->
 
 
-  
+  <!--------------------------------------------------------Modal for Rescheule Request----------------------------------------------------->
+<div class="modal fade" id="RescheduleRequest" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Reschedule Services Request</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="#">
+                <p><b>Select New Date & Time</b></p>
+                <div class="row">
+                    <div  class="col-sm-6">
+                       <div class="form-group">
+                          <input type="date" class="form-control">
+                       </div>
+                    </div>
+                    <div  class="col-sm-6">
+                        <div class="form-group">
+                            <input type="time" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class=" text-center">
+                <button data-bs-toggle="modal"
+                     data-bs-target="#exampleModallogin" data-bs-dismiss="modal" title="Login" class="buttonaccept">Login</button></a></div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+  <!--------------------------------------------------------End of Modal for Rescheule Request----------------------------------------------------->
+<!----------------------------------------------------Modal for Cancel Service Request----------------------------------------------------------->
+<div class="modal fade" id="cancelRequest" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Cancel Service Request</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="#">
+                <p><b>Why you want to cancel the service request?</b></p>
+                <textarea rows="5" class="form-control" placeholder="why do you want to cancel service requests?"></textarea>
+                <hr>
+                <div class=" text-center">
+                    <button type="button"  class="buttoncancel1">Cancel Now</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<!----------------------------------------------------End of Modal for Cancel Service Request----------------------------------------------------------->
    
+<!------------------------------------------------------Modal for Edit Address------------------------------------------------------------>
+<div class="modal fade" id="editAddress" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Addresses</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="#">
+                <div class="row">
+                    <div  class="col-sm-6">
+                       <div class="form-group">
+                           <label>Street name</label>
+                          <input type="text" class="form-control" placeholder="Koenigstreet20">
+                       </div>
+                    </div>
+                    <div  class="col-sm-6">
+                        <div class="form-group">
+                            <label>House Number</label>
+                            <input type="text" class="form-control w200" placeholder="112">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div  class="col-sm-6">
+                       <div class="form-group">
+                           <label>Postal code</label>
+                          <input type="text" class="form-control" placeholder="99397">
+                       </div>
+                    </div>
+                    <div  class="col-sm-6">
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" class="form-control" placeholder="Ahmedabad">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Phone Number</label>
+                        <div class="input-group">
+                            <span class="input-group-text" >+49</span>
+                            <input type="text" class="form-control" placeholder="Phone Number" aria-label="Username" >
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class=" text-center">
+                    <button type="button"  class="buttonaccept">Edit</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<!--------------------------------------------------------end edit address  modal--------------------------------------------------------> 
+<!------------------------------------------------------------Add Address Model------------------------------------------------> 
+<div class="modal fade" id="addNewAddress" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Add New Address</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="#">
+                <div class="row">
+                    <div  class="col-sm-6">
+                       <div class="form-group">
+                           <label>Street name</label>
+                          <input type="text" class="form-control w200" placeholder="Koenigstreet20">
+                       </div>
+                    </div>
+                    <div  class="col-sm-6">
+                        <div class="form-group">
+                            <label>House Number</label>
+                            <input type="text" class="form-control w200" placeholder="112">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div  class="col-sm-6">
+                       <div class="form-group">
+                           <label>Postal code</label>
+                          <input type="text" class="form-control w200" placeholder="99397">
+                       </div>
+                    </div>
+                    <div  class="col-sm-6">
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" class="form-control w200" placeholder="Ahmedabad">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Phone Number</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">+49</span>
+                            <input type="text" class="form-control" placeholder="Phone Number" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class=" text-center">
+                    <button type="button"  class="buttonaccept">Add</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<!------------------------------------------------------------End of Add Address Model------------------------------------------------> 
+<!------------------------------------------------------Modal for Delete Address Model---------------------------------------------->
+<div class="modal fade" id="deleteAddress" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Delete Address</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="#">
+                <div class="row">
+                    <div class=" text-center">
+                        <p> Are You Sure to delete the Address?</p>
+                    </div>
+                </div>   
+                <hr>
+                <div class=" text-center">
+                    <button type="button"  class="buttonaccept">Delete</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
 
+<!----------------------------------------------------------End  of Delete Address Modal--------------------------------------------------------> 
 
+ <!------------------------------------------------------ Model For Service Request ------------------------------->
+    <div class="modal fade" id="exampleModalServiceRequest" tabindex="-1" aria-labelledby="exampleModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-7 modal-body">
+                                <div class="row">
+                                    <p class="head">Service Details</p>
+                                    <p class="time">07/10/2021 08:00 -11:00 </p>
+                                    <p>Duration: 3 Hrs </p>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <p class="head">Service Id: 8488.</p>
+                                    <p>Extras:Inside Cabinets</p>
+                                    <p>Net Amount: <span class="currency">56,25 €</p>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <p>Service Address: Koenigstrasse 112,99897 Tambach-Dietharz</p>
+                                     <p>Billing Address:Same as Cleaning Address</p>
+                                    <p>Phone:+49 9955648797</p>
+
+                                    <p>Email:patel2128@gmail.com</p>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <p class="head">Comments</p>
+                                    <p><span class="fa fa-times-circle-o"></span> I dont't have pets at home</p>
+                                </div>
+                                <hr>
+                                <div class="row modal-button">
+                                    <div class="col">
+                                            <button class="buttonaccept " title="Reschedule "><i class="fa fa-check"></i>Reschedule</button>
+                                        <button class="buttoncancel1 " title="Cancel"><i class="fa fa-times"></i>
+                                            Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
   </body>
 <script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="css/script1.js"></script>

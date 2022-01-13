@@ -134,38 +134,93 @@
     </div>
     <!--------------------------------------------------- End of Service cancel Model ----------------------------------------------->
 
+
+     <!------------------------------------------------------ Model For Service Accept------------------------------->
+    <div class="modal fade" id="exampleModalServiceAccept" tabindex="-1" aria-labelledby="exampleModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" >
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-5 modal-body">
+                                <div class="row">
+                                    <p class="head">Service Details</p>
+                                    <p class="time">07/10/2021 08:00 -11:00 </p>
+                                    <p>Duration: 3 Hrs </p>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <p class="head">Service Id: 8488.</p>
+                                    <p>Extras:</p>
+                                    <p>Total Payment: <span class="currency">56,25 €</p>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <p class="head">Customer Name: Gaurang Patel.</p>
+                                    <p>Service Address: Koenigstrasse 112,99897 Tambach-Dietharz</p>
+                                    <p>Distance: 296,76</p>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <p class="head">Comments</p>
+                                    <p><span class="fa fa-times-circle-o"></span> I dont't have pets at home</p>
+                                </div>
+                                <hr>
+                                <div class="row modal-button">
+                                    <div class="col">
+                                        <button class="modal-button-complete" title="Accept"><i class="fa fa-check"></i>
+                                            Accept</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 modal-map">
+                                <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=tatvasoft%20ahmedababd+(Your%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/sport-gps/">fitness tracker</a></iframe>
+                            </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------------------- End of Service Accept Model ----------------------------------------------->
+
  <!-- --------------------------------------------------Navigation Bar ------------------------------------------------------------  -->
   
-   <div class="wrapper">
-<!-- header -->
-<header class="site-header fixed-top">
-        <div class="header-wrapper d-flex justify-content-between align-items-center">
-            <a href="index.html" title="Helperland" class="logo-block">
+<header class="navheader fixed-top">
+        <div class="header-navbar1 d-flex justify-content-between align-items-center">
+            <a href="index.html" title="Helper hand" class="logo-block">
                 <img src="image/logo.png" alt="Helper hand logo">
             </a>
             <div class="header-right-block">
                 <div class="right-block-inner d-flex align-items-center">
                     <nav class="navbar navbar-expand-lg align-items-center ">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalnavbartoggle" data-bs-dismiss="modal" >
-                        <span class="navbar-toggler-icon" ></span>
-                    </button>
+                   <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalnavbartoggle" data-bs-dismiss="modal">
+                             <span class="navbar-toggler-icon"></span>
+                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav" >
                             <ul class="navbar-nav align-items-center">
-                                <li class="nav-item">
-                                    <a class="nav-link " href="price.html" title="Prices and Services">Prices and Services</a>
+                                 <li class="nav-item">
+                                    <a class="nav-link Rounded-Rectangle-0" href="" title="book now">Book now</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" title="Warranty">Warranty</a>
+                                    <a class="nav-link" href="price.html" title="Prices">Prices & Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" title="Blog">Warranty</a>
                                 </li>
                               
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" title="Blog" >Blog</a>
+                                    <a class="nav-link" href="#" title="Login" >Blog</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " href="contact us.html" title="Contact us">Contact</a>
+                                    <a class="nav-link" href="contact us.html" title="Contact us">Contact</a>
                                 </li>
                                 
-                                <li class="nav-item ">
+                                <li class="nav-item">
                                     <a class="nav-link"><div class="seprator"><div class="counter">2</div><img src="image/notification.png"></div></a>
                                 </li>
                                 <li class="dropdown">
@@ -176,8 +231,8 @@
                                         <li>Welcome ,<br>Yatri Shah!</li>
                                         <li><hr class="dropdown-divider"></li>
                                       <li><a class="dropdown-item active" href="#">My Dashboard</a></li>
-                                      <li><a class="dropdown-item" href="#"> My Settings</a></li>
-                                      <li><a class="dropdown-item" href="#">Log out</a></li>
+                                      <li><a class="dropdown-item"href="#mySettings"  onclick="mySettings();" role="button" > My Settings</a></li>
+                                      <li><a class="dropdown-item" href="index.html">Logout</a></li>
                                     </ul>
                                   
                                 </li>
@@ -190,6 +245,8 @@
 </header>
 
  <!-- -------------------------------------------------- End of Navigation Bar ------------------------------------------------------------  -->
+  
+
 <!-- ------------------------------------ Nav MOdel ---------------------------------------------- -->
  <div class="modal fade navbar-tmodel" id="exampleModalnavbartoggle" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
         <div class="modal-dialog modal-dialog-center">
@@ -201,13 +258,14 @@
                     <a href="#dashboard"  class="" onclick="dashboard();" role="button" title="Dashboard">Dashboard</a>
                     <a href="#newservicerequests" class="" onclick="newservice();" role="button" title="New Service Requests">New Service Requests</a>
                     <a href="#upcomingservice"   class="active" onclick="upcoming();" role="button" title="Upcoming Service">Upcoming Service</a>
-                    <a href="#serviceschedule" class="" onclick="schedule();" role="button" title="Service Schedule">Service Schedule</a>
+                    <a href="#newserviceschedule" class="" onclick="schedule();" role="button" title="Service Schedule">Service Schedule</a>
                     <a href="#servicehistory"  class="" onclick="history();" role="button" title="Service History">Service History</a>
                     <a href="#myratings"  class="" onclick="ratings();" role="button" title="My Ratings">My Ratings</a>
-                    <a href="#blockcustomer"   class="" onclick="bookcustomer();" role="button" title="Block Customer">Block Customer</a>
+                    <a href="#blockcustomer"   class="" onclick="blockcustomer();" role="button" title="Block Customer">Block Customer</a>
                     <a href="#invoice">Invoices</a>
-                    <a href="#mysetting">My Setting</a>
-                    <a href="#logout">Logout</a>
+                <a href="#notification">Notification</a>
+                    <a href="#mySettings"  onclick="mySettings();" role="button">My Setting</a>
+                    <a href="index.html">Logout</a>
                 </div>
                 <div class="modal-footer tab">
                     <a href="price.html" title="Prices & Services">Prices & Services</a>
@@ -242,12 +300,187 @@
                 <a href="#serviceschedule" id="schedule" class="" onclick="schedule();" role="button" title="Service Schedule">Service Schedule</a>
                 <a href="#servicehistory" id="history" class="" onclick="history();" role="button" title="Service History"> Service History</a>
                 <a href="#myratings" id="ratings" class="" onclick="ratings();" role="button" title="My Ratings">My Ratings</a>
-                <a href="#bookcustomer" id="customer" class="" onclick="bookcustomer();" role="button" title="Block Customer">Block Customer</a>
+                <a href="#blockcustomer" id="customer" class="" onclick="blockcustomer();" role="button" title="Block Customer">Block Customer</a>
+                <a href="#invoice">Invoices</a>
+                <a href="#notification">Notification</a>
             </div>
 
             <!-----------------------------------------End of Left table----------------------------------------------------->
+            <!-------------------------------------------settings tab--------------------------------------------->
 
 <div class="content-section">
+
+   <div class="divContent" id="mySettings">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#MyDetails" type="button" role="tab"  aria-selected="true">My Details</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link"  data-bs-toggle="tab" data-bs-target="#changePassword" type="button" role="tab"  aria-selected="false">Change Password</button>
+                    </li>
+                    
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="MyDetails" role="tabpanel" aria-labelledby="home-tab">
+                        <p><b> Account Status : </b> Active </p>
+                        <h6><b>Basic Details</b></h6>
+                        <hr>
+                        <div class="row" style="margin-bottom:20px;">
+                            <div class="col-sm-4 ">
+                                <div class="form-group">
+                                    <label>First name</label>
+                                    <input type="text" class="form-control" placeholder="Yatri">
+                                </div>
+
+                            </div>
+                            <div class="col-sm-4 ">
+                                <div class="form-group">
+                                    <label>Last name</label>
+                                    <input type="text" class="form-control" placeholder="Shah">
+                                </div>
+                            </div>
+                            <div class="col-sm-4 ">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" class="form-control" placeholder="yatri@gmail.com">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row "  style="margin-bottom:20px;">
+                            <div class="col-sm-4">
+                                <label>Mobile Number</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon1">+49</span>
+                                    <input type="text" class="form-control" placeholder="Phone Number">
+                                  </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Date of Birth</label>
+                                    <input type="date" class="form-control" placeholder="26/03/2000">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Nationality</label>
+                                    <select class="form-select" >
+                                        <option selected>German</option>
+                                        <option value="1">American</option>
+                                        <option value="2">Indian</option>
+                                        <option value="3">Canadian</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+                        <label> Gender </label>
+                        <div class="row "  style="margin-bottom:20px;">
+                        <div class="form-check col" style="margin-left:20px;">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="Radios1" value="option1">
+                            <label class="form-check-label" for="Radios1">
+                              Male
+                            </label>
+                        </div>
+                        <div class="form-check col">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="Radios2" value="option2">
+                            <label class="form-check-label" for="Radios2">
+                              Female
+                            </label>
+                        </div>
+                        <div class="form-check col">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="Radios3" value="option3">
+                            <label class="form-check-label" for="Radios3">
+                              Rather not to say
+                            </label>
+                        </div>
+                        </div>
+                        <label> Select Avatar</label>
+                        
+                        <div class="form-group">
+                            <div class="columnAvatar">
+                                <img class="avatar" src="image/avatar-female.png">
+                            </div>
+                            <div class="columnAvatar">
+                                <img class="avatar" src="image/avatar-car.png">
+                            </div>
+                            <div class="columnAvatar">
+                                <img class="avatar" src="image/avatar-hat.png">
+                            </div>
+                            <div class="columnAvatar">
+                                <img class="avatar" src="image/avatar-iron.png">
+                            </div>
+                            <div class="columnAvatar">
+                                <img class="avatar" src="image/avatar-male.png">
+                            </div>
+                            <div class="columnAvatar">
+                                <img class="avatar" src="image/avatar-ship.png">
+                            </div>
+                        </div>
+                    </select>
+                        
+                        <h6 style="margin-top:190px;"><b>My Address</b></h6>
+                        <hr>
+                        <div class="row ">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Street Name</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>House Number</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Postal code</label>
+                                    <input type="email" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>City</label>
+                                    <input type="email" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div >
+                            <button class="save"> Save </button>
+                        </div>
+
+                    </div> 
+                                <!------------------------------------------- My Details--------------------------------------------->
+
+                                <!-------------------------------------------Password--------------------------------------------->
+
+                    <div class="tab-pane fade" id="changePassword" role="tabpanel">
+                        <div class="form-group  col-sm-3" >
+                            <label>Old Password</label>
+                            <input type="password" class="form-control" placeholder="Old Password ">
+                        </div>
+                        <div class="form-group  col-sm-3">
+                            <label>New Password</label>
+                            <input type="password" class="form-control" placeholder="New Password">
+                        </div>
+                        <div class="form-group  col-sm-3">
+                            <label>Confirm Password</label>
+                            <input type="password" class="form-control" placeholder="Confirm Password">
+                        </div>
+                        <div >
+                            <button class="save"> Save </button>
+                        </div>
+                    </div>
+                   
+                  </div>
+            </div>
+                        <!-------------------------------------------End of Password--------------------------------------------->
+
+            <!-------------------------------------------End settings tab--------------------------------------------->
             <div class="divContent" id="dashboard">
                
             </div>
@@ -255,6 +488,8 @@
                
 
             </div>
+                        <!-------------------------------------------Service History--------------------------------------------->
+
             <div class="divContent" id="servicehistory">
                 <div>
                     <p style="color: black;">Payment Status:
@@ -363,16 +598,102 @@
                
             </div>
 
+                        <!-------------------------------------------End of Service History--------------------------------------------->
 
+                        <!------------------------------------------- End of Ratings--------------------------------------------->
 
             <div class="divContent" id="myratings">
-               
+                <div class="card " >
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h5 class="card-title">8318</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Gaurang Patel</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <div><img src="image/calendar.png"><b>09/04/2018</b></div>
+                                <div><img src="image/clock1.png">12:00 - 18:00</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Ratings</span><br>
+                              <div class="td-rating">
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star-o"></span>
+                                            Very good
+                                        </div>
+                               
+                        </div></div>
+                    <hr>
+                    <p>Customer Comments</p>
+                    </div> 
+                </div>
+                <div class="card" >
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h5 class="card-title">7216</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Gaurang Patel</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <div><img src="image/calendar.png"><b>09/04/2018</b></div>
+                                <div><img src="image/clock1.png">12:00 - 18:00</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>Ratings</span>
+                                <div class="td-rating">
+                                    
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star-o"></span>
+                                            Very good
+                                        </div>
+                                  
+                            </div>
+                        </div>
+                    <hr>
+                    <p>Customer Comments</p>
+                    <p> Excellent work done by the provider i am very happy and would like to receive the services of the same provider.</p>
+                    </div> 
+                </div>
             </div>
-            <div class="divContent" id="bookcustomer">
-                
+                        <!-------------------------------------------End of Ratings--------------------------------------------->
+
+                        <!-------------------------------------------Block Customers--------------------------------------------->
+
+                <div class="divContent" id="blockcustomer">
+                <div class="row " >
+                    <div class="col-sm-5 ">
+                      <div class="card">
+                        <div class="card-body text-center">
+                         <div class="td-rating" style="justify-content: center;">
+                          <div class="rating-img"><img src="image/image_table.png"></div></div>
+
+                          <h5 class="card-title">Gurang Patel</h5>
+                         <button class="buttonblock">Block</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="card">
+                          <div class="card-body text-center">
+                           <div class="td-rating" style="justify-content: center;">   
+                                        <div class="rating-img"><img src="image/image_table.png"></div></div>
+                            <h5 class="card-title">Keyur Nakrani</h5>
+                           <button class="buttonblock">Block</button>
+                          </div>
+                        </div>
+                      </div> 
             </div>
 
+</div>
+                        <!-------------------------------------------End of Block Customers--------------------------------------------->
 
+                        <!-------------------------------------------New Service Requests--------------------------------------------->
 
             <div class="divContent" id="newservicerequests">
                 <div>
@@ -411,7 +732,9 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttonaccept" title="Accept"><button>Accept</button>
+                                <td class="buttonaccept" title="Accept"> <button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceAccept"
+                                            data-bs-dismiss="modal">Accept</button>
                                 </td>
                             </tr>
                             <tr>
@@ -425,7 +748,9 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttonaccept" title="Accept"><button>Accept</button>
+                                <td class="buttonaccept" title="Accept"><button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceAccept"
+                                            data-bs-dismiss="modal">Accept</button>
                                 </td>
                             </tr>
                             <tr>
@@ -439,7 +764,9 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttonaccept" title="Accept"><button>Accept</button>
+                                <td class="buttonaccept" title="Accept"><button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceAccept"
+                                            data-bs-dismiss="modal">Accept</button>
                                 </td>
                             </tr>
                             <tr>
@@ -453,7 +780,9 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttonaccept" title="Accept"><button>Accept</button>
+                                <td class="buttonaccept" title="Accept"><button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceAccept"
+                                            data-bs-dismiss="modal">Accept</button>
                                 </td>
                             </tr>
                             <tr>
@@ -467,7 +796,9 @@
                                     <div><img src="image/home.png">Musterstrabe 5,12345 Bonn</div>
                                 </td>
                                 <td>15 km</td>
-                                <td class="buttonaccept" title="Accept"><button>Accept</button>
+                                <td class="buttonaccept" title="Accept"><button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceAccept"
+                                            data-bs-dismiss="modal">Accept</button>
                                 </td>
                             </tr>
                            
@@ -484,7 +815,9 @@
                                 </td>
                                 <td>15 km</td>
                                 <td class="buttonaccept" title="Accept">
-                                    <button>Accept</button>
+                                    <button data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalServiceAccept"
+                                            data-bs-dismiss="modal">Accept</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -493,6 +826,10 @@
                 <div>
 
                  </div></div></div> 
+                        <!-------------------------------------------End of New Service Requests--------------------------------------------->
+                       
+                        <!-------------------------------------------Upcoming Services--------------------------------------------->
+
 
                  </div>  
             <div class="divContent" id="upcomingservice">
@@ -706,6 +1043,7 @@
         </div>
     </div>
 </section>
+                        <!-------------------------------------------End of Upcoming Services--------------------------------------------->
 
 </main>
 </div>

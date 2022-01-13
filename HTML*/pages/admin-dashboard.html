@@ -20,6 +20,68 @@
 </head>
 <body>
 
+    
+         <!-- ------------------------------------------------------------Model For Login ------------------------------------------------>
+    <div class="modal fade" id="exampleModallogin" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title" id="staticBackdropLabel">Login to your account</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+                            <img alt="email" src="image/user.png">
+                        </div>
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="password" class="form-control" id="exampleFormControlInput2"
+                                placeholder="Password">
+                            <img alt="Password" src="image/lock.png">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Remember Me
+                            </label>
+                        </div>
+                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalfpwd" data-bs-dismiss="modal">Forgot Password</a></div>
+                        <div class="text-center">Don't have an account? <a href="Registration.html" >Create an account</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------------- End Model for Login --------------------------------------------------------------->
+
+    <!--------------------------------------------------------- Model For Forgot Password ----------------------------------------------------->
+    <div class="modal fade" id="exampleModalfpwd" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel">Forgot Password</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+                            <img alt="email" src="image/user.png">
+                        </div>
+                        
+                        <button class="submit-button mb-3" type="submit">Login</button>
+                        <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModallogin" data-bs-dismiss="modal">Login now</a></div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------- End Model for forgot password ---------------------------------------------------------------------->
+
 
  <!--------------------------------------Model For Navbar toggle--------------------------->
     <div class="modal fade navbar-tmodel" id="exampleModalnavbartoggle" tabindex="-1"
@@ -142,30 +204,43 @@
                         <div class="search-bar">
                             <form action="#">
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-3">
                                         <select class="form-select" aria-label="Default select example">
-                                            <option selected>User name</option>
+                                            <option selected>Seelct User name</option>
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
                                             <option value="3">Three</option>
                                           </select>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-3">
                                         <select class="form-select" aria-label="Default select example">
-                                            <option selected>User Role</option>
+                                            <option selected>User Type</option>
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
                                             <option value="3">Three</option>
                                         </select>
                                     </div>
-                                    <div class="col">
+
+                                    <div class="col-3">
                                         <div class="input-group">
                                             <span class="input-group-text" id="basic-addon1">+49</span>
-                                            <input type="text" class="form-control" placeholder="Phone Number" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="text" class="form-control" placeholder="Phone Number" aria-label="Username">
                                           </div>
                                     </div>
-                                    <div class="col">
+                                      <div class="col col-xs-12">
+                                        <input type="text" class="form-control" placeholder="postalcode">
+                                    </div>
+                                     <div class="col-3">
+                                        <input type="email" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="col-3">
                                         <input type="text" class="form-control" placeholder="zipcode">
+                                    </div>
+                                     <div class="col-3">
+                                        <input type="date" class="form-control" placeholder="From Date">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="date" class="form-control" placeholder="To Date">
                                     </div>
                                     <div class="col col-buttons">
                                         <button type="Search" class="btn-search">Search</button>
@@ -606,31 +681,49 @@
                         <div class="search-bar">
                             <form action="#">
                                 <div class="row">
-                                    <div class="col col-xs-12">
-                                        <input type="number" class="form-control" placeholder="Service ID">
+                                    <div class="col col-xs">
+                                        <input type="number" class="form-control" placeholder="ServiceID">
                                     </div>
-                                    <div class="col col-xs-12">
+                                     <div class="col col-xs-12">
+                                        <input type="text" class="form-control" placeholder="postalcode">
+                                    </div>
+                                     <div class="col-3">
+                                        <input type="email" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="col-3">
                                         <select class="form-select" aria-label="Default select example">
-                                            <option selected>Customer</option>
-                                            <option value="david bought">David Bough</option>
+                                            <option selected>Select Customer</option>
+                                            <option value="">User1</option>
+                                             <option value="">User2</option>
+                                             <option value="">User3</option>
+                                              </select></div>
+                                    <div class="col-3">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Select Service Provider</option>
+                                            <option value="">Type1</option>
+                                             <option value="">Type2</option>
+                                             <option value="">Type3</option>
                                           </select></div>
-                                    <div class="col col-xs-12">
+                                    <div class="col-3">
                                         <select class="form-select" aria-label="Default select example">
-                                            <option selected>Service Pro..</option>
-                                            <option value="lyum watson">Lyum Watson</option>
-                                          </select></div>
-                                    <div class="col col-xs-12">
+                                            <option selected> Sp Payment  Status</option>
+                                            <option value="New">Select 1</option>
+                                            <option value="Pending">Select 2</option>
+                                            
+                                          </select> </div>
+
+                                          <div class="col-3">
                                         <select class="form-select" aria-label="Default select example">
-                                            <option selected>Status</option>
+                                            <option selected> Select Status</option>
                                             <option value="New">New</option>
                                             <option value="Pending">Pending</option>
                                             <option value="Completed">Completed</option>
                                             <option value="Cancelled">Cancelled</option>
                                           </select> </div>
-                                    <div class="col col-xs-12">
+                                    <div class="col-3">
                                         <input type="date" class="form-control" placeholder="From Date">
                                     </div>
-                                    <div class="col col-xs-12">
+                                    <div class="col-3">
                                         <input type="date" class="form-control" placeholder="To Date">
                                     </div>
                                     <div class="col col-xs-12 col-buttons">
@@ -640,7 +733,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div id="servicehistory" class="servicerequests table-responsive">
+                        <div class="servicerequests table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -1241,17 +1334,17 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="Date">Date</label>
-                                    <input type="date" class="form-control">
+                                    <input type="date" class="form-control head">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="Time">Time</label>
-                                    <input type="time" class="form-control">
+                                    <input type="time" class="form-control head">
                                 </div>
                             </div>
                         </div>
-                        <br><div class="divtitle">Service Address</div>
+                        <br><div class=" head">Service Address</div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -1283,7 +1376,7 @@
                             </div>
                         </div>
 
-                        <br><div class="divtitle">Invoice Address</div>
+                        <br><div class="head">Invoice Address</div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -1315,14 +1408,14 @@
                             </div>
                         </div>
 
-                        <br><div class="divtitle">Why do you want to rechedule service requests?</div>
+                        <br><div class="head">Why do you want to rechedule service requests?</div>
                         <div class="row">
                             <div class="col">
                                 <textarea name="" id="" rows="3" class="form-control" placeholder="why do you want to rechedule service requests?"></textarea>
                             </div>
                         </div>
 
-                        <br><div class="divtitle">Call Center EMP notes</div>
+                        <br><div class="head">Call Center EMP notes</div>
                         <div class="row">
                             <div class="col">
                                 <textarea name="" id="" rows="3" class="form-control" placeholder="Enter Notes?"></textarea>
