@@ -157,6 +157,40 @@ opacity: 1;
 
 
 /*-----------Right Table -------------------*/
+
+@media screen and (max-width:767px) {
+    table{
+        width: 90% !important;
+    }
+    .services tr {
+        display: block;
+        box-shadow: 0 0 10px rgb(0 0 0 / 25%);
+        }
+    .services tbody tr {
+    margin-bottom: 37px;
+        }
+ 
+    td{
+    margin-left: 15px;
+    margin-right: 20px;
+     }
+
+    .services td+td {
+    border-top: 1px solid #e1e1e1;
+    }
+    .services tbody td {
+    display: block!important;
+    padding: 15px 0!important;
+    }
+
+    .buttoncancel , .buttonaccept{
+    text-align: center;
+    }
+    th{
+    display: none;
+    }
+  
+}
 .form-control {
     background: #fff;
     font-size: 16px;
@@ -233,7 +267,7 @@ opacity: 1;
         margin-top: 10px;
     }
     .differ-section{
-        height: 1400px;
+        max-height: auto 0;
     }
 }
 
