@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Roboto', 'sans-serif';
+}
+
+.servicetext {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.servicetext h1 {
+    font-size: 40px;
+    font-family: Roboto;
+
+}
+.servicetext h1:hover{
+   color: #29626D;
+opacity:1;  transform: scale(1.2);
+
+}
+.border {
+    border: 2px solid black;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+.set_cleaning_service_heading {
+    text-align: center;
+    color: #525252;
+    margin: 30px auto 10px;
+}
+
+.payment_summary {
+    border: 1px solid #adabab;
+    width: 100%;
+}
+
+.heading_ps {
+    background-color: #1d7a8c;
+    padding: 5px 5px;
+    width: 100%;
+}
+
+.heading_ps p {
+    color: #eee7e7;
+    font-size: 20px;
+    margin: 10px 20px;
+    font-weight: bold;
+}
+
+.duration {
+    padding: 15px 10px 0px;
+}
+
+.duration p {
+    margin-bottom: 2px;
+    color: #474747;
+    font-weight: 500;
+}
+
+.duration p span {
+    float: right;
+}
+
+.total_payment p {
+    color: #69aab6;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 15px 10px 0px;
+}
+
+.total_payment p span {
+    float: right;
+    font-size: 34px;
+    margin: -15px 2px 0px;
+    color: #146371;
+    font-weight: bold;
+}
+
+.what_included {
+    background-color: #f5f0f0;
+    padding: 10px 10px 1px;
+}
+
+.what_included p {
+    margin-bottom: 5px;
+}
+
+.question_heading {
+    text-align: center;
+    margin: 10px auto;
+    color: #474747;
+    font-size: 18px;
+}
+
+.accordion {
+    font-size: 14px;
+    margin: 2px 0px 2px 5px;
+    cursor: pointer;
+}
+
+.panel {
+    display: none;
+}
+
+.more_help {
+    color: #146371;
+    font-weight: 500;
+    font-size: 14;
+    margin: 0px 5px;
+}
+
+.buttonaccept{
+            font-size: 16px;
+        background-color: #146371;;
+        color: white;
+        border-radius: 17px;
+        padding: 5px 10px;
+        box-shadow: none;
+        border: none;
+        margin-top: 8px;
+    }
+  
+
+
+.booktab {
+    background-color: #aaa;
+    padding: 10px 2px 0px;
+    border-right: 2px solid rgb(240, 236, 236);
+}
+
+.tabclick{
+    background-color: #1d7a8c;
+}
+
+.booktab p {
+    color: #fdf6f6;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+
+/*-------------- Setup Service-----------------  */
+
+#setup_service {
+    display: block;
+}
+
+.postal_code_hd {
+    margin: 40px 5px 2px 5px;
+    color: #474747;
+    font-weight: 500;
+}
+
+.postal_input {
+    margin: 5px;
+}
+
+.postal_input input {
+    padding: 5px 2px;
+    width: 200px;
+}
+
+/*---------------- Schedule & Plan ------------- */
+
+.need_cleaner {
+    color: #474747;
+    margin: 40px 0px 2px 0px;
+    font-weight: 500;
+}
+
+.services{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.extra_service_option {
+    width: 140px;
+    padding: 5px 15px;
+}
+
+.extra_service_option div {
+    border: 1px solid #dedddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 5px;
+    height: 100px;
+}
+
+.extra_service_border_click div {
+    border: 2px solid #1d7a8c;
+}
+
+.extra_service_option p {
+    font-size: 14px;
+    color: #474747;
+    font-weight: 500;
+}
+
+.comment_textbox {
+    width: 100%;
+    resize: none;
+    border: 1px solid #adabab;
+}
+
+/*---------- Yours Details --------------- */
+
+.radio_address{
+    border: 1px solid #d8d5d5;
+    padding: 10px;
+    width: 100%;
+}
+
+.radio_address label{
+    /* padding: 6px 26px; */
+    margin: 1px 0px 0px;
+}
+
+.radio_address label p{
+    margin: 2px 5px 2px 0px;
+    font-size: 16px;
+}
+
+.add_address{
+    border: 2px solid #1d7a8c;
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: #1d7a8c;
+    background-color: white;
+    font-weight: 500;
+}
+
+.add_new_address{
+    padding: 15px;
+    margin: 5px 0px;
+    background-color: #ece8e8;
+    border: 1px solid black;
+}
+
+.cancel_btn{
+    background-color: #e1e1e1;
+    color: #4f4f4f;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.select_btn{
+    width: 100px;
+    margin: 0 auto;
+}
+
+/* Make Payment  */
+
+.card_input input{
+    border: none;
+    width: 90%;
+}
+
+.card_input input:focus{
+    border: none !important;
+}
+
+.card_input i{
+    color: lightblue;
+}
+
+.accpted_card{
+    float: right;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+.card_accepted{
+    clear: both;
+}
+
+.card_accepted img{
+    float: right;
+    width: 60px;
+    height: 40px;
+    margin: 2px 2px 20px 2px;
+}
+
+.terms{
+    clear: both;
+}
+
+.terms div label{
+    font-size: 14px;
+}
+
+@media screen and (max-width:1250px) {
+    .book_tabs p span{
+        display: none;
+    }
+
+    .book_tabs p img{
+        margin: 0 40%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .book_tabs p img{
+        margin: 0 20%;
+    }
+}
+
+
+/*-------------- Complete Modal -------------- */
+
+.complete_box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px 0px;
+}
+
+.complete_box img{
+    width: 80px;
+    height: 80px;
+    margin: 0px auto;
+}
+
+.complete_box p{
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 9px;
+    text-align: center;
+}
+
+.request_id{
+    font-size: 14px !important;
+}
+
+ /*-----------Mail-------------------*/
+
+.mail-heading{
+
+   max-width: 390px;
+  max-height: 13px;
+  margin-top: 28px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  font-weight: bold;
+  letter-spacing: normal;
+  text-align:center;
+  color: #353548;
+}
+
+.user-input{
+  align-content: center;
+}
+
+.mailBox{
+max-width: 233px;
+  max-height: 40px;
+  margin-top: 20px ;
+  padding: 14px 50px 16px 22px;
+  border-radius: 20px;
+  border: solid 1px #565656;
+  background-color: #f4f5f8;
+}
+.mailText{
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #565656;
+  height:   40px;
+  width:  233px;
+  cursor: pointer;
+  }
+
+ 
+
+.submit{
+  margin-top: 16px;
+  margin-left: 11px;
+  border-radius: 20px;
+  width: 88px;
+  height: 40px ;
+  background-color: #ff7b6d;
+  color:  white ;
+  border:   none  ;
+}
+
+.toptoback{
+    position:fixed; 
+    left:20px; 
+    bottom:200px;
+     background-color:rgb(105, 104, 104); 
+     border-radius: 50%;
+      z-index: 100;
+      padding:10px;
+      margin-top: 20px;  
+      border:1px solid white;
+  }
+ /*-----------End of  Mail -------------------*/
