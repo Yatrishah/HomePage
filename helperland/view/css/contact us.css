@@ -1,0 +1,203 @@
+body{
+
+
+width: 100%;
+height: 100%;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+  /*----------- line-star-line -------------------*/
+
+    .contact{
+  margin-top: 40px;
+  height: 27px;
+  text-align: center;
+  color: #4F4F4F;
+  font-size: 36px;
+  font-family: Roboto;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.67;
+  letter-spacing: normal;
+  }
+ 
+     .contact:hover{
+        opacity:1;  transform: scale(1.2);
+        color:#29626D;
+
+    }
+
+  .lineLeft {
+    width: 62px;
+    height: 1px;
+    margin: 26px auto 48px;
+    background-color: #ccc;
+    display: inline-block;
+}
+
+.starfaq {
+    width: 24px;
+    height: 25px;
+    margin: -54px 12px 37px 14px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lineRight {
+    width: 62px;
+    height: 1px;
+    margin: 26px auto 49px auto;
+    background-color: #ccc;
+    display: inline-block;
+}
+
+ /*----------- End of line-star-line -------------------*/
+
+   /*----------- Contact US-------------------*/
+.contactus-services .line{
+    height: 50px;
+    width: 5%;
+}
+.img{
+    width: 108px;
+    height: 108px;
+    margin: 10px auto;
+    position: relative;
+}
+.img img{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.list{
+    display: block;
+    text-align: center;
+}
+.title{
+    font-size: 18px;
+    font-family:Roboto;
+
+}
+.c-time{
+    color: #1D7A8C;
+}
+.img img:hover{
+        opacity:1;  transform: scale(1.2);
+
+}
+
+   /*----------- End of Contact US-------------------*/
+
+ 
+/*-----------Form----------- */
+
+
+.modal-body{
+    padding: 5px;
+}
+.c-form{
+    width: 60%;
+    margin: 0 auto;
+}
+.form-title{
+    text-align: center;
+    margin: 40px auto;
+    color: #565656;
+}
+.form-control, .input-group-text{
+    height: 50px;
+}
+.submit-btn{
+    text-align: center;
+}
+.submit-btn button{
+    width: 160px;
+    height: 45px;
+    margin: 10px;
+    background-color: #1D7A8C;
+    color:white;
+    font-size: 20px;
+    border-radius: 25px;
+    border: none;
+}
+
+.form-title:hover{
+    opacity:1;  transform: scale(1.2);
+    color:#29626D;
+
+}
+/*-----------End of Form----------- */
+ /*-----------Mail-------------------*/
+
+.mail-heading{
+
+   max-width: 390px;
+  max-height: 13px;
+  margin-top: 28px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  font-weight: bold;
+  letter-spacing: normal;
+  text-align:center;
+  color: #353548;
+}
+
+.user-input{
+  align-content: center;
+}
+
+.mailBox{
+max-width: 233px;
+  max-height: 40px;
+  margin-top: 20px ;
+  padding: 14px 50px 16px 22px;
+  border-radius: 20px;
+  border: solid 1px #565656;
+  background-color: #f4f5f8;
+}
+.mailText{
+
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #565656;
+  height:   40px;
+  width:  233px;
+  }
+
+.submit{
+  margin-top: 16px;
+  margin-left: 11px;
+  border-radius: 20px;
+  width: 88px;
+  height: 40px ;
+  background-color: #ff7b6d;
+  color:  white ;
+  border:   none  ;
+}
+
+.toptoback{
+    position:fixed; 
+    left:20px; 
+    bottom:200px;
+     background-color:rgb(105, 104, 104); 
+     border-radius: 50%;
+      z-index: 100;
+      padding:10px;
+      margin-top: 20px;  
+      border:1px solid white;
+  }
+ /*-----------End of  Mail -------------------*/
+
