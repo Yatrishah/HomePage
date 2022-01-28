@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/Registration.css">     
+    <link rel="stylesheet" type="text/css" href="../css/services.css">
+    <link rel="stylesheet" type="text/css" href="../css/model.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Services</title>
+</head>
+ <body>
+
+     <!------------------------------------------------------------------- Model For Login ---------------------------------------------------->
+
+    <div class="modal fade" id="exampleModallogin" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title" id="staticBackdropLabel" title="Login to Your Account">Login to your account</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" title="Email">
+                            <img alt="email" src="image/user.png" >
+                        </div>
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="password" class="form-control" id="exampleFormControlInput2"
+                                placeholder="Password" title="Password  ">
+                            <img alt="Password" src="image/lock.png">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Remember Me
+                            </label>
+                        </div>
+                        <button class="submit-button mb-3" type="submit" title="Login">Login</button>
+                        <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalfpwd" data-bs-dismiss="modal" title="Forgot Password   ">Forgot Password</a></div>
+                        <div class="text-center">Don't have an account? <a href="./Registration.html">Create an account</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------- End Model --------------------------------------------------------------->
+
+    <!---------------------------------------------- Model For Forgot Password ------------------------------------------------------>
+
+    <div class="modal fade" id="exampleModalfpwd" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel" title="Forgot  Password">Forgot Password</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="mb-3 form-group icon-textbox">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" title="Email ">
+                            <img alt="email" src="image/user.png">
+                        </div>
+                        
+                        <button class="submit-button mb-3" type="submit" title="Login">Login</button>
+                        <div class="text-center mb-2"><a href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModallogin" data-bs-dismiss="modal" title="Login Now">Login now</a></div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -----------------------------------------------End Model ----------------------------------------------------------------------->
+
+
+
+<!-- --------------------------------------------------modal for tabs with navbar ------------------------------------------------------------  -->
+
+<div class="modal fade navbar-tmodel" id="exampleModalnavbartoggle" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-center" style="float: right;">
+            <div class="modal-content">
+            
+        <div class="modal-body tab">
+                    <a href="index.html">HomePage</a>
+                     <a href="#" title="Book a Cleaner">Book a Cleaner</a>
+                    <a href="price.html" title="Prices">Prices </a>
+                    <a href="#" title="Our Guarantee">Our Guarantee</a>
+                    <a href="#"title="Blog">Blog</a>
+                    <a href="contact us.html" title="Contact">Contact</a>
+                    <a href="#"data-bs-toggle="modal"
+                     data-bs-target="#exampleModallogin" data-bs-dismiss="modal">Login</button></a>                    
+                     <a href="#" title="Become a Helper">Become a Helper</a>
+
+            </div>
+
+                <hr>
+                <div class ="footer-social1">
+                    <img src="image/instagram.png" class="insta">
+                    <img src="image/facebook.png" class="fb">
+                </div>
+            </div>
+        </div>
+</div>
+ <!-- --------------------------------------------------End of modal for tabs with navbar ------------------------------------------------------------  -->
+    <!------------------------------------------------------------ Navbar  --------------------------------------------------------------------------->
+    <header id="navbar">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3 navbar-scroll" >
+      <div class="container-fluid">
+        <a href="index.html">
+        <img src="image/logo.png" class="navbar-brand" href="#" style="width:100px;height:70px;" title="Helperland"></img></a>
+        <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalnavbartoggle" data-bs-dismiss="modal">
+     <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse" >
+          <div class="mx-auto" style="background-color:#525252"></div>
+      <ul class="navbar-nav ms-auto mb-4 mb-lg-0 " style="margin-top:  -20px;">
+            <li class="nav-item">
+              <a class="nav-link   Rounded-Rectangle-1  text-white" href="#" title="Book a Cleaner">Book a Cleaner</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link Rounded-Rectangle  text-white" href="price.html" title="Prices">Prices</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  Rounded-Rectangle  text-white" href="#" title="Our Guarantee">Our Guarantee</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  Rounded-Rectangle  text-white" href="" title="Blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  Rounded-Rectangle  text-white" href="contact us.html" title="Contact Us">Contact Us</a>
+            </li>
+             <li class="nav-item" title="Login">
+               <a href="#"data-bs-toggle="modal" data-bs-target="#exampleModallogin" data-bs-dismiss="modal" class="Rounded-Rectangle-1 nav-link  text-white">Login</button></a> 
+            </li>
+             <li class="nav-item">
+              <a class="nav-link text-white Rounded-Rectangle-1" href="#">Become a Helper</a>
+            </li>
+     
+
+        </li>       
+        </ul>
+                    
+        </div>
+      </div>
+     
+     </nav>
+
+</header>
+    <!------------------------------------------------------------End of  Navbar  --------------------------------------------------------------------------->
+
+    <!------------------------------------------------------------ Form  --------------------------------------------------------------------------->
+
+<section class="banner img-fluid" id="form">
+                  
+            <div class="flex-container" style="justify-content: center; align-items: center;">
+              <div class="hero-image" >
+                        <div id="form">
+                            <div class="form">
+                                <div class="text-center">
+                                    <span >Register Now!</span>
+                                </div>
+                                <form action="#">
+                                    <div class="row">
+                                        <div class="">
+                                            <input class="form-control" name="firstname" placeholder="First name" type="text"
+                                                required autofocus title="First Name" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="">
+                                            <input class="form-control" name="lastname" placeholder="Last name" type="text"
+                                                required title="Last name " />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="">
+                                            <input class="form-control" name="email" placeholder="Email Address" type="email"
+                                                required  title="Email  Address " />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">+46</div>
+                                                </div>
+                                                <input type="number" class="form-control" id="inlineFormInputGroup"
+                                                    placeholder="Phone number" title="Phone Number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="">
+                                            <input class="form-control" name="psw" placeholder="Password" type="text"
+                                                required autofocus title="Password  " />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="">
+                                            <input class="form-control" name="cpsw" placeholder="Confirm Password" type="text"
+                                                required  title="Confirm Password   " />
+                                        </div>
+                                    </div>
+                                    <div class="form-elements">
+                                        <input class="form-elements-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-elements-label" for="flexCheckDefault">
+                                            Send me newsletters from Helperland 
+                                        </label>
+                                        
+                                    </div>
+                                    <div class="form-elements">
+                                        <input class="form-elements-input" type="checkbox" value="" id="flexCheckDefault1">
+                                        <label class="form-elements-label" for="flexCheckDefault1">
+                                            I accept <span>terms and conditions </span>&<span> privacy policy</span>
+                                        </label> 
+                                    </div>
+                                    <div class="row form-elements">
+                                        <img src="assets\layer-20.png" alt="">
+                                    </div>    
+                                    <div class="get-started text-center row" title="Get Started">
+                                        <button>Get Started <img src="image/whiterightarrow.png" alt=""></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+<div style="position:absolute;top: 760px;">
+
+           <img src="../image/circle_arrow.png" width="40px" height="40px" >
+
+</div>
+ </section>
+ <div class="left-img">
+                <img src="../image/blog-left-bg.png" alt="">
+            </div>
+            <div class="right-img">
+                <img src=../image/forma-1_2.png" alt="">
+                <img src="../image/forma-1_5.png" alt="">
+                <img src="../image/forma-1_4.png" alt="">
+            </div>
+
+    <!------------------------------------------------------------ End of Form  --------------------------------------------------------------------------->
+
+        <!------------------------------------------------------------ Body Content  --------------------------------------------------------------------------->
+
+<section id="servicecontent">
+<p class="bodyheading" title="How it Works">How it works</p>
+
+<div class="bodycontent">
+
+  <div class="section-container">
+         
+         <div class="columns content">
+            <div class="content-container">
+               <p class="bodytext1">Register yourself</h5>
+               <p class="bodytext2">
+                 Provide your basic information to register yourself as a service provider.
+               </p>
+               <p class="bodytext3">
+                  Read more<span style="margin-left: 10px;"><img src="../image/rightarrow.png"></span>
+               </p>
+               
+               
+            </div>
+         </div> 
+         <div class="columns image" title="Register yourself" style="background-image:url('../image/serviceproviderimage1.png')">
+            &nbsp;
+         </div>
+      </div>
+
+<div class="section-container">
+         <div class="columns image" title="Get service requests"style="background-image:url('../image/serviceproviderimage2.png')">
+            &nbsp;
+         </div>
+         <div class="columns content">
+            <div class="content-container">
+               <p class="bodytext1">Get service requests</h5>
+               <p class="bodytext2">
+                 You will get service requests from customes depend on service area and profile.
+               </p>
+               <p class="bodytext3">
+                  Read more<span style="margin-left: 10px;"><img src="../image/rightarrow.png"></span>
+               </p>
+                </div>
+         </div>
+      </div>
+
+  <div class="section-container">
+         
+         <div class="columns content">
+            <div class="content-container">
+               <p class="bodytext1">Complete service</h5>
+               <p class="bodytext2">
+                    Accept service requests from your customers and complete your work.</p>
+               <p class="bodytext3">
+                  Read more<span style="margin-left: 10px;"><img src="../image/rightarrow.png"></span>
+               </p>
+        </div>
+         </div>
+         <div class="columns image" title="Complete service" style="background-image:url('../image/serviceproviderimage3.png')">
+            &nbsp;
+         </div>
+      </div>
+</div>
+
+     <!-- -------------------------------------------------Mail------------------------------------------------------------  -->
+<section id="mail"> 
+    <div class="newsletter d-flex justify-content-center  row">
+    <div class="mail-heading">GET OUR NEWSLETTER</div>        
+            <p class="user-input newsletter d-flex justify-content-center  ">
+                <input type="mail" name="mail" placeholder="YOUR EMAIL" class="mailBox ">
+                <input type="submit" value="Submit" class="submit" title="submit">
+            </p>
+         
+     
+        </div>
+    </div>
+
+</section>
+ <!-- --------------------------------------------------End of Mail------------------------------------------------------------  -->
+
+    <!------------------------------------------------------------ End of body content  --------------------------------------------------------------------------->
+
+
+<!-- --------------------------------------------------Footer ------------------------------------------------------------  -->
+    <section id="section-footer" class="container-fluid">
+        <div class="f-main row">
+            <div class="footer-logo col-xl-2">
+                <img src="image/logo.png"
+                    srcset="image/logo.png" class="footer1-logo " title="Helperland" style="width:100px;">
+            </div>
+            <div class="footer-nav col-xl-8">
+                <ul>
+                    <li><a href="index.html" title="home">HOME</a></li>
+                    <li><a href="about us.html" title="About">ABOUT</a></li>
+                    <li><a href="#" title="Testimonials">TESTIMONIALS</a></li>
+                    <li><a href="faqpage.html" title=Faqs>FAQS</a></li>
+                    <li><a href="#" title=Insurance>INSURANCE</a></li>
+                    <li><a href="contact us.html"title="Policy">POLICY</a></li>
+                    <li><a href="#"title="Impressum">IMPRESSUM</a></li>
+                </ul>
+            </div>
+            <div class="footer-social col-xl-2">
+                <img src="image/facebook.png" alt="">
+                <img src="image/instagram.png" alt="">
+            </div>
+        </div>
+        <hr class="hr">
+        <div class="f-sub">
+            <p>©2018 Helperland. All rights reserved. Terms and Conditions | Privacy Policy</p>
+        </div>
+    </section>
+  
+ <!-- --------------------------------------------------End of Footer ------------------------------------------------------------  -->
+ 
+  <script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script>
+
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+      var nav = document.querySelector('nav');
+
+      window.addEventListener('scroll', function () {
+        if (window.pageYOffset >10) {
+          nav.classList.add('bg-dark', 'shadow');
+        } else {
+          nav.classList.remove('bg-dark', 'shadow');
+        }
+      });
+</script>
+</body>
+   
+</html>

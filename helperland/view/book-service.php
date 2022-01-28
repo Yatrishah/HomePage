@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bookservice.css">
+
+   <link rel="stylesheet" type="text/css" href="../css/model.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../css/Registration.css"> 
+    <link rel="stylesheet" type="text/css" href="../css/navbar.css">  
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+
+    <title>Book Service</title>
+</head>
+
+<body>
+
+     <?php include 'login.php'; ?> 
+
+      <!-- --------------------------------------------------Navigation Bar ------------------------------------------------------------  -->
+  <heder>
+    <nav class="navbar navbar-default sticky-top navbar-expand-lg navbar-dark " id="navbar">
+  <div class="container-fluid">
+    <a href="index.html">
+    <img class="navbar-brand" src="../image/logo.png" style="width: 75px;height: 55px;" title="Helperland"></a>
+    <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalnavbartoggle" data-bs-dismiss="modal">
+     <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-end ">
+      <ul class="navbar-nav ms-auto mb-4 mb-lg-0 " style="margin-top:  -20px;">
+    
+      <li class="nav-item">
+        <a class="nav-link Rounded-Rectangle-2" href="#" title="Book Now">Book now</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link Rounded-Rectangle-2" href="price.html" title="Prices & Services">Prices & services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text " href="#" title="Warranty">Warranty</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text " href="#" title="Blog">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text" href="contact us.html" title="Contact">Contact</a>
+      </li>
+      <li class="nav-item">
+         <button class="nav-link btn btn-outline-light nav-btn Rounded-Rectangle-2"  data-bs-toggle="modal"
+        data-bs-target="#exampleModallogin" data-bs-dismiss="modal" title="Login">Login</button>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link Rounded-Rectangle-2" title="Become a Helper" href="service provider(6th).html">Become a Helper</a>
+      </li>
+      
+    </ul>
+  </div>
+
+</nav> 
+</header> 
+ <!-- -------------------------------------------------- End of Navigation Bar ------------------------------------------------------------  -->
+
+
+ <!-- -------------------------------------------------- End of Navigation Bar ------------------------------------------------------------  -->
+ <!-- -------------------------------------------------- Text ------------------------------------------------------------  -->
+
+ <div>
+    <img src="../image1/bookbanner.jpg"class="img-fluid"style="width:100%;">
+</div>       
+
+ <section id="section-faqs">
+            <div class="servicetext">
+                <h1 >Set up your cleaning service</h1>
+                 <div>
+        <div style="text-align: center;">
+            <div class="lineLeft"></div>
+            <img src="../image/faqstar.png" class="starfaq">
+            <div class="lineRight"></div>
+        </div>
+ <!-- -------------------------------------------------- End of Text ------------------------------------------------------------  -->
+ <!-- -------------------------------------------------- Tab ------------------------------------------------------------  -->
+
+ <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-3 booktab tabclick" id="tab1">
+                            <p>
+                                <img src="../image1/setup-service.png">
+                                <span>Setup Service</span>
+                            </p>
+                            <div class="box arrow_rotate">
+
+                            </div>
+                        </div>
+                        <div class="col-3  booktab" id="tab2">
+                            <p>
+                                <img src="../image1/schedule.png">
+                                <span>Schedule & Plan</span>
+                            </p>
+                            <div class="box">
+
+                            </div>
+                        </div>
+                        <div class="col-3 booktab" id="tab3">
+                            <p>
+                                <img src="../image1/details.png" style="margin-top: -5px;">
+                                <span>Your Details</span>
+                            </p>
+                            <div class="box">
+
+                            </div>
+                        </div>
+                        <div class="col-3 booktab" id="tab4">
+                            <p>
+                                <img src="../image1/payment.png">
+                                <span>Make Payment</span>
+                            </p>
+                            <div class="box">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!------------------------------------ SetUp Service  ------------------------------------------->
+                    <section id="setup_service">
+                        <p class="postal_code_hd">Postal Code</p>
+
+                        <div class="postal_input">
+                            <input type="number" placeholder="Postal Code">
+                            <button type="button" class="buttonaccept" id="check_availability">Check Availability</button>
+                        </div>
+                    </section>
+                    <!------------------------------------End of  SetUp Service  ------------------------------------------->
+
+                    <!--------------------------------------- Schedule & Plan  ------------------------------------------->
+                    <section id="schedule_plan" style="display: none;">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <p class="need_cleaner">When do you need the cleaner?</p>
+
+                                <div class="row">
+                                    <div class="col-8">
+                                        <div class="form-group" style="width: 100%;">
+                                            <div class='input-group date' id='datetimepicker1' class="date">
+                                              
+                                        <input type="date" class="form-control" placeholder="To Date">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 ">
+                                        <select id="inputState" class="form-control">
+                                            <option selected>8:00</option>
+                                            <option>9:00</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-1">
+
+                            </div>
+                            <div class="col-md-6">
+                                <p class="need_cleaner">How long do you need cleaner to stay?</p>
+
+                                <select id="inputState" class="form-control" style="width: 100px;">
+                                    <option selected>8:00</option>
+                                    <option>9:00</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <hr>
+                    <!--------------------------------------- End Schedule & Plan  ------------------------------------------->
+
+                        <!------------------------------------ Extra Service Option  ---------------------------------------->
+                        <div class="extra_service">
+                            <p class="need_cleaner">Extra Service</p>
+
+                            <div class="services">
+                                <div class="extra_service_option" >
+                                    <div>
+                                        <img src="../image/extraservice1.png">
+                                    </div>
+                                    <p class="text-center">Inside Cabinet</p>
+                                </div>
+                                <div class="extra_service_option" >
+                                    <div>
+                                        <img src="../image/extraservice2.png">
+                                    </div>
+                                    <p class="text-center">Inside fridge</p>
+                                </div>
+                                <div class="extra_service_option">
+                                    <div>
+                                        <img src="../image/extraservice3.png" >
+                                    </div>
+                                    <p class="text-center">Inside oven</p>
+                                </div>
+                                <div class="extra_service_option" >
+                                    <div>
+                                        <img src="../image/extraservice4.png" >
+                                    </div>
+                                    <p class="text-center">Laundry wash & dry</p>
+                                </div>
+                                <div class="extra_service_option" >
+                                    <div>
+                                        <img src="../image/extraservice5.png">
+                                    </div>
+                                    <p class="text-center">Inferior window</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <p class="need_cleaner">Comments</p>
+
+                        <textarea id="comments" name="comments" class="comment_textbox" rows="3"
+                            style="width: 100%; resize: none;" placeholder="Comments"></textarea>
+
+                        <div class="my-2">
+                            <input type="checkbox" id="pets" name="pets">
+                            <label for="pets">I have pets at home</label>
+                        </div>
+
+                        <hr>
+
+                        <div>
+                            <button class="buttonaccept float-right" id="continue_schedulePlan">Continue</button>
+                        </div>
+
+                    </section>
+                        <!------------------------------------ End of Extra Service Option  ---------------------------------------->
+
+                    <!------------------------------------ Your Details  ------------------------------------------------>
+                    <section id="your_details" style="display: none;">
+                        <p class="need_cleaner">Enter your contact details, so we can serve you in better way!</p>
+
+                        <div class="radio_address">
+                            <div class="row">
+                                <div class="col-1" style="margin: auto;width: 100%;">
+                                    <input type="radio" id="address_ckbox" name="address" value="address1"
+                                        style="margin: 0 auto;">
+                                </div>
+                                <div class="col-11">
+                                    <label for="address1">
+                                        <p style="margin-bottom: 0px;"><b>Address:</b> Koenigstrasse 112,
+                                            Tambach-Dietharz
+                                            99897</p>
+                                        <p style="margin-bottom: 0px;"><b>Phone number:</b> 9955648797</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="radio_address my-2">
+                            <div class="row">
+                                <div class="col-1" style="margin: auto;width: 100%;">
+                                    <input type="radio" id="address_ckbox" name="address" value="address2"
+                                        style="margin: 0 auto;">
+                                </div>
+                                <div class="col-11">
+                                    <label for="address2">
+                                        <p style="margin-bottom: 0px;"><b>Address:</b> Koenigstrasse 111,
+                                            Tambach-Dietharz
+                                            99897</p>
+                                        <p style="margin-bottom: 0px;"><b>Phone number:</b> 9955648797</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="add_address"> + Add New Address</button>
+                    <!------------------------------------End of Your Details  ------------------------------------------------>
+
+                        <!-------------------------------------- Add New Address Form  ----------------------------------------->
+
+                        <div class="add_new_address" style="display: none;">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="street_name" class="m-1">Street Name</label>
+                                        <input type="text" class="form-control" placeholder="Street name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="house_no" class="m-1">House No</label>
+                                        <input type="number" class="form-control" placeholder="Last name">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="postal_code" class="m-1">Postal Code</label>
+                                        <input type="number" class="form-control" placeholder="Postal_code">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="city" class="m-1">City</label>
+                                        <input type="text" class="form-control" placeholder="City">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="postal_code" class="m-1">Phone number</label>
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">+49</div>
+                                            </div>
+                                            <input type="text" class="form-control" id="inlineFormInputGroup"
+                                                placeholder="Phone number">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="accept_btn" id="save_address_btn" type="submit"
+                                    style="padding: 5px 15px;">Save</button>
+                                <button class="buttonaccept" type="button">Cancel</button>
+
+                            </form>
+
+                        </div>
+
+                        <p class="need_cleaner">Your Favourite Service Provider</p>
+                        <hr style="margin: 2px;">
+                        <p>You can choose your favourite service provider from the below list</p>
+
+                        <!-- Block Customer  -->
+                        <div class="block_customer">
+                            <div class="d-flex flex-wrap">
+                                <div class="block_box" style="width: 200px; border: none;">
+                                    <div class="block_logo">
+                                        <img src="../image/image_table.png">
+                                    </div>
+                                    <p class="block_name">Guarang Patel</p>
+                                    <button class="buttonaccept">Select</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div>
+                            <button class="buttonaccept float-right" id="continue_details">Continue</button>
+                        </div>
+
+
+                    </section>
+                        <!--------------------------------------End of  Add New Address Form  ----------------------------------------->
+
+                    <!------------------------------------- Make Payment  ------------------------------------------------------>
+                    <section id="make_payment" style="display: none;">
+                        <p class="need_cleaner">Pay securely with Helperland payment gateway!</p>
+
+                        <p class="mb-0 mt-3 mx-1">Promo Code (Optional)</p>
+
+                        <div class="postal_input">
+                            <input type="number" placeholder="Promo Code (Optional)">
+                            <button type="button" class="add_address ml-2" style="display: inline;">Apply</button>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-8 card_input">
+                                <i class="far fa-credit-card"></i>
+                                <input type="number" placeholder="Card Number" name="card_number">
+                            </div>
+                            <div class="col-sm-2 card_input">
+                                <input type="number" placeholder="MM/YY" name="mmyy">
+                            </div>
+                            <div class="col-sm-2 card_input">
+                                <input type="number" placeholder="CVC" name="cvc" style="width: 100%;">
+                            </div>
+                        </div>
+
+                        <hr style="margin: 2px 0px 16px;">
+
+                        <p class="accpted_card">Accepted Card</p>
+                        <div class="card_accepted">
+                            <img src="../image1/america_express.png">
+                            <img src="../image1/mastercard.png">
+                            <img src="../image1/visa.png">
+                        </div>
+
+                        <hr style="clear: both;">
+                        <div style="clear: both;" class="terms">
+
+                            <div class="row">
+                                <div class="col-1">
+                                    <input type="checkbox" name="terms" style="margin: auto;">
+                                </div>
+                                <div class="col-11 pl-2">
+                                    <label for="terms">I accepted terms and condition, the cancellation policy and the
+                                        privacy
+                                        policy. I confirm that helperland start to execute the contract before the
+                                        expiry of the
+                                        withdrawal period and I lose my right of withdrawal as a consumer with full
+                                        performance of the contract.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div>
+                            <button class="buttonaccept float-right" id="complete_booking" data-toggle="modal"
+                                data-target="#complete_booking_modal">Complete Booking</button>
+                        </div>
+
+                    <!------------------------------------- End of Make Payment  ------------------------------------------------------>
+
+                        <!------------------------------------------ Complete Booking Modal ------------------------------------------>
+
+                        <div class="modal fade" id="complete_booking_modal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header" style="border-bottom:none ;">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="complete_box">
+                                            <img src="image1/paymentdone.png" alt="">
+                                            <p>Booking has been successfully submitted</p>
+                                            <p class="request_id">Service Request Id: 8488</p>
+                                            <button class="buttonaccept" style="width: 80px; margin: 0 auto;"
+                                                data-dismiss="modal">Ok</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+                        <!------------------------------------------End of  Complete Booking Modal ------------------------------------------>
+
+
+                </div>
+                <div class="col-lg-4">
+
+                    <!----------------------------------------- Payment Summary  ------------------------------------------------>
+                    <div class="payment_summary">
+                        <div class="heading_ps">
+                            <p>Payment Summary</p>
+                        </div>
+
+                        <div class="duration">
+                            <p>Duration</p>
+                            <p>Basic <span>0 Hrs</span></p>
+                        </div>
+
+                        <div class="schedule_price">
+                            <div class="duration">
+                                <p>Extras</p>
+                                <p>Inside Cabinet <span>30 min</span></p>
+                                <p>Inside fridge <span>30 min</span></p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="duration pt-0">
+                            <p>Total Service Time <span>3 Hrs</span></p>
+                        </div>
+
+                        <hr>
+
+                        <div class="duration pt-0">
+                            <p>Per Cleaning <span>0,00 €</span></p>
+                        </div>
+
+                        <hr>
+
+                        <div class="total_payment">
+                            <p>Total Payment <span>0,00 €</span></p>
+                        </div>
+
+                        <div class="what_included">
+                            <p>
+                                <i class="far fa-smile"></i>
+                                See what is always included
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="question">
+                        <p class="question_heading">Question?</p>
+
+                        <p class="accordion">
+                            <img src="../image/arrow-right.png" alt="" style="transform: rotate(180deg);">&nbsp;
+                            What's included in training?
+                        </p>
+                        <div class="panel">
+                            <p>Lorem</p>
+                        </div>
+
+                        <hr>
+                        <p class="accordion">
+                            <img src="../image/arrow-right.png" alt="" style="transform: rotate(180deg);">&nbsp;
+                            Which helperland profession will come to my place?
+                        </p>
+                        <div class="panel">
+                            <p>Lorem</p>
+                        </div>
+
+                        <hr>
+                        <p class="accordion">
+                            <img src="../image/arrow-right.png" alt="" style="transform: rotate(180deg);">&nbsp;
+                            Can I skip or Reschedule booking?
+                        </p>
+                        <div class="panel">
+                            <p>Lorem</p>
+                        </div>
+
+                        <hr>
+
+                        <p class="more_help">For more help</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+                    <!-----------------------------------------ENd of  Payment Summary  ------------------------------------------------>
+
+     <!-- -------------------------------------------------Mail------------------------------------------------------------  -->
+<section id="mail">
+ <div class="newsletter d-flex justify-content-center  row">
+    <div class="mail-heading">GET OUR NEWSLETTER</div>        
+            <p class="user-input newsletter d-flex justify-content-center  row">
+                <input type="mail" name="mail" placeholder="YOUR EMAIL" class="mailBox ">
+                <input type="submit" value="Submit" class="submit">
+            </p>
+          </div>
+    </div>
+</section>
+
+ <!-- --------------------------------------------------End of Mail------------------------------------------------------------  -->
+
+
+    <?php include 'footer.php';?>
+
+   </body>
+<script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="css/bookservice.js"></script>
+
+</html>
