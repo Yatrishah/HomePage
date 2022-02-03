@@ -1,0 +1,373 @@
+#newservicerequests{
+    display: none;
+} 
+#dashboard,#myratings,#serviceschedule,#servicehistory,#blockcustomer,#mySettings{
+    display: none;
+}
+
+body{
+width: 100%;
+height: 100%;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+/*-----------Navbar-------------------*/
+.navheader {  background-color: #73706C ; padding: 10px 17px; position:sticky;  }
+ .header-navbar1 a.logo-block { width: 70px !important; height:52px !important; }
+ .header-navbar1 a.logo-block img { width: 100%; }
+ .header-navbar1 .header-right-block .navbar .nav-item .nav-link:not(.border-btn) { color: #fff; font-size: 17px;   padding: 0; }
+ .header-navbar1 .header-right-block .navbar .nav-item+.nav-item { margin-left:42px; }
+.nav-item:hover{
+    border: 1px solid #FFFFFF80;
+border-radius: 20px;
+}
+
+.dropdown1{
+    margin-left: 20px;
+    margin-right: 80px;
+}
+
+ .seprator{
+    padding: 8px 15px;
+    position: relative;
+    border-left:  1px solid white;
+    border-right: 1px solid white;
+    width: 70px;
+}
+
+.seprator .counter{
+    background-color: red;
+    border-radius: 50%;
+    padding: 1px;
+    width: 16px;
+    text-align: center;
+    font-size: 10px;
+    position: absolute;
+    top: 1px;
+    right: 15px;
+    color: white;
+}
+
+/*-----------End of Navbar-------------------*/
+
+
+
+
+/*-----------Head text-------------------*/
+
+.text{
+
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.8;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4f4f4f;
+}
+
+.textdiv{
+  height: 119px;
+  margin: 1px 0 30px;
+  padding: 44px 0 0;
+  background-color: #f9f9f9;
+}
+/*-----------End of Head text-------------------*/
+
+/*-----------Left table-------------------*/
+
+ #tab-section{
+    padding: 31px 0;
+    width:85%;
+    margin: 0 auto;
+}
+.div-main{
+    height:80%;
+}
+.div-tab{
+    height:auto;
+    margin-bottom: 200px;
+    width: 262px;
+    margin-right: 31px;
+    float: left;
+    background-color: #1d7a8c;
+}
+.div-tab a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    padding: 17px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+.divContent{
+    overflow: auto;
+}
+
+.div-tab .active{
+    background-color: #146371;
+}
+@media screen and (max-width:991px) {
+  .div-tab{
+        display: none;
+    }
+}
+
+
+/*-----------End of Left table-------------------*/
+
+/*-----------Right table-------------------*/
+table {
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    table-layout: auto;
+}
+  
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th{
+    background-color:#e1e1e1 !important;
+    color: #646464;
+    font-size: 16px;
+    border-bottom: 1px solid #e1e1e1 !important;
+} 
+tr:hover{
+    background-color: #e1e1e1;
+}
+.buttonaccept button{
+        width: 80px;
+        font-size: 16px;
+        background-color: #146371;;
+        color: white;
+        border-radius: 17px;
+        padding: 5px 10px;
+        box-shadow: none;
+        border: none;
+        margin-top: 8px;
+    }
+    .buttoncancel button{
+        width: 80px;
+        font-size: 16px;
+        background-color: #ff6b6b;
+        color: white;
+        border-radius: 17px;
+        padding: 5px 10px;
+        box-shadow: none;
+        border: none;
+        margin-top: 8px;
+    }
+
+  .buttoncancel button:hover{opacity:1;  transform: scale(1.2);}
+
+    .buttonaccept button:hover{opacity:1;  transform: scale(1.2);}
+
+
+    @media screen and (max-width:767px) {
+    table{
+        width: 90% !important;
+    }
+    .services tr {
+        display: block;
+        box-shadow: 0 0 10px rgb(0 0 0 / 25%);
+        }
+    .services tbody tr {
+    margin-bottom: 37px;
+        }
+ 
+    td{
+    margin-left: 15px;
+    margin-right: 20px;
+     }
+
+    .services td+td {
+    border-top: 1px solid #e1e1e1;
+    }
+    .services tbody td {
+    display: block!important;
+    padding: 15px 0!important;
+    }
+
+    .buttoncancel , .buttonaccept{
+    text-align: center;
+    }
+    th{
+    display: none;
+    }
+  
+}
+
+.card{
+    margin-bottom: 30px;
+    box-shadow: 0 0 6px rgb(0 0 0 / 25%);
+
+}
+
+ .fa {
+    color: #ecb91c;
+}
+
+.td-rating {
+    display: flex;
+    align-items: center;
+}
+ .rating-img {
+    border: 1px solid  #AAAAAA;
+    opacity: 1;
+    border-radius: 50%;
+    padding: 9px 5px 7px 5px;
+    text-align: center;
+}
+
+ .buttonblock{
+        width: 80px;
+        font-size: 16px;
+        background-color: #ff6b6b;
+        color: white;
+        border-radius: 17px;
+        padding: 5px 10px;
+        box-shadow: none;
+        border: none;
+        margin-top: 8px;
+    }
+
+  .buttonblock:hover{opacity:1;  transform: scale(1.2);}
+
+/*-----------End of Right table-------------------*/
+
+/*----------  pagination---------- */
+
+.history-pagination{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.paginations{
+    display: flex;
+    align-items: center;
+}
+.paginations div{
+width: 45px;
+cursor: pointer;
+  height: 45px;
+  margin: 0 1px;
+  padding-top: 7px;
+  text-align: center;
+  border: 2px solid #e1e1e1;;
+  border-radius: 50%;
+}
+.paginations .current-page{
+    background-color: #146371;
+    color: white;
+}
+
+
+/*------- End of  pagination----------- */
+
+
+/*------------ Modal Service Cancel  --------------*/
+
+.modal-map iframe{
+    height: 100%;
+    width: 100%;
+}
+.modal-body div p{
+    margin-top: 2px;
+    margin-bottom: 0;
+    font-size: 18px;
+}
+.modal-body .time{
+    font-size: 26px;
+}
+
+.modal-button{
+    padding-top: 7px;
+}
+.modal-button button{
+    width: 130px;
+    border-radius: 25px;
+    padding: 8px 10px; 
+    color: white;
+    border: none;
+}
+.modal-button button i{
+    margin-right: 5px;
+}
+.modal-button-cancel{
+   background-color: #ff6b6b; 
+}
+.modal-button-complete{
+    background-color: #348588;
+}
+
+ .currency{
+    font-size: 30px;
+    color: #348588;
+    font-weight: 700;
+}
+.modal-section-body hr{
+    margin: 7px 0;
+}
+.head{
+    font-weight: 500;
+}
+
+
+#exampleModalServiceCancel .modal-dialog{
+    max-width: 1000px;
+}
+
+#exampleModalServiceAccept .modal-dialog{
+    max-width: 1000px;
+}
+
+
+/* for my settings */
+ select {
+    width: auto;
+   
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+.save{
+    width: 100px;
+    font-size: 18px;
+    background-color: #146371;
+    color: white;
+    border-radius: 16px;
+    padding: 5px 10px;
+    border: none;
+    margin-top: 10px;
+}
+
+
+.columnAvatar {
+    float: left;
+    cursor: pointer;
+    padding: 5px;
+}
+.columnAvatar .avatar {
+    height: 85px;
+    border-radius: 85px;
+}
+.avatar:hover{
+    border:2px solid #1d7a8c;
+}
+
+/* complete */
+
+#newservicerequests{
+    display: none;
+    } 
