@@ -11,9 +11,7 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/Registration.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <?php
 
-?>
 
 
 <!------------------------------------------------------------------- Model For Login ---------------------------------------------------->
@@ -99,7 +97,7 @@ unset($_SESSION['status_msg2']);
             }
         else{
 
-            echo "<li class='nav-item'>Hello ".$_SESSION['FirstName']."</li>"; ?>
+            echo "<h4 class='modal-title'>Hello ".$_SESSION['FirstName']."</h4>"; ?>
                    
 <?php
          }
@@ -112,6 +110,11 @@ unset($_SESSION['status_msg2']);
                     <a href="contact us.php" title="Contact">Contact</a>
                                        
                      <a href="service provider(6th).php" title="Become a Helper">Become a Helper</a>
+                     <a class="dropdown-item active" href="customer-service history.php">My Dashboard</a>
+                     
+
+                     <a href="#mySettings" id="mysettings"  onclick="mysettings();" role="button">My Settings</a>
+                    <a href="index.php">Logout</a>
 
             </div>
 

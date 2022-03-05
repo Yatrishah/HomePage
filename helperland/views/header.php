@@ -66,20 +66,24 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
 
-                        <?php echo "<li class='nav-item' style='text-align:center;font-size:20px;color:white;'>
-                        <b> Welcome;</br> ".$_SESSION['FirstName']."</b></li>"; ?>                 
+                    <?php echo "<li class='nav-item' style='text-align:center;font-size:20px;color:white;'>
+                    <b> Welcome;</br> ".$_SESSION['FirstName']."</b></li>"; ?>               
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item active" href="#">My Dashboard</a></li>
-                        <li><a class="dropdown-item"href="#mySettings"  onclick="mySettings();" role="button" > My Settings</a></li>
+                        <li><a class="dropdown-item active" href="customer-service history.php">My Dashboard</a></li>
+                        <li><a class="dropdown-item" href="#mySettings" id="mysettings"  onclick="mysettings();" role="button"> My Settings</a></li>
                         <li><a class="dropdown-item" href="../controllers/logout.php">Logout</a></li>
                     </ul>
                 </li>
         <?php
          }
 ?>
-      <li class="nav-item" style='margin-top:10px;'>
+<?php
+      if(!isset($_SESSION['UserId'])){?>
+          <li class="nav-item" style='margin-top:10px;'>
         <a class="nav-link Rounded-Rectangle-2" title="Become a Helper" href="service provider(6th).php">Become a Helper</a>
       </li>
+            <?php }?>
+   
       
     </ul>
   </div>

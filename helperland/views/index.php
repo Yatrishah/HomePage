@@ -259,5 +259,9 @@ session_start();
    
 </body>
 <script type="text/javascript" src="../assets/css/bootstrap/js/bootstrap.min.js"></script>
-<script src="../assets/css/stickynav.js"></script>    
+<script src="../assets/css/stickynav.js"></script> 
+<script >
+    
+</script>
+
 </html>

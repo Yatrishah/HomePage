@@ -68,17 +68,20 @@
                     <?php echo "<li class='nav-item' style='text-align:center;font-size:20px;color:white;'><b > 
                     Welcome ".$_SESSION['FirstName']."</b></li>"; ?>                 
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item active" href="#">My Dashboard</a></li>
-                        <li><a class="dropdown-item"href="#mySettings"  onclick="mySettings();" role="button" > My Settings</a></li>
+                        <li><a class="dropdown-item active" href="customer-service history.php">My Dashboard</a></li>
+                        <li><a class="dropdown-item" href="#mySettings" id="mysettings"  onclick="mysettings();" role="button"> My Settings</a></li>
                         <li><a class="dropdown-item" href="../controllers/logout.php">Logout</a></li>
                     </ul>
                 </li>
         <?php
          }
 ?>
+<?php
+      if(!isset($_SESSION['UserId'])){?>
              <li class="nav-item" >
                 <a class="nav-link text-white Rounded-Rectangle-1" href="service provider(6th).php" title="Become a Helper">Become a Helper</a>
             </li>
+            <?php }?>
             </div>
       </div>
 
