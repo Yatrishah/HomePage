@@ -52,14 +52,14 @@ class HomeController
                $phonenumber=$_POST['phonenumber'];
                $password=trim($_POST['password']);
                $cpassword=trim($_POST['cpassword']);
-               $role=1;
+            
                $userTypeId=1;
                $currentDateTime = date('Y-m-d H:i:s');
                $isApproved=1;
             
                if($password == $cpassword){
                
-               $temp= $this->modal->customer_insert('user',$name,$lastname ,$email,$password,$phonenumber,$role,$userTypeId,
+               $temp= $this->modal->customer_insert('user',$name,$lastname ,$email,$password,$phonenumber,$userTypeId,
                $currentDateTime,$isApproved);
                $_SESSION['status_msg1']="Inserted User Data Sucessfully And Mail is Sended To your Account";
                doMail($email,'Account Created','Congratulation ' .$name. ' your account is created sucessfully!!');
@@ -80,14 +80,14 @@ class HomeController
         $phonenumber=$_POST['phonenumber'];
         $password=trim($_POST['password']);
         $cpassword=trim($_POST['cpassword']);
-        $role=1;
-        $userTypeId=1;
+       
+        $userTypeId=2;
         $currentDateTime = date('Y-m-d H:i:s');
         $isApproved=1;
       
         if($password == $cpassword){
           
-          $temp= $this->modal->customer_insert('user',$name,$lastname ,$email,$password,$phonenumber,$role,$userTypeId,
+          $temp= $this->modal->customer_insert('user',$name,$lastname ,$email,$password,$phonenumber,$userTypeId,
           $currentDateTime,$isApproved);
           $_SESSION['status_msg1']="Inserted User Data Sucessfully And Mail is Sended To your Account";
           doMail($email,'Account Created','Congratulation ' . $name.' your account is created sucessfully!!');
@@ -199,7 +199,7 @@ class HomeController
       $_SESSION['status_msg1']='<script>
       alert("Password Does Not Match Plz Click on your Link Again")
       </script>';
-            header('Location:./views/index.php');
+           header('Location:./views/index.php');
 
 
     }
@@ -255,6 +255,7 @@ class HomeController
 //ADDRESS(TAB3)
 function schedule()
 {
+   
    $servicerequest["date"] = date("Y/m/d",strtotime($_POST["date"]));
    $servicerequest["time"] = $_POST["time"];
    $servicerequest["zipcode"] = $_SESSION["postalcode"];
@@ -378,5 +379,525 @@ function favouriteserviceprovider()
       echo $output;
    }
 
+
+   function fetchcurrentservice()
+   {
+      $output = "";
+      $userid = $_SESSION["UserId"];
+      $parameterarr = explode("-",$_GET["parameter"]);
+      $offset = $parameterarr[0];
+      $limit = $parameterarr[1];
+      $output .= " <div>
+                   
+      <table  id='dashboardforpagination'  class='services'>
+     <thead>
+         <tr>
+             <th>Service Id<img src='../assets/image/both_arrow.png'></th>
+             <th>Service Date<img src='../assets/image/both_arrow.png'></th>
+             <th>Service Provider <img src='../assets/image/both_arrow.png'></th>
+             <th>Payment<img src='../assets/image/both_arrow.png'></th>
+             <th>Actions<img src='../assets/image/both_arrow.png'></th>
+             
+             
+         </tr>
+     </thead>
+     <tbody>";
+
+      $result = $this->modal->fetchcurrentservice($userid,$offset,$limit);
+      while ($row = mysqli_fetch_assoc($result)) {
+
+         $servicerequestid = $row["ServiceRequestId"];
+         $serviceid = $row["ServiceId"];
+         $datetime = $row["ServiceStartDate"];
+         $payment = $row["TotalCost"];
+         $totalhr = $row["ServiceHours"] + $row["ExtraHours"];
+         $serviceproviderid = $row["ServiceProviderId"];
+         // echo $serviceproviderid;
+
+         // Date & Time 
+         $datetime_arr = explode(" ", $datetime);
+         $date = $datetime_arr[0];
+         $time = $datetime_arr[1];
+         $starttime = date("g:i", strtotime($time));
+         $endtime = date("H:i", strtotime("+$totalhr hour", strtotime($time)));
+         
+
+
+
+
+         $output .= 
+                        "<tr data-bs-toggle='modal'
+                        data-bs-target='#exampleModalServiceRequest'
+                        data-bs-dismiss='modal'>
+            <td onclick='dashboardmodal($servicerequestid)'><b>$serviceid</b></td>
+            <td >
+                <div><img src='../assets/image/calender_c.png'><b>$date</b></div>
+                <div><img src='../assets/image/clock1.png'>$starttime - $endtime</div>
+            </td>";
+
+         if (isset($serviceproviderid)) {
+
+            $row1 = $this->modal->fetchuserdetails($serviceproviderid);
+
+            $firstname = $row1["FirstName"];
+            $lastname = $row1["LastName"];
+            $picture = $row1["UserProfilePicture"];
+
+            $output .=  
+                       " <td>
+                        <div class='td-rating'>
+                           <div class='rating-img' ><img src='../assets/image/$picture' style='width:50px;height:50px'></div>
+                            <div class='info'>
+                                <div class='name'><b>$firstname $lastname</b></div>
+                                <div class='avg_rating_serprovider $serviceproviderid-avgRating'>hh
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </td>";
+         } else {
+            $output .= "<td> </td>";
+         }
+
+
+
+         $output .=  "<td>
+         <div class='td-curr'>€<span>$payment</span></div>
+ </td>
+ <td >
+ <button class='buttonaccept'  data-bs-toggle='modal'
+     data-bs-target='#RescheduleRequest' ' onclick='onReschedule($servicerequestid)' data-bs-dismiss='modal'>
+      Reschedule </button>
+     <button class='buttoncancel1'  data-bs-toggle='modal'
+     data-bs-target='#cancelRequest' ' onclick='onCancel($servicerequestid)' data-bs-dismiss='modal'> Cancel </button>   
+                                     </td>
+                     </tr>";
+      }
+
+      echo $output;
+   }
+
+
+
+   function update_datetime(){
+      $date = date("Y/m/d", strtotime($_POST["date"]));;
+      $time = $_POST["time"];
+      $id = $_POST["serviceid"];
+
+      $datetime = $date." ".$time. ":00";
+   
+      echo $date;
+      echo $time;
+      $this->modal->update_datetime($id,$datetime);
+      $result = $this->modal->emailsp($id);
+      $row = mysqli_fetch_assoc($result);
+      $userid = $row["ServiceProviderId"];
+      if ($userid != NULL) {
+         $row = $this->modal->fetchuserdetails($userid);
+         $email = $row["email"];
+         echo $row["email"];
+         $subject = 'Service Date Change';
+         $body = "Service Request ".$id." has been rescheduled by customer. New date and time are {".$date.",".$time."}";
+         doMail($email, $subject, $body);
+      }
+   }
+
+   function fetch_datetime(){
+      $serviceid = $_POST["serviceid"];
+
+      $datetime = $this->modal->fetch_datetime($serviceid);
+      $datetimearr = explode(" ",$datetime);
+      echo $datetimearr[0]."|";
+
+      $timearr = explode(":",$datetimearr[1]);
+      $time = $timearr[0].":".$timearr[1];
+      echo $time;
+   }
+
+   function checkserviceavailable(){
+      $date = date("Y/m/d", strtotime($_POST["date"]));;
+      $time = $_POST["time"];
+      $id = $_POST["serviceid"];
+      //echo $id;
+      $datetime = $date." ".$time. ":00";
+      
+      $result = $this->modal->checkserviceavailable($datetime);
+      $no = mysqli_num_rows($result);
+      echo $no;
+   }
+
+   function cancelservice(){
+      $serviceid = $_POST["serviceid"];
+      $comment = $_POST["comment"];
+      
+      $this->modal->cancelservice($serviceid,$comment);
+   }
+
+   function Allservicerequestdetails()
+   {
+      $servicerequestid = $_POST["id"];
+
+
+      $result = $this->modal->Allservicerequestdetails($servicerequestid);
+
+      $row = mysqli_fetch_assoc($result);
+      $servicedetails = [];
+
+      $servicedetails["ServiceId"] = $row["ServiceId"];
+      $datetime = $row["ServiceStartDate"];
+      $servicedetails["servicerequestid"] = $servicerequestid;
+      $servicedetails["ServiceHours"] = $row["ServiceHours"];
+      $servicedetails["ExtraHours"] = $row["ExtraHours"];
+      $servicedetails["TotalCost"] = $row["TotalCost"];
+      $servicedetails["UserId"] = $row["UserId"];
+      $servicedetails["Comments"] = $row["Comments"];
+      $servicedetails["HasPets"] = $row["HasPets"];
+      $servicedetails["AddressLine1"] = $row["AddressLine1"];
+      $servicedetails["AddressLine2"] = $row["AddressLine2"];
+      $servicedetails["City"] = $row["City"];
+      $servicedetails["State"] = $row["State"];
+      $servicedetails["PostalCode"] = $row["PostalCode"];
+
+      // Date and Time 
+      $totalhr = $servicedetails["ServiceHours"] + $servicedetails["ExtraHours"];
+      $servicedetails["duration"] = $totalhr;
+      $datetime_arr = explode(" ", $datetime);
+      $servicedetails["date"] = $datetime_arr[0];
+      $time = $datetime_arr[1];
+      $servicedetails["starttime"] = date("g:i", strtotime($time));
+      $servicedetails["endtime"] = date("H:i", strtotime("+$totalhr hour", strtotime($time)));
+
+      // Extra Service 
+      $servicedetails["ServiceExtraId"] = [];
+
+      $result1 = $this->modal->Allextraservicedeatils($servicerequestid);
+
+      if (mysqli_num_rows($result1) == 0) {
+         array_push($servicedetails["ServiceExtraId"], 0);
+      } else {
+         while ($row1 = mysqli_fetch_assoc($result1)) {
+            array_push($servicedetails["ServiceExtraId"], $row1["ServiceExtraId"]);
+         }
+      }
+
+
+      // Extra Service Name 
+      $servicedetails["ExtraService"] = [];
+      foreach ($servicedetails["ServiceExtraId"] as $value) {
+
+         if ($value == 1) {
+            array_push($servicedetails["ExtraService"], "Inside Cabinet");
+         } else if ($value == 2) {
+            array_push($servicedetails["ExtraService"], "Inside fridge");
+         } else if ($value == 3) {
+            array_push($servicedetails["ExtraService"], "Inside oven");
+         } else if ($value == 4) {
+            array_push($servicedetails["ExtraService"], "Inside fridge");
+         } else if ($value == 5) {
+            array_push($servicedetails["ExtraService"], "Laundry wash & dry");
+         } else {
+            array_push($servicedetails["ExtraService"], 0);
+         }
+      }
+
+      $servicedetails["customername"] = $this->modal->servicerequestCustomerName($servicedetails["UserId"]);
+
+      echo json_encode($servicedetails);
+   }
+
+
+function ServiceHistory()
+{
+   
+   $output = "";
+   $userid = $_SESSION["UserId"];
+   $parameterarr = explode("-",$_GET["parameter"]);
+   $offset = $parameterarr[0];
+   $limit = $parameterarr[1];
+
+   $output .= "  <table  id='tblCustomers'  class='services'>
+   <thead> <tr>
+   <th>Service Id<img src='../assets/image/both_arrow.png'></th>
+   <th>Service Date<img src='../assets/image/both_arrow.png'></th>
+   <th>Service Provider <img src='../assets/image/both_arrow.png'></th>
+   <th>Payment<img src='../assets/image/both_arrow.png'></th>
+   <th>Status<img src='../assets/image/both_arrow.png'></th>
+   <th>Rate SP<img src='../assets/image/both_arrow.png'></th>
+   
+</tr>
+</thead> ";
+
+   $servicehistorydetails = $this->modal->servicehistorydetails($userid, $offset, $limit);
+
+   while ($row = mysqli_fetch_assoc($servicehistorydetails)) {
+
+      $servicerequestid = $row["ServiceRequestId"];
+      $serviceid = $row["ServiceId"];
+      $datetime = $row["ServiceStartDate"];
+      $payment = $row["TotalCost"];
+      $totalhr = $row["ServiceHours"] + $row["ExtraHours"];
+      $serviceproviderid = $row["ServiceProviderId"];
+      $status = $row["Status"];
+      // echo $serviceproviderid;
+
+      // Date & Time 
+      $datetime_arr = explode(" ", $datetime);
+      $date = $datetime_arr[0];
+      $time = $datetime_arr[1];
+      $starttime = date("g:i", strtotime($time));
+      $endtime = date("H:i", strtotime("+$totalhr hour", strtotime($time)));
+
+      $output .= " <tr>
+                  <td><b>$serviceid</b> </td>
+                  <td>
+                        <div><img src='../assets/image/calender_c.png'><b>$date</b></div>
+                        <div><img src='../assets/image/clock1.png'>$starttime - $endtime</div>
+                  </td>";
+
+      if (isset($serviceproviderid)) {
+
+         $row1 = $this->modal->fetchuserdetails($serviceproviderid);
+
+         $firstname = $row1["FirstName"];
+         $lastname = $row1["LastName"];
+         $picture= $row1["UserProfilePicture"];
+
+         $output .=  
+                    " <td>
+                     <div class='td-rating'>
+                        <div class='rating-img'><img src='../assets/image/$picture' style='width:50px;height:50px'></div>
+                         <div class='info'>
+                             <div class='name'style='margin-bottom:-20px;'><b>$firstname $lastname</b>   </div>
+                             <div class='servicehistory_rating mt-4 ml-5' id='$servicerequestid-ratings'
+                             >
+                            </div>
+                            
+                         </div>
+                     </div>
+                 </td>";
+      } else {
+         $output .= "<td> </td>";
+      }
+
+
+    
+      $output .=  "<td>
+      <div class='td-curr'>€<span>$payment</span></div>
+</td>";
+
+      
+
+      if ($status == 1) {
+
+         $output .= "
+                       
+                        <td class='centerbutton'>
+                        <button class='buttoncompleted'> Completed </button>
+                    </td>                           </div>
+                     ";
+      } else {
+         $output .= "  <td class='centerbutton'>
+         <button class='buttoncancel'> Cancelled </button>
+         </td> ";
+      }
+
+      if (isset($serviceproviderid)) {
+         if($status==2){
+            $output .= "<td>
+            <button type='button' class='RateSP'>Rate SP</button>
+         </td>
+         </tr>";}
+         else{
+      $output .= "<td class='centerbutton'>
+      <button class='RateSP' data-bs-toggle='modal'
+          data-bs-target='#exampleModalRateSP' onclick='ratingclick($servicerequestid,$serviceproviderid)'> Rate SP </button>
+   </td>
+ 
+</tr>";
+}}
+else{
+   $output .= "<td>
+   <button type='button' class='RateSP'>Rate SP</button>
+</td>
+</tr>";
+}
+   }
+
+   echo $output;
+}
+function fetchtotalentriesdashboard(){
+
+   $userid = $_SESSION["UserId"];
+
+   $totalentries = $this->modal->gettotalentriesdashboard($userid);
+   echo $totalentries;
+}
+
+function fetchtotalentriesservicehistory(){
+   $userid = $_SESSION["UserId"];
+
+   $totalentries = $this->modal->gettotalentriesservicehistory($userid);
+   echo $totalentries;
+}
+
+function setrating()
+   {
+      $rating["userid"] = $_SESSION["UserId"];
+      $rating["serviceid"]  = $_POST["id"];
+      $rating["serviceproviderid"]  = $_POST["serviceprovider_id"];
+      $rating["feedback"]  = $_POST["service_feedback"];
+      $rating["timeArrivalRating"]  = $_POST["timeArrival"];
+      $rating["frindlyRating"]  = $_POST["friendly"];
+      $rating["qualityRating"]  = $_POST["quality"];
+      $rating["rating"] =  $_POST["rating_service"];
+
+      $ratingdone = $this->modal->checkratingalreadydone($rating["serviceid"]);
+
+      if ($ratingdone == true) {
+         $this->modal->updaterating($rating);
+      } else {
+         $this->modal->insertrating($rating);
+      }
+
+      echo $rating["serviceid"] . "|";
+      echo $rating["rating"];
+   }
+
+   function setratingmodal()
+   {
+      $serviceproviderid = $_POST["serviceProviderId"];
+      //echo $serviceproviderid;
+      $row1 = $this->modal->fetchuserdetails($serviceproviderid);
+
+      $fname = $row1["FirstName"];
+      $lname = $row1["LastName"];
+      //echo $lname;
+      $avatar = $row1["UserProfilePicture"];
+
+      $name = $fname." ".$lname;
+
+      echo '<b>'.$name.'<b>'."|".$avatar;
+   }
+   function getrating()
+   {
+      $servicerequestId = $_POST["serviceRequestId"];
+
+      $result = $this->modal->getAverageRating($servicerequestId);
+      while ($row = mysqli_fetch_assoc($result)) {
+         echo $row["Ratings"] . "|" . $servicerequestId;
+      }
+   }
+   function oldpasswordcheck(){
+      $old_password = $_POST["oldPassword"]; 
+      $userid = $_SESSION["UserId"];
+
+      $row = $this->modal->fetchuserdetails($userid);
+      echo $row["Password"];
+   }
+
+   function updatePassword()
+   {
+      $user["userid"] = $_SESSION["UserId"];
+      $user["password"] = $_POST["password"];
+
+      $this->modal->changepassword1($user);
+   }
+   
+   
+    function Mydetails(){
+       
+      $details["userid"]=$_SESSION["UserId"];
+     
+      $details["fname"]=$_SESSION["fname"];
+      //echo $details["fname"];
+      $details["lname"]=$_POST["lname"];
+      $details["email1"]=$_POST["email1"];
+     $details["phonenumber"]=$_POST["phonenumber"];
+     $details["bdate"]=$_POST["bdate"];
+      $this->modal->updateDetails($details);
+      $_SESSION['msg1']='<script>
+      alert("Your Details Hase Been Updated!!!");
+      </script>';
+      header('Location:./views/customer-service history.php');
+
+
+    }
+    function loadsettingaddress(){
+      $row = $this->modal->fetchuseraddress();
+      $useraddress = "<tr class='table_heading'>
+                        <th class='address_th py-3 px-4'>Addresses</th>
+                        <th>Action</th>
+                     </tr>";
+      while ($address = mysqli_fetch_assoc($row)) {
+
+         $addressid = $address["AddressId"];
+         $houseno = $address["AddressLine1"];
+         $addressline = $address["AddressLine2"];
+         $city = $address["City"];
+         $state = $address["State"];
+         $postalcode = $address["PostalCode"];
+         $mobile = $address["Mobile"];
+         $useraddress .= "<tr>
+                           <td class='address_td' id='$addressid-useraddress'>
+                        <div>
+                                    <p><b>Address:</b> $houseno $addressline, $city, $state, $postalcode</p>
+                                    <p><b>Phone Number:</b> $mobile</p>
+                                 </div>
+                              </td>
+                              <td class='action_row'>
+                                
+                                 <i class='fa fa-edit' data-bs-toggle='modal'
+                                 data-bs-target='#editAddress' data-bs-dismiss='modal' onclick='edit_address($addressid)'> Edit </button>
+                                 <i class='fa fa-trash' data-bs-toggle='modal'
+                                 data-bs-target='#deleteAddress' data-bs-dismiss='modal' onclick='delete_address($addressid)'> Delete </button> 
+                                 
+                              </td>
+                        </tr>";
+      }
+      echo $useraddress;
+   }
+   function setAddressModal()
+   {
+      $id = $_POST["addressId"];
+      
+
+      $result = $this->modal->fetchAddressModal($id);
+      $row = mysqli_fetch_assoc($result);
+
+      echo json_encode($row);
+   }
+
+   //   Update Address 
+   function updateAddress(){
+      $address["StreetName"] = $_POST["streetName"];
+      $address["HouseNo"] = $_POST["houseno"];
+      $address["PostalCode"] = $_POST["postalcode"];
+      $address["City"] = $_POST["city"];
+      $address["Mobile"] = $_POST["Mobile"];
+      $address["addressId"] = $_POST["AddressId"];
+     
+      $this->modal->updateAddress($address);
+      print_r($address);
+   }
+
+   // Delete Address 
+   function deleteaddress_setting(){
+      $addressid = $_POST["addressId"];
+
+      $this->modal->deleteaddress($addressid);
+   }
+   function averageRating(){
+      $id = $_POST["serviceProviderId"];
+
+      $result = $this->modal->getAllRatingOfProvider($id);
+      $count = 0;
+      $sum = 0;
+      while($row = mysqli_fetch_assoc($result)){
+         $sum += $row["Ratings"];
+         $count++;
+      }
+      $avg = $sum/$count;
+      echo  number_format($avg,1);
+   }
 }
 ?>
