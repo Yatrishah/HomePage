@@ -660,9 +660,9 @@ $('#complete_booking').click(function (e) {
 
     if (creditcardno == "" || creditcardexpiry == "" || creditcardcvc == "") {
         alert("Please Enter all details")
-    } else if(creditcardno.length != 16 || creditcardexpiry.length != 4 || 
-                creditcardcvc.length != 3){
-        alert("Please Enter all the details properly");
+    // } else if(creditcardno.length != 16 || creditcardexpiry.length != 4 || 
+    //             creditcardcvc.length != 3){
+    //     alert("Please Enter all the details properly");
     } else {
 
    var date = $('#date').val();
@@ -709,8 +709,16 @@ $('#complete_booking').click(function (e) {
                 success: function (response) {
                 //  $('.request_id').html("Service Request Id: ".concat(response));
                     $('#complete_booking_modal').modal('show');
+                    $.ajax({
+                            type: "POST",
+                            url: "http://localhost/project/?function=sendEmailtoProvider",
+                            success: function (response) {
+                                console.log(response);
+                            }
+                        });
                 }
             });
+         
            
         }
 
