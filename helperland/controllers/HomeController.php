@@ -117,7 +117,14 @@ class HomeController
 
                       $_SESSION['FirstName'] = $row['FirstName'];
                       $_SESSION['UserTypeId'] = $row['UserTypeId'];
-                      header('Location:./views/index.php');
+                      if($_SESSION['UserTypeId']==3){
+                      header('Location:./views/admin-dashboard.php');
+                      }
+                      else
+                      {
+                        header('Location:./views/index.php');
+ 
+                      }
 
                   }
          }
@@ -335,7 +342,7 @@ function schedule()
 
 function yourdetails()
    {
-      $row = $this->model->fetchuseraddress();
+      $row = $this->modal->fetchuseraddress();
       print_r($row);
    }
 
@@ -787,6 +794,15 @@ function setrating()
          echo $row["Ratings"] . "|" . $servicerequestId;
       }
    }
+   function getdetails()
+   {
+      $userid = $_SESSION["UserId"];
+
+      $row = $this->modal->fetchuserdetails($userid);
+
+      echo json_encode($row);
+   }
+
    function oldpasswordcheck(){
       $old_password = $_POST["oldPassword"]; 
       $userid = $_SESSION["UserId"];
@@ -898,6 +914,792 @@ function setrating()
       }
       $avg = $sum/$count;
       echo  number_format($avg,1);
+   }
+
+    //Update details of Service Provider
+   //  function updatedetails_sp()
+   //  {
+   //     $provider["fname"] = $_POST["FirstName"];
+   //     $provider["lname"] = $_POST["LastName"];
+   //     $provider["email"] = $_POST["Email"];
+   //     $provider["phoneno"] = $_POST["PhoneNo"];
+   //     $provider["birthdate"] = $_POST["date"];
+   //     $provider["nationality"] = $_POST["Nationality"];
+   //     $provider["gender"] = $_POST["Gender"];
+   //     $provider["avatar_name"] = $_POST["logo_name"];
+   //     $provider["streetname"] = $_POST["streetName"];
+   //     $provider["houseno"] = $_POST["houseNo"];
+   //     $provider["postalcode"] = $_POST["postalcode"];
+   //     $provider["city"] = $_POST["city"];
+   //     $provider["userid"] = $_SESSION["UserId"];
+ 
+   //     $this->modal->updateServiceProviderDetails($provider);
+ 
+   //     $result = $this->modal->IsInsertedAddress_SP($provider);
+ 
+   //     if ($result > 0) {
+   //        //Update Address
+   //        $this->modal->updateAddress_sp($provider);
+   //     } else {
+   //        //Insert Address
+   //        $this->modal->insertuseraddress($provider);
+   //     }
+ 
+   //     print_r($provider);
+   //  }
+ 
+   //  function setAdress_sp()
+   //  {
+   //     $provider["userid"] = $_SESSION["UserId"];
+ 
+   //     $result = $this->modal->IsInsertedAddress_SP($provider);
+ 
+   //     if ($result > 0) {
+   //        $result1 = $this->modal->getAddress_SP($provider["UserId"]);
+   //        echo json_encode($result1);
+   //     }
+   //  }
+ 
+    function loadServiceRequest_SP()
+    {
+      
+       $output = "";
+      
+       $userid = $_SESSION["UserId"];
+       
+       $result = $this->modal->getAddress_SP($userid);
+      $pincode = $result['PostalCode'];
+ 
+      // //  $parameterarr = explode("-", $_GET["parameter"]);
+      $parameterarr = explode("-", $_GET["parameter"]);
+      $offset = $parameterarr[0];
+      $limit = $parameterarr[1];
+      // $pets = $parameterarr[2];
+
+ 
+       $output .= "  <thead>
+       <tr >
+           <th title='Service ID'>Service ID <img src='../assets/image/both_arrow.png'></th>
+           <th title='Service Date'>Service date <img src='../assets/image/both_arrow.png'></th>
+           <th title='Customer Details'>Cutomer details <img src='../assets/image/both_arrow.png'></th>
+           <th title='Distance'>Distance <img src='../assets/image/both_arrow.png'></th>
+           <th title='Actions'>Actions</th>
+       </tr>
+   </thead>";
+ 
+       $result = $this->modal->getnewservicerequest_sp($pincode,$offset,$limit);
+       while ($row = mysqli_fetch_assoc($result)) {
+ 
+          $servicerequestid = $row["ServiceRequestId"];
+          $serviceid = $row["ServiceId"];
+          $datetime = $row["ServiceStartDate"];
+          $payment = $row["TotalCost"];
+          $totalhr = $row["ServiceHours"] + $row["ExtraHours"];
+          $serviceproviderid = $row["ServiceProviderId"];
+ 
+          //Customer details
+          $customerid = $row["UserId"];
+          //$row1 = $this->modal->getAddress_SP($customerid);
+          $row1 = $this->modal->getAddress_SD($servicerequestid);
+
+          $customer_address = $row1["AddressLine1"] . ", " . $row1["AddressLine2"] . " " . $row1["City"] . " " . $row1["PostalCode"];
+         echo $customer_address ;
+          $row2 = $this->modal->fetchuserdetails($customerid);
+ 
+          $fname = $row2["FirstName"];
+          $lname = $row2["LastName"];
+          $name = $fname . " " . $lname;
+ 
+          // Date & Time 
+          $datetime_arr = explode(" ", $datetime);
+          $date = $datetime_arr[0];
+          $time = $datetime_arr[1];
+          $starttime = date("G:i", strtotime($time));
+          $endtime = date("H:i", strtotime("+$totalhr hour", strtotime($time)));
+ 
+          $output .= " <tr  data-bs-toggle='modal'
+          data-bs-target='#exampleModalServiceAccept'
+          data-bs-dismiss='modal' onclick='Accept_Service($servicerequestid)'>
+          <td>$serviceid</td>
+          <td>
+              <div><img src='../assets/image/calendar.png'><b>$date</b></div>
+              <div><img src='../assets/image/clock1.png'>$starttime - $endtime</div>
+          </td>
+          <td>
+              <div>$name</div>
+              <div><img src='../assets/image/home.png'>$customer_address</div>
+          </td>
+          <td>$payment</td>
+          <td class='buttonaccept' title='Accept'> <button data-bs-toggle='modal'
+                      data-bs-target='#exampleModalServiceAccept'
+                      data-bs-dismiss='modal' >Accept</button>
+          </td>
+      </tr>";
+       }
+ 
+       echo $output;
+    }
+   
+    function setAcceptServiceModal()
+    {
+       $id = $_POST["id"];
+ 
+       $row = $this->modal->getServiceRequests_SP_details($id);
+ 
+       $servicerequestid = $row["ServiceRequestId"];
+       $details["serviceid"] = $row["ServiceId"];
+       $datetime = $row["ServiceStartDate"];
+       $details["payment"] = $row["TotalCost"];
+       $totalhr = $row["ServiceHours"] + $row["ExtraHours"];
+       $details["totalhr"] = $totalhr;
+       $details["comment"] = $row["Comments"];
+       $details["HasPets"] = $row["HasPets"];
+       //echo $details["HasPets"];
+    
+       $serviceproviderid = $row["ServiceProviderId"];
+ 
+       //Customer details
+       $customerid = $row["UserId"];
+       $row1 = $this->modal->getAddress_SD($servicerequestid);
+       $details["customer_address"] = $row1["AddressLine1"] . ", " . $row1["AddressLine2"] . " " . $row1["City"] . " " . $row1["PostalCode"];
+ 
+       $row2 = $this->modal->fetchuserdetails($customerid);
+ 
+       $fname = $row2["FirstName"];
+       $lname = $row2["LastName"];
+       $details["name"] = $fname . " " . $lname;
+ 
+       // Date & Time 
+       $datetime_arr = explode(" ", $datetime);
+       $details["date"] = $datetime_arr[0];
+       $time = $datetime_arr[1];
+       $details["starttime"] = date("G:i", strtotime($time));
+       $details["endtime"] = date("H:i", strtotime("+$totalhr hour", strtotime($time)));
+ 
+       // Extra Service 
+       $servicedetails["ServiceExtraId"] = [];
+ 
+       $result1 = $this->modal->Allextraservicedeatils($servicerequestid);
+ 
+       if (mysqli_num_rows($result1) == 0) {
+          array_push($servicedetails["ServiceExtraId"], 0);
+       } else {
+          while ($row1 = mysqli_fetch_assoc($result1)) {
+             array_push($servicedetails["ServiceExtraId"], $row1["ServiceExtraId"]);
+          }
+       }
+ 
+ 
+       // Extra Service Name 
+       $details["ExtraService"] = [];
+       foreach ($servicedetails["ServiceExtraId"] as $value) {
+ 
+          if ($value == 1) {
+             array_push($details["ExtraService"], "Inside Cabinet");
+          } else if ($value == 2) {
+             array_push($details["ExtraService"], "Inside fridge");
+          } else if ($value == 3) {
+             array_push($details["ExtraService"], "Inside oven");
+          } else if ($value == 4) {
+             array_push($details["ExtraService"], "Inside fridge");
+          } else if ($value == 5) {
+             array_push($details["ExtraService"], "Laundry wash & dry");
+          } else {
+             array_push($details["ExtraService"], 0);
+          }
+       }
+ 
+ 
+       echo json_encode($details);
+       
+    }
+  
+    
+   function TotalEntriesNewServiceRequest()
+   {
+
+      $userid = $_SESSION["UserId"];
+      $result = $this->modal->getAddress_SP($userid);
+      $pincode = $result["PostalCode"];
+
+    
+
+      $no = $this->modal->getnewservicerequestTotalEntries_sp($pincode);
+
+      echo $no;
+   }
+   function SetServiceProvider()
+   {
+      $serviceid = $_POST["id"];
+      $userid = $_SESSION["UserId"];
+
+      $this->modal->setServiceProviderId($serviceid, $userid);
+   }
+   
+   function loadUpcomingService_SP()
+   {
+     
+
+      $userid = $_SESSION["UserId"];
+      $parameterarr = explode("-", $_GET["parameter"]);
+      $offset = $parameterarr[0];
+      $limit = $parameterarr[1];
+      $output = "<tr>
+      <th title='Service ID'>Service ID <img src='../assets/image/both_arrow.png'></th>
+      <th title='Service Date'>Service date <img src='../assets/image/both_arrow.png'></th>
+      <th title='Customer Details'>Cutomer details <img src='../assets/image/both_arrow.png'th>
+      <th title='Distance'>Distance <img src='../assets/image/both_arrow.png'></th>
+      <th title='Actions'>Actions</th>
+  </tr>";
+
+
+      $result = $this->modal->getUpcomingService_Sp($userid, $offset, $limit);
+
+      while ($row = mysqli_fetch_assoc($result)) {
+
+         $servicerequestid = $row["ServiceRequestId"];
+         $serviceid = $row["ServiceId"];
+         $datetime = $row["ServiceStartDate"];
+         $payment = $row["TotalCost"];
+         $totalhr = $row["ServiceHours"] + $row["ExtraHours"];
+         $serviceproviderid = $row["ServiceProviderId"];
+
+         //Customer details
+         $customerid = $row["UserId"];
+         //$row1 = $this->modal->getAddress_SP($customerid);
+         $row1 = $this->modal->getAddress_SD($servicerequestid);
+
+         $customer_address = $row1["AddressLine1"] . ", " . $row1["AddressLine2"] . " " . $row1["City"] . " " . $row1["PostalCode"];
+
+         $row2 = $this->modal->fetchuserdetails($customerid);
+
+         $fname = $row2["FirstName"];
+         $lname = $row2["LastName"];
+         $name = $fname . " " . $lname;
+
+         // Date & Time 
+         $datetime_arr = explode(" ", $datetime);
+         $date = $datetime_arr[0];
+         $time = $datetime_arr[1];
+         $starttime = date("G:i", strtotime($time));
+         $endtime = date("H:i", strtotime("+$totalhr hour", strtotime($time)));
+
+         $output .= "
+         <tr data-bs-toggle='modal'
+         data-bs-target='#exampleModalServiceCancel'
+         data-bs-dismiss='modal'  onclick='SetUpcomingServiceModal($servicerequestid)'>
+         <td>$serviceid</td>
+         <td>
+             <div><img src='../assets/image/calendar.png'><b>$date</b></div>
+             <div><img src='../assets/image/clock1.png'>$starttime - $endtime</div>
+         </td>
+         <td>
+             <div>$name</div>
+             <div><img src='../assets/image/home.png'>$customer_address</div>
+         </td>
+         <td>$payment €</td>
+         <td class='buttoncancel' title='Cancel'><button data-bs-toggle='modal'
+                     data-bs-target='#exampleModalServiceCancel'
+                     data-bs-dismiss='modal'>Cancel</button>
+         </td>
+     </tr>";
+      }
+
+      echo $output;
+   }
+
+   function IsServiceProviderAssigned()
+   {
+    
+     $serviceid = $_POST["id"];
+
+     $row =  $this->modal->getUpcomingServiceDetails($serviceid);
+     $ServiceDateStart = $row["ServiceStartDate"];
+     $zipcode = $row["ZipCode"];
+     $userid = $_SESSION["UserId"];
+     $currentdatetotalhrs = $row["ServiceHours"] + $row["ExtraHours"];
+      $ServiceDateEnd = date("Y-m-d H:i:s", strtotime("+$currentdatetotalhrs hours", strtotime($ServiceDateStart)));
+
+      $result = $this->modal->AcceptServiceValidation($zipcode, $userid);
+
+      $onecount = 0;
+      $zerocount = 0;
+      if (mysqli_num_rows($result) > 0) {
+         while ($row1 = mysqli_fetch_assoc($result)) {
+            // echo $row1["ServiceStartDate"] . "    ";
+            $ServiceStartComp = $row1["ServiceStartDate"];
+            $totalhrs = $row1["ServiceHours"] + $row1["ExtraHours"];
+            $ServiceEndComp = date("Y-m-d H:i:s", strtotime("+$totalhrs hours", strtotime($ServiceStartComp)));
+if (($ServiceDateStart < $ServiceStartComp && $ServiceDateEnd < $ServiceStartComp) || $ServiceDateStart > $ServiceEndComp) {
+               if (isset($row["ServiceProviderId"])) {
+                  $onecount++;
+               } else {
+                  $zerocount++;
+               }
+            } else {
+               $onecount++;
+            }
+         }
+      } else {
+         $zerocount++;
+      }
+      if ($onecount > 0) {
+         echo "1";
+      } else {
+         echo "0";
+      }
+
+   }
+   function GetUpcomingServiceDetails()
+   {
+      $servicerequestId = $_POST["id"];
+
+      $row = $this->modal->getUpcomingServiceDetails($servicerequestId);
+
+     
+       $servicerequestid = $row["ServiceRequestId"];
+       $details["serviceid"] = $row["ServiceId"];
+       $datetime = $row["ServiceStartDate"];
+       $details["payment"] = $row["TotalCost"];
+       $totalhr = $row["ServiceHours"] + $row["ExtraHours"];
+       $details["totalhr"] = $totalhr;
+       $details["comment"] = $row["Comments"];
+       $details["HasPets"] = $row["HasPets"];
+       //echo $details["HasPets"];
+       $details['ServiceRequestId']=$servicerequestid;
+
+    
+       $serviceproviderid = $row["ServiceProviderId"];
+ 
+       //Customer details
+       $customerid = $row["UserId"];
+       $row1 = $this->modal->getAddress_SD($servicerequestid);
+       $details["customer_address"] = $row1["AddressLine1"] . ", " . $row1["AddressLine2"] . " " . $row1["City"] . " " . $row1["PostalCode"];
+ 
+       $row2 = $this->modal->fetchuserdetails($customerid);
+ 
+       $fname = $row2["FirstName"];
+       $lname = $row2["LastName"];
+       $details["name"] = $fname . " " . $lname;
+ 
+       // Date & Time 
+       $datetime_arr = explode(" ", $datetime);
+       $details["date"] = $datetime_arr[0];
+       $time = $datetime_arr[1];
+       $details["starttime"] = date("G:i", strtotime($time));
+       $details["endtime"] = date("H:i", strtotime("+$totalhr hour", strtotime($time)));
+ 
+       $todayDate = date("Y/m/d G:i:s");
+       $datetime = date("Y/m/d h:i:s",strtotime($datetime));
+ 
+       
+       $endtime_us = date("H:i:s", strtotime($details["endtime"]));
+       $datetime_end =  date("Y/m/d G:i:s",strtotime($details["date"]." ".$endtime_us));
+ 
+       $details["endtime_check"] = $datetime_end;
+       $details["todayDate"] = $todayDate;
+ 
+       // echo $todayDate;
+       // $details["datetime"] = $datetime;
+       // $details["todayDate"] = $todayDate;
+ 
+       if($todayDate > $datetime_end){
+          $details["Complete"] = 1;
+       }else{
+          $details["Complete"] = 0;
+       }
+
+
+      // Extra Service 
+      $servicedetails["ServiceExtraId"] = [];
+
+      $result1 = $this->modal->Allextraservicedeatils($servicerequestid);
+
+      if (mysqli_num_rows($result1) == 0) {
+         array_push($servicedetails["ServiceExtraId"], 0);
+      } else {
+         while ($row1 = mysqli_fetch_assoc($result1)) {
+            array_push($servicedetails["ServiceExtraId"], $row1["ServiceExtraId"]);
+         }
+      }
+
+
+      // Extra Service Name 
+      $details["ExtraService"] = [];
+      foreach ($servicedetails["ServiceExtraId"] as $value) {
+
+         if ($value == 1) {
+            array_push($details["ExtraService"], "Inside Cabinet");
+         } else if ($value == 2) {
+            array_push($details["ExtraService"], "Inside fridge");
+         } else if ($value == 3) {
+            array_push($details["ExtraService"], "Inside oven");
+         } else if ($value == 4) {
+            array_push($details["ExtraService"], "Inside fridge");
+         } else if ($value == 5) {
+            array_push($details["ExtraService"], "Laundry wash & dry");
+         } else {
+            array_push($details["ExtraService"], 0);
+         }
+      }
+
+      echo json_encode($details);
+   }
+
+
+
+
+   function cancelServiceRequest(){
+      $serviceRequestId = $_POST["id"];
+      
+      $this->modal->cancelServiceRequest_SP($serviceRequestId);
+   }
+   function completeServiceRequest(){
+      $serviceRequestId = $_POST["id"];
+
+      $this->modal->completeServiceRequest_SP($serviceRequestId);
+      $userid = $_SESSION["UserId"];
+      $row = $this->modal->getUpcomingServiceDetails($serviceRequestId);
+
+      $customerId = $row["UserId"];
+      $this->modal->insertFavoriteBlock($userid,$customerId);
+      echo $customerId,$userid ;
+   }
+   function TotalEntriesUpcomingService()
+   {
+      $userid = $_SESSION["UserId"];
+
+      $no = $this->modal->gettotalentries_us($userid);
+      echo $no;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   function loadServiceHistory_SP(){
+      $userid = $_SESSION["UserId"];
+      $parameterarr = explode("-", $_GET["parameter"]);
+      $offset = $parameterarr[0];
+      $limit = $parameterarr[1];
+
+      $output = "<tr>
+      <th title='Service Id'>Service ID <img src='../assets/image/both_arrow.png'></th>
+      <th title='Service Date'>Service date <img src='../assets/image/both_arrow.png'></th>
+      <th title='Customer Details'>Cutomer details <img src='../assets/image/both_arrow.png'></th>
+      
+      </tr>";
+
+      $result = $this->modal->getServiceHistory_SP($userid, $offset, $limit);
+
+      while($row = mysqli_fetch_assoc($result)){
+
+         $servicerequestid = $row["ServiceRequestId"];
+         $serviceid = $row["ServiceId"];
+         $datetime = $row["ServiceStartDate"];
+         $payment = $row["TotalCost"];
+         $totalhr = $row["ServiceHours"] + $row["ExtraHours"];
+         $serviceproviderid = $row["ServiceProviderId"];
+
+         //Customer details
+         $customerid = $row["UserId"];
+        // $row1 = $this->modal->getAddress_SP($customerid);
+        $row1 = $this->modal->getAddress_SD($servicerequestid);
+
+         $customer_address = $row1["AddressLine1"] . ", " . $row1["AddressLine2"] . " " . $row1["City"] . " " . $row1["PostalCode"];
+
+         $row2 = $this->modal->fetchuserdetails($customerid);
+
+         $fname = $row2["FirstName"];
+         $lname = $row2["LastName"];
+         $name = $fname . " " . $lname;
+
+         // Date & Time 
+         $datetime_arr = explode(" ", $datetime);
+         $date = $datetime_arr[0];
+         $time = $datetime_arr[1];
+         $starttime = date("G:i", strtotime($time));
+         $endtime = date("H:i", strtotime("+$totalhr hour", strtotime($time)));
+
+         $output .= "
+         
+         <tr  data-bs-toggle='modal'
+         data-bs-target='#exampleModalServiceHistory'
+         data-bs-dismiss='modal' onclick='SetServiceHistoryModal_SP($servicerequestid)'>
+                                <td>$serviceid</td>
+                                <td>
+                                    <div><img src='../assets/image/calendar.png'><b>$date</b></div>
+                                    <div><img src='../assets/image/clock1.png'>$starttime - $endtime</div>
+                                </td>
+                                <td>
+                                    <div>$name</div>
+                                    <div><img src='../assets/image/home.png'>$customer_address</div>
+                                </td>
+                               
+                            </tr>";
+
+      }
+
+      echo $output;
+   }
+   function TotalEntriesServiceHistory_Sp()
+   {
+      $userid = $_SESSION["UserId"];
+
+      $no = $this->modal->gettotalentriesServiceHistory_Sp($userid);
+      echo $no;
+   }
+   function updatedetails_sp()
+   {
+      $provider["fname"] = $_POST["FirstName"];
+      $provider["lname"] = $_POST["LastName"];
+      $provider["email"] = $_POST["Email"];
+      $provider["phoneno"] = $_POST["PhoneNo"];
+      $provider["birthdate"] = $_POST["date"];
+      $provider["nationality"] = $_POST["Nationality"];
+      $provider["gender"] = $_POST["Gender"];
+      $provider["avatar_name"] = $_POST["logo_name"];
+      $provider["streetname"] = $_POST["streetName"];
+      $provider["houseno"] = $_POST["houseNo"];
+      $provider["postalcode"] = $_POST["postalcode"];
+      $provider["city"] = $_POST["city"];
+      $provider["userid"] = $_SESSION["UserId"];
+
+      $this->modal->updateServiceProviderDetails($provider);
+
+      $result = $this->modal->IsInsertedAddress_SP($provider);
+
+      if ($result > 0) {
+         //Update Address
+         $this->modal->updateAddress_sp($provider);
+      } else {
+         //Insert Address
+         $this->modal->insertuseraddress($provider);
+      }
+
+      print_r($provider);
+   }
+
+   function setAdress_sp()
+   {
+      $provider["userid"] = $_SESSION["UserId"];
+
+      $result = $this->modal->IsInsertedAddress_SP($provider);
+
+      if ($result > 0) {
+         $result1 = $this->modal->getAddress_SP($provider["userid"]);
+         echo json_encode($result1);
+      }
+   }
+   function GetBlockedCustomerlist(){
+      $userid = $_SESSION["UserId"];
+
+      $result = $this->modal->getServiceHistoryExport($userid);
+      $userarr = [];
+      while($row = mysqli_fetch_assoc($result)){
+
+         if(!in_array($row["UserId"],$userarr)){
+            array_push($userarr,$row["UserId"]);
+         }
+
+      }
+      // print_r($userarr);
+
+      // $parameterarr = explode("-", $_GET["parameter"]);
+      // $offset = $parameterarr[0];
+      // $limit = $parameterarr[1];
+
+     // $user_arr_range = array_slice($userarr);
+
+      $output = "";
+      foreach($userarr as $customerId){
+         $row = $this->modal->FavouriteBlockedCustomerDetails($customerId,$userid);
+         $IsFavorite = $row["IsFavorite"];
+         $customerName = $row["FirstName"]." ".$row["LastName"];
+         $id = $row["Id"];
+         $favblock = $row["IsFavorite"];
+
+         $output .= "
+         <div class='row' >
+             <div class='col-sm-4'>
+               <div class='card'>
+                 <div class='card-body text-center'>
+                  <div class='td-rating' style='justify-content: center;'>
+                   <div class='rating-img'><img src='../assets/image/image_table.png'></div></div>
+
+                   <h5 class='card-title'>$customerName</h5>";
+
+         if($IsFavorite == 1){
+            $output .=     "<button class='buttonblock favblock' id='$id-$favblock' >
+            Block</button>
+                  </div></div></div></div>";
+         }else{
+            $output .=     "<button class='buttonblock favblock' id='$id-$favblock'  >UnBlock</button>
+                  </div></div></div></div>";
+         }
+
+         
+      }
+      echo $output;
+   }
+
+   function GetBlockedCustomertotal(){
+      $userid = $_SESSION["UserId"];
+
+      $result = $this->modal->getServiceHistoryExport($userid);
+      $userarr = [];
+      while($row = mysqli_fetch_assoc($result)){
+
+         if(!in_array($row["UserId"],$userarr)){
+            array_push($userarr,$row["UserId"]);
+         }
+      }
+
+      echo count($userarr);
+   }
+
+   function SetFavBlockedCustomerlist(){
+      $id = $_POST["favouriteId"];
+
+      $id_arr = explode("-",$id);
+      $favblockid = (int)$id_arr[0];
+      $isfavorite = (int)$id_arr[1];
+
+      if($isfavorite == 1){
+         $this->modal->blockcustomer($favblockid);
+      }else{
+         $this->modal->favcustomer($favblockid);
+      }
+   }
+
+   function Ratinglist_Sp()
+   {
+      $userid = $_SESSION["UserId"];
+      $orderby ="FirstName Asc";
+      $rating_select_val = 6;
+      if ($rating_select_val == 6) {
+         $startRatingValue = 1;
+         $endRatingValue = 6;
+      } else {
+         $startRatingValue = $rating_select_val;
+         $endRatingValue = $startRatingValue + 1;
+      }
+
+      // $offset = (int) $_POST["offset_val"];
+      // $limit = (int)$_POST["limit_val"];
+
+      $result = $this->modal->getRatinglist_Sp($userid, $orderby, $startRatingValue, $endRatingValue);
+
+      $output = "";
+
+      while ($row = mysqli_fetch_assoc($result)) {
+         $rating_comment = $row["Comments"];
+         $rating_value = $row["Ratings"];
+         $CustomerId = $row["RatingFrom"];
+         $servicerequestid = $row["ServiceRequestId"];
+
+         // $servicedetails =  $this->model->getUpcomingServiceDetails($servicerequestid);
+
+         $serviceid = $row["ServiceId"];
+         $datetime = $row["ServiceStartDate"];
+         $totalhr = $row["ServiceHours"] + $row["ExtraHours"];
+
+         // Date & Time 
+         $datetime_arr = explode(" ", $datetime);
+         $date = $datetime_arr[0];
+         $time = $datetime_arr[1];
+         $starttime = date("G:i", strtotime($time));
+         $endtime = date("H:i", strtotime("+$totalhr hour", strtotime($time)));
+
+
+         // $userdetails = $this->model->getuserdetails($CustomerId);
+
+         $fname = $row["FirstName"];
+         $lname = $row["LastName"];
+         $name = $fname . " " . $lname;
+
+         $output .= "<div class='rating_box'>
+         
+         <div class='card-body' >
+         <div class='row' style='border:2px grey solid;box-shadow: 3px 5px #888888;'>
+             <div class='col-sm-3'>
+                 <h5 class='card-title'>$serviceid</h5>
+                 <h6 class='card-subtitle mb-2 text-muted'>$name</h6>
+                           </div>
+                           <div class='col-sm-6'>
+                           <div><img src='../assets/image/calendar.png'><b>$date</b></div>
+                              <div><img src='../assets/image/clock1.png'><b> $starttime - $endtime</b></div>
+                           </div>
+                           <div class='col-sm-3 rating_star'>
+                           <span><b>Ratings</b></span><br>
+
+                              <span class=' rating_value_Sp td-rating' id='$servicerequestid-ratingValueSp'>$rating_value</span>";
+
+         if ($rating_value > 3) {
+            $output .=           "<span>very good</span>";
+         } else {
+            $output .=           "<span>Not good</span>";
+         }
+
+
+         $output .= "         <span class='starrating_Sp' id='$servicerequestid-ratingSp'></span>
+                           </div>
+                        <div class='comments'>
+                           <p class='comment_heading'><b>Customer Comments:</b>$rating_comment</p>
+                                                </div>
+                  </div>   </div>
+                  </div>
+                </div>";
+      }
+      echo $output;
+   }
+
+   function TotalRatinglist_Sp(){
+      $userid = $_SESSION["UserId"];
+      $orderby = $_POST["orderby"];
+      $rating_select_val = (int) $_POST["rating"];
+
+      if ($rating_select_val == 6) {
+         $startRatingValue = 1;
+         $endRatingValue = 6;
+      } else {
+         $startRatingValue = $rating_select_val;
+         $endRatingValue = $startRatingValue + 1;
+      }
+
+      $total_no = $this->modal->totalRatinglist_Sp($userid, $orderby, $startRatingValue, $endRatingValue);
+
+      echo $total_no;
+   }
+   function sendEmailtoProvider()
+   {
+      // Email Service Pool 
+      $serviceprovideremail =  $this->modal->fetchserviceprovideremail(380007);
+      print_r($serviceprovideremail);
+      
+      
+      //  Send Email  
+      // include "view/include/sendemail.php";
+      foreach ($serviceprovideremail as $emailtext) {
+         $email = $emailtext;
+         $subject = 'One Service Request Arrived in your area';
+         $message = 'Please login in helperland and check the service request';
+        
+         doMail($email, $subject, $message);
+         echo "success";
+
+      }
+
+      unset($_SESSION["postalcode"]);
    }
 }
 ?>
