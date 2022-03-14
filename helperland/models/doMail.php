@@ -50,7 +50,7 @@ function doMailAttactment($email,$subject,$message)
                   $mail->Password = '2000ys26';
                   $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                   $mail->Port = 587;
-                  $mail->setFrom($email,$name);
+                  $mail->setFrom($email);
                   $mail->addAddress($email);
                  $mail->addAddress('drashyatri1726@gmail.com');
 
