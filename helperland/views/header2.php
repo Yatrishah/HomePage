@@ -53,8 +53,9 @@
             </li> 
             <?php
             }
-        else{
-
+        else{?>
+               <?php
+                if($_SESSION['UserTypeId']==1){
             //echo "<li class='nav-item'>Hello ".$_SESSION['FirstName']."</li>"; ?>
                 <li class="nav-item">
                     <a class="nav-link"><div class="seprator"><div class="counter">2</div><img src="../assets/image/notification.png">
@@ -75,7 +76,64 @@
                 </li>
         <?php
          }
+
+ else {?>
+ <?php
+                if($_SESSION['UserTypeId']==2){
+            //echo "<li class='nav-item'>Hello ".$_SESSION['FirstName']."</li>"; ?>
+      <li class="nav-item">
+                                    <a class="nav-link"><div class="seprator"><div class="counter">2</div>
+                                    <img src="../assets/image/notification.png"></div></a>
+                                </li>
+                                <li class="dropdown">
+                                    <button class="btn  dropdown-toggle dropdown1" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" >
+                                        <img src="../assets/image/login.png" alt="">
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                    <?php echo "<li class='nav-item' style='text-align:center;font-size:20px;color:white;'><b > 
+                    Welcome ".$_SESSION['FirstName']."</b></li>"; ?>  
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item active" href="us.php">My Dashboard</a></li>
+                                      <li><a class="dropdown-item"href="#mySettings"  onclick="mySettings();" role="button" > My Settings</a></li>
+                                      <li><a class="dropdown-item" href="../controllers/logout.php">Logout</a></li>
+                                    </ul>
+                                  
+                                </li>
+                             </ul>
+    <?php
+         }
+
+ else {?>
+    <li class="nav-item">
+    <a class="nav-link"><div class="seprator"><div class="counter">2</div>
+    <img src="../assets/image/notification.png"></div></a>
+</li>
+<li class="dropdown">
+    <button class="btn  dropdown-toggle dropdown1" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" >
+        <img src="../assets/image/login.png" alt="">
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+    <?php echo "<li class='nav-item' style='text-align:center;font-size:20px;color:white;'><b > 
+Welcome ".$_SESSION['FirstName']."</b></li>"; ?>  
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item active" href="us.php">My Dashboard</a></li>
+      <li><a class="dropdown-item"href="#mySettings"  onclick="mySettings();" role="button" > My Settings</a></li>
+      <li><a class="dropdown-item" href="../controllers/logout.php">Logout</a></li>
+    </ul>
+  
+</li>
+</ul>
+
+ 
+<?php
+    }
 ?>
+<?php
+         }
+?><?php
+}
+?>
+
 <?php
       if(!isset($_SESSION['UserId'])){?>
              <li class="nav-item" >
