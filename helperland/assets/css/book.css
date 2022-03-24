@@ -626,9 +626,4 @@ ul.no-bullets {
     .our-news-letter .scroll-top { left: 20px; }
     .our-news-letter .message-boat { right: 20px; }
 }
-.select_btn_selected{
-    border: 4px solid #146371;
-}
-.select_btn{
-    background-color: #565656;
-}
+

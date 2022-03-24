@@ -134,7 +134,6 @@ h2, .h2 {
     color: #fff!important;
     transition: all .3s ease;
     margin-top: 20px;
-    margin-bottom: 20px;
     padding: 11px 25px;
     border-radius: 50px;
     float: right;
@@ -180,9 +179,6 @@ h2, .h2 {
     border-color: #c6c6c6;
     color: #666;
 }
-.complete_box{
-    text-align: center;
-}
 .border{
     border: 1px solid #c8c8c8;
     border-radius: 3px;
@@ -191,16 +187,6 @@ h2, .h2 {
 .onlyone a{
     color: #1d7a8c !important;
     text-decoration: none !important;
-}
-.card_accepted{
-    clear: both;
-}
-
-.card_accepted img{
-    float: right;
-    width: 60px;
-    height: 40px;
-    margin: 2px 2px 20px 2px;
 }
 .accordion-button::after {
     flex-shrink: 0;
@@ -401,11 +387,14 @@ ul.no-bullets {
 .rotate{
     height: 15px;
 }
-
+.td-rating {
+    display: flex;
+    align-items: center;
+    
+}
 .td-rating .rating-user {
     border: 1px solid  #AAAAAA;
     opacity: 1;
-    width:50px;
     background-color:#ddd ;
     margin-left: 20px;
     border-radius: 50%;
@@ -626,9 +615,4 @@ ul.no-bullets {
     .our-news-letter .scroll-top { left: 20px; }
     .our-news-letter .message-boat { right: 20px; }
 }
-.select_btn_selected{
-    border: 4px solid #146371;
-}
-.select_btn{
-    background-color: #565656;
-}
+
