@@ -2,19 +2,20 @@
 session_start();
 
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../assets/css/about us.css">    
     <link rel="stylesheet" type="text/css" href="../assets/css/footer.css">
      <link rel="stylesheet" type="text/css" href="../assets/css/model.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/Registration.css"> 
-        <link rel="stylesheet" type="text/css" href="../assets/css/navbar.css">    
-   
+        <link rel="stylesheet" type="text/css" href="../assets/css/navbar.css">     -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/about us.css">    
+        <?php include '../views/include/header_css.php';?>
+
     
     
 
@@ -23,8 +24,8 @@ session_start();
 
 <body>
 
-    <?php include 'login.php';?>
-    <?php include 'header.php';?>
+    <?php include '../views/include/login.php';?>
+    <?php include '../views/include/header.php';?>
 
 
 
@@ -73,16 +74,7 @@ session_start();
 </div>
 </section>
    <!-- -------------------------------------------------Mail------------------------------------------------------------  -->
-<section id="mail">
- <div class="newsletter d-flex justify-content-center  row">
-    <div class="mail-heading">SUBSCRIBE TO NEWSLETTER</div>        
-            <p class="user-input newsletter d-flex justify-content-center  row">
-                <input type="mail" name="mail" placeholder="YOUR EMAIL" class="mailBox ">
-                <input type="submit" value="Submit" class="submit">
-            </p>
-          </div>
-    </div>
-</section>
+
 
  <!-- --------------------------------------------------End of Mail------------------------------------------------------------  -->
 
@@ -90,11 +82,13 @@ session_start();
 
   <!-- --------------------------------------------------Footer ------------------------------------------------------------  -->
 
-        <?php include 'footer.php';?>
+        <?php include '../views/include/footer.php';?>
 
   
  <!-- -------------------------------------------------- End of about us Image--------------------------------------------------------------------  -->
 
  </body>
-<script type="text/javascript" src="../assets/css/bootstrap/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="../assets/css/bootstrap/js/bootstrap.min.js"></script> -->
+<?php include '../views/include/footer_js.php';?>
+
 </html>

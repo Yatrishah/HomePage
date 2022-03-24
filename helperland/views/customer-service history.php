@@ -2,7 +2,7 @@
 session_start();
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -13,22 +13,20 @@ session_start();
      <link rel="stylesheet" type="text/css" href="../assets/css/footer.css">  
       <link rel="stylesheet" type="text/css" href="../assets/css/Registration.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/model.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-
+awesome.min.css"> -->
 
+    <?php include '../views/include/header_customer.php'; ?> 
 
-
-
-
-   
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Customer-Service History</title>
+<title>Customer-Service History</title>
 </head>
         
 <body>
 
-<?php include 'header3.php'; ?> 
+<?php include '../views/include/header3.php'; ?> 
 
 
  <!-- --------------------------------------------------modal for tabs with navbar ------------------------------------------------------------  -->
@@ -82,7 +80,8 @@ session_start();
                 <a href="#dashboard" id="dashboard1"  class="dashboardrow active " onclick="dashboard();" role="button">Dashboard</a>
                 <a href="#servicehistory" id="history"  onclick="history();" role="button">Service History</a>
                 <a href="#serviceschedule" id="schedule" class="" onclick="schedule();" role="button">Service Schedule</a>
-                <a href="#favouritepros" id="favpros" class="" onclick="favouritepros();" role="button" >Favourite Pros</a>
+                <a href="#favouritepros" id="favpros" class="block"
+                 onclick="favouritepros();" role="button" >Favourite Pros</a>
                 <a href="#invoices" id="invoice" class="" onclick="invoice();" role="button">Invoices</a>
                 <a href="#notifications" id="notification" class="" onclick="notification();" role="button">Notifications</a>
                 
@@ -534,7 +533,7 @@ $r=($_SESSION['msg1']);
                  <!-- ------------------------------------------------------Favourite ------------------------------------------------ --> 
 
             <div class="divContent" id="favouritepros">
-                <div class="row" >
+                <div class="row" id="blockfav_Sp" >
                  <div class="col-sm-5 ">
                       <div class="card">
                         <div class="card-body text-center">
@@ -550,9 +549,7 @@ $r=($_SESSION['msg1']);
                                     <span class="fa fa-star"></span>
                                     <span class="fa fa-star-o"></span>
                                     4
-                                </div>
-                            </div>
-                        </div>
+                                
                           <p class="card-text">1 Cleanings</p>
                           <button class="buttonaccept">Remove</a>
                           <button class="buttonblock">Block</button>
@@ -626,7 +623,7 @@ $r=($_SESSION['msg1']);
  <!-- --------------------------------------------------Footer ------------------------------------------------------------  -->
 
 
- <?php include 'footer.php';?>
+ <?php include '../views/include/footer.php';?>
 
  <!-- -------------------------------------------------- End of Footer ------------------------------------------------------------  -->
 
@@ -1016,10 +1013,13 @@ if (isset($_GET["parameter"]) && $_GET["parameter"] == 0) {
 }
   ?>  
   </body>
-<script type="text/javascript" src="../assets/css/bootstrap/js/bootstrap.min.js"></script>
+  <?php include '../views/include/footer_js.php';?>
+
+<!-- <script type="text/javascript" src="../assets/css/bootstrap/js/bootstrap.min.js"></script> -->
     <script type="text/javascript" src="../assets/css/script1.js"></script>
     <!-- <script type="text/javascript" src="../assets/js/ajax.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script> -->
 
 
 <script>
@@ -1165,7 +1165,7 @@ $('.dashboardrow').click(function (e) {
 });
 
 function onReschedule(id) {
-console.log('hiii');
+//console.log('hiii');
     $('#error').css('display','none');
     $('#RescheduleRequest').modal('show');
 
@@ -1718,6 +1718,79 @@ $('#delete_address_setting').click(function (e) {
     
 });
 
+
+
+
+
+function loadBlockedCustomer() {
+    $.ajax({
+        url: "http://localhost/project/?function=GetBlockedCustomerlist_C",
+        success: function (response) {
+            console.log(response);
+            $('#favouritepros').html(response);
+
+            //Rating in Customer
+
+            $('.rating_customer').rateYo({
+                rating: 1,
+                starWidth: "20px",
+                readOnly: true
+            });
+
+            $('.rating_customer').each(function () {
+                className = $(this).attr('class');
+                className_arr = className.split(' ');
+                rating_arr = className_arr[1].split('-');
+                avgrating = parseFloat(rating_arr[0]);
+
+                $(this).rateYo("option", "rating", avgrating);
+            });
+
+        }
+    });
+
+}
+
+$('#favpros').click(function (e) {
+    e.preventDefault();
+
+    loadBlockedCustomer()
+});
+
+
+function favouriteSp(id) {
+    id_arr = id.split("-");
+
+    favblockid = parseInt(id_arr[0]);
+
+    $.ajax({
+        type: "POST",
+        url: "http://localhost/project/?function=favouriteblocked_C",
+        data: {
+            favouriteId: favblockid
+        },
+        success: function (response) {
+            loadBlockedCustomer();
+        }
+    });
+}
+
+function BlockedSp(id) {
+    id_arr = id.split("-");
+
+    favblockid = parseInt(id_arr[0]);
+
+    $.ajax({
+        type: "POST",
+        url: "http://localhost/project/?function=favouriteblocked_C2",
+        data: {
+            favouriteId: favblockid
+        },
+        success: function (response) {
+            loadBlockedCustomer();
+        }
+    });
+}
 </script>
 
  

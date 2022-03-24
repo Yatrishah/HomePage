@@ -1,0 +1,9 @@
+<?php
+use .\Controller\HomeController
+class MailController  extends HomeController{
+	//$mail=new HomeController();
+	//$mail->
+getTouchwithUs();
+}
+
+?>

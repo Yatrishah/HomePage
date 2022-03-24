@@ -8,25 +8,28 @@ $error=($_SESSION["status_msg"]);
     unset($_SESSION["status_msg"]);
 }
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../assets/css/contact us.css">   
     <link rel="stylesheet" type="text/css" href="../assets/css/model.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/footer.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/Registration.css"> 
-    <link rel="stylesheet" type="text/css" href="../assets/css/navbar.css">  
+    <link rel="stylesheet" type="text/css" href="../assets/css/navbar.css">   -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/contact us.css"> 
+    <?php include '../views/include/header_css.php';?>
+  
+
 
     <title>Contact Us Page</title>
 </head>
 
 <body>
-  <?php include 'login.php';?>
- <?php include 'header.php';?>
+  <?php include '../views/include/login.php';?>
+ <?php include '../views/include/header.php';?>
  <!-- -------------------------------------------------- COntact Us  Image--------------------------------------------------------------------  -->
 <div>
     <img src="../assets/image/contactuscoverpage.png"class="img-fluid"style="width:100%;">
@@ -201,16 +204,7 @@ $error=($_SESSION["status_msg"]);
 
      <!-- -------------------------------------------------Mail------------------------------------------------------------  -->
 
- <div class="newsletter d-flex justify-content-center  row">
-    <div class="mail-heading">SUBSCRIBE TO NEWSLETTER</div>        
-        <p class="user-input newsletter d-flex justify-content-center  row">
-            <input type="mail" name="mail" placeholder="YOUR EMAIL" class="mailBox ">
-            <input type="submit" value="Submit" class="submit">
-        </p>
-         
-     
-    </div>
-</div>
+ 
 
 
  <!-- --------------------------------------------------End of Mail------------------------------------------------------------  -->
@@ -219,12 +213,14 @@ $error=($_SESSION["status_msg"]);
     <a href="#"  class="toptoback" id="backtotop" ><img src="../assets/image/up.png" ></a>
 
   <!-- --------------------------------------------------Footer ------------------------------------------------------------  -->
-      <?php include 'footer.php';?>
+      <?php include '../views/include/footer.php';?>
 
   
  <!-- --------------------------------------------------End of Footer ------------------------------------------------------------  -->
  
 
  </body>
-<script type="text/javascript" src="../assets/css/bootstrap/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="../assets/css/bootstrap/js/bootstrap.min.js"></script> -->
+<?php include '../views/include/footer_js.php';?>
+
 </html>

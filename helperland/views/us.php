@@ -15,6 +15,7 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css">
 
     <title>Service Provider_Upcoming</title>
 </head>
@@ -243,7 +244,7 @@ session_start();
                 <a href="#dashboard" id="dashboard1" class="" onclick="dashboard();" role="button" title="Dashboard">Dashboard</a>
                 <a href="#newservicerequests" id="newservice" class="new_service_request" onclick="newservice();" role="button" title="New Service Requests">New Service Requests</a>
                 <a href="#upcomingservice" id="upcoming" class="active upcoming_service" onclick="upcoming();" role="button" title="Upcoming Service">Upcoming Service</a>
-                <a href="#serviceschedule" id="schedule" class="" onclick="schedule();" role="button" title="Service Schedule">Service Schedule</a>
+                <a href="#serviceschedule" id="schedule" class="service_schedule_tab" onclick="schedule();" role="button" title="Service Schedule">Service Schedule</a>
                 <a href="#servicehistory" id="history" class="service_history_tab" onclick="history();" role="button" title="Service History"> Service History</a>
                 <a href="#myratings" id="ratings" class="my_ratings_tab" onclick="ratings();" role="button" title="My Ratings">My Ratings</a>
                 <a href="#blockcustomer" id="customer" class="block_customer_tab" onclick="blockcustomer();" role="button" title="Block Customer">Block Customer</a>
@@ -476,9 +477,9 @@ session_start();
             <div class="divContent" id="dashboard">
                
             </div>
-            <div class="divContent" id="serviceschedule">
+            <div class="divContent" id="serviceschedule" style="display: none;">
                
-
+            <div id="calendra_display"></div>
             </div>
                         <!-------------------------------------------Service History--------------------------------------------->
 
@@ -848,6 +849,9 @@ session_start();
     <script type="text/javascript" src="../assets/css/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.js"></script>
 
     <script>
         function change_avatar(src) {
@@ -1404,7 +1408,7 @@ function setting_set_details_sp() {
 
 
 
-function loadBlockedCustomer_SP(offset, limit) {
+function loadBlockedCustomer_SP() {
     $.ajax({
         url: "http://localhost/project/?function=GetBlockedCustomerlist",
         success: function (response) {
@@ -1709,6 +1713,31 @@ $('#star_value').change(function (e) {
 
     rating_val = $('#star_value').val();
     loadratings_SP(order,rating_val);
+});
+$('.service_schedule_tab').click(function (e) {
+    e.preventDefault();
+
+    var calendarEl = document.getElementById('calendra_display');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        headerToolbar: {
+            start: 'prev,next,today',
+            center: 'title', // buttons for switching between views
+            end: 'prevYear,nextYear'
+        },
+        themeSystem: 'bootstrap',
+        initialView: 'dayGridMonth',
+        // events: [
+        //     {
+        //       title  : 'event1',
+        //       start  : '2022-03-04'
+        //     },
+        // ]
+        events: {
+            url: 'http://localhost/project/?function=loadsevent',
+        }, 
+    });
+    calendar.render();
+
 });
 
 

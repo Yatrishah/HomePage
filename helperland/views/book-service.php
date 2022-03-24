@@ -3,7 +3,7 @@ session_start();
 ?>
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -16,28 +16,32 @@ session_start();
     <link rel="stylesheet" type="text/css" href="../assets/css/footer.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/Registration.css"> 
     <link rel="stylesheet" type="text/css" href="../assets/css/navbar.css">  
-    <script type="text/javascript" src="../assets/css/custom.js"></script>
+    <script type="text/javascript" src="../assets/css/custom.js"></script> -->
 
  
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel=stylesheet>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+ -->
+ <script type="text/javascript" src="../assets/css/Custom.js"></script>
 
+ <link rel="stylesheet" type="text/css" href="../assets/css/bs.css">
+ <?php include '../views/include/header_css.php';?> 
 
     <title>Book Service</title>
 </head>
 
 <body>
 
-     <?php include 'login.php'; ?> 
+     <?php include '../views/include/login.php'; ?> 
 
       <!-- --------------------------------------------------Navigation Bar ------------------------------------------------------------  -->
-     <?php include 'header.php';?>
+     <?php include '../views/include/header.php';?>
 
      
 
@@ -258,8 +262,8 @@ session_start();
                     </div>
                     <hr>
 
-                    <div>
-                    <input type="button" class="  btncontinue" value="Continue" 
+                    <div class="serviceproviderid">
+                    <input type="button" class="btncontinue" value="Continue" 
                     id="continue_details">
 
                   </div>
@@ -352,7 +356,6 @@ session_start();
                   <p><b>Total Service Time<span style="float: right;" id="total">0 Hrs</span></b></p>
                   <hr>
                   <p>per Cleaning<span style="float: right;" id="totalPay">$00</span></p>
-                  <p>Discount<span style="float: right;">-$0</span></p>
                   <hr>
                   <h6 class="payment"><b>Total Payment<span class="paymentsub">$<span id="totalPayment">0</span></span></b></h6>
                   <br>
@@ -444,7 +447,6 @@ session_start();
                 <p><b>Total Service Time<span style="float: right;">3.5 Hrs</span></b></p>
                 <hr>
                 <p>per Cleaning<span style="float: right;">$87</span></p>
-                <p>Discount<span style="float: right;">-$27</span></p>
                 <hr>
                 <h6 class="payment"><b>Total Payment<span class="paymentsub">$63</span></b></h6>
                 <br>
@@ -509,223 +511,13 @@ session_start();
 
 
  
-  <?php include 'footer.php';?>
-
+  <?php include '../views/include/footer.php';?>
   </body>
-<script type="text/javascript" src="../assets/css/bootstrap/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="../assets/css/bootstrap/js/bootstrap.min.js"></script> -->
             <script type="text/javascript" src="../assets/css/bs.js"></script>
-   
-            <?php
-// if (isset($_SESSION["postalcode"])) {
-//     echo "<script>
-//        scheduleplan();            
-//         </script>";
-// }
+            <script type="text/javascript" src="../assets/css/ajax.js"></script>
 
-// if (isset($_SESSION["scheduleplan"])) {
-//   echo "<script>
-//     details();
-//       </script>";
-// }
-// unset($_SESSION["scheduleplan"]);
-//unset($_SESSION["postalcode"]);
-
-?>
-<script>
-$('#check_availability').click(function (e) {
-    e.preventDefault();
-
-    var postalcode = $('#postalcode_aj').val().trim();
-    console.log(postalcode);
-    if (postalcode == "") {
-
-        $('#postalerror').html("Please Enter Value");
-    } 
-    else if (postalcode.length != 6) {
-        $('#postalerror').html("Postal Code must have six numbers");}
-    else {
-        $.ajax({
-            type: "POST",
-            url: "http://localhost/project/?controller=Home&function=postalcodevalidation",
-            data: {
-                code: postalcode
-
-            },
-            success: function (response) {
-                if (response == 1) {
-                    $('#postalform').trigger("reset");
-                    $('#postalerror').html("We are not providing service in this area. Well notify you if any helper would start working near your area.");
-                } else {
-                  scheduleplan();
-                  var splitted = response.split("|");
-                  $('#postalcode').val(splitted[0]);
-                  
-                   // console.log(response);
-                    $('#city').val(splitted[1]);
-                }
-            }
-        });
-    }
-});
-
-
-$('#continue_schedulePlan').click(function (e) {
-    e.preventDefault();
-    var date = $('#date').val();
+            <?php include '../views/include/footer_js.php';?>
 
    
-    if (date == "") {
-        $('#add').html("Please Enter Date");
-    }
-    else{
-    details();
-    }
-    $.ajax({
-        url: "http://localhost/project/?controller=Home&function=usersaddress",
-        success: function (response) {
-            $('#addresses').html(response);
-        }
-    });
 
-    $.ajax({
-        url: "http://localhost/project/?controller=Home&function=favouriteserviceprovider",
-        success: function (response) {
-            $('#fav_service_provider_box').html(response);
-        }
-    });
-
-    
-    
-});
-
-$('#save_address_btn').click(function (e) {
-    e.preventDefault();
-
-    var streetname = $('#street_name').val();
-    var houseno = $('#house_no').val();
-    var postalcode = $('#postalcode').val();
-    var city = $('#city').val();
-    var phone_no = $('#phoneno').val();
-    if (streetname == "" || houseno == "" || postalcode == "" || city == "" || phone_no == "") {
-        $('#add_new_address_error').html("Please Enter all Value");
-    } else if (postalcode.length != 6) {
-        $('#add_new_address_error').html("Postal Code must have 6 numbers");
-    } else if (phone_no.length != 10) {
-        $('#add_new_address_error').html("Phone No must have 10 numbers");
-    } else {
-    $.ajax({
-        type: "POST",
-        url: "http://localhost/project/?controller=Home&function=insertaddress",
-        data: {
-            street_name: streetname,
-            house_no: houseno,
-            postalcode: postalcode,
-            city: city,
-            phoneno: phone_no
-        },
-        success: function (response) {
-            $('#addnewaddress_form').trigger("reset");
-            $('#addnewadd').css('display', 'none');
-            $('#formadd').css('display', 'block');
-
-            $('#addresses').html(response);
-        }
-    });
-  }
-});
-
-$('#continue_details').click(function (e) { 
-    e.preventDefault();
-
-    addressid =  $("input:radio[name=address]:checked").attr('id');
-    console.log(addressid);
-    if (addressid == undefined) {
-        // alert("Please select the address");
-        $('#address_alert').css('display', 'block');
-        window.scrollTo(0,300);
-    } else {
-        $('#address_alert').css('display', 'none');
-        payment();
-    }
-    
-});
-
-$('#complete_booking').click(function (e) {
-    e.preventDefault();
-   
-    creditcardno = $('#creditcardno').val().trim();
-    creditcardexpiry = $('#creditcardexpiry').val().trim();
-    creditcardcvc = $('#creditcardcvc').val().trim();
-    promo_code = $('#promo_code').val().trim();
-
-    if (creditcardno == "" || creditcardexpiry == "" || creditcardcvc == "") {
-        alert("Please Enter all details")
-    // } else if(creditcardno.length != 16 || creditcardexpiry.length != 4 || 
-    //             creditcardcvc.length != 3){
-    //     alert("Please Enter all the details properly");
-    } else {
-
-   var date = $('#date').val();
-    var time = $('#time').val();
-    var duration = $('#duration').val();
-    var comments = $('#comments').val();
-    if ($("#pets").is(":checked")) {
-        pets = 1;
-    } else {
-        pets = 0;
-    }
-    var extraservice = [];
-    $("input:checkbox[name=extraservice]:checked").each(function () {
-        extraservice.push($(this).val());
-    });
-
-    if (extraservice.length == 0) {
-        extraservice.push(0);
-    }
-    $.ajax({
-        type: "POST",
-        url: "http://localhost/project/?controller=Home&function=schedule",
-        data: {
-            date: date,
-            time: time,
-            duration: duration,
-            pets: pets,
-            comments: comments,
-
-            extraservice: extraservice
-        },
-        success: function (response) {
-            //console.log(response);
-
-            addressid =  $("input:radio[name=address]:checked").attr('id');
-    id_arr = addressid.split("-");
-
-    $.ajax({
-        type: "POST",
-        url: "http://localhost/project/?controller=Home&function=insertServiceRequestAddress",
-        data: {
-            addressid : id_arr[0]
-        },
-                success: function (response) {
-                //  $('.request_id').html("Service Request Id: ".concat(response));
-                    $('#complete_booking_modal').modal('show');
-                    $.ajax({
-                            type: "POST",
-                            url: "http://localhost/project/?function=sendEmailtoProvider",
-                            success: function (response) {
-                                console.log(response);
-                            }
-                        });
-                }
-            });
-         
-           
-        }
-
-
-    });
-
-    }
-});
-
-</script>

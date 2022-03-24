@@ -2,7 +2,7 @@
 session_start();
 
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -18,16 +18,19 @@ session_start();
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/faq.css">
+
+    <?php include '../views/include/header_css.php';?>
 
     <title>FAQs Page</title>
 </head>
 
 <body>
 
- <?php include 'login.php';?>
+ <?php include '../views/include/login.php';?>
  
-   <?php include 'header.php';?>
+   <?php include '../views/include/header.php';?>
 
 <!-- -------------------------------------------------- FAQ Image--------------------------------------------------------------------  -->
 <div>
@@ -147,31 +150,24 @@ session_start();
 
     
    <!-- -------------------------------------------------Mail------------------------------------------------------------  -->
-<section id="mail">
- <div class="newsletter d-flex justify-content-center  row">
-    <div class="mail-heading">SUBSCRIBE TO NEWSLETTER</div>        
-            <p class="user-input newsletter d-flex justify-content-center  row">
-                <input type="mail" name="mail" placeholder="YOUR EMAIL" class="mailBox ">
-                <input type="submit" value="Submit" class="submit">
-            </p>
-          </div>
-    </div>
-</section>
+
 
  <!-- --------------------------------------------------End of Mail------------------------------------------------------------  -->
 
             <a href="#"  class="toptoback" id="backtotop" ><img src="../assets/image/up.png" ></a>
 
   <!-- --------------------------------------------------Footer ------------------------------------------------------------  -->
-   <?php include 'footer.php';?>
+   <?php include '../views/include/footer.php';?>
   
  <!-- --------------------------------------------------End of Footer ------------------------------------------------------------  -->
  
 
 
   </body>
-<script type="text/javascript" src="../assets/css/bootstrap/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="../assets/css/bootstrap/js/bootstrap.min.js"></script> -->
 <script type="text/javascript" src="../assets/css/faq.js"></script>
+<?php include '../views/include/footer_js.php';?>
+
 </html>
 
 
