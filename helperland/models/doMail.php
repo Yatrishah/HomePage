@@ -13,9 +13,9 @@ function doMail($email,$subject,$message)
                   $mail->Host = 'smtp.gmail.com';
                   $mail->SMTPAuth = true;
                   // Gmail ID which you want to use as SMTP server
-                  $mail->Username = 'yatri.shah03@gmail.com';
+                  $mail->Username = 'yatritatvsoft@gmail.com';
                   // Gmail Password
-                  $mail->Password = '2000ys26';
+                  $mail->Password = 'yatri2603';
                   $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                   $mail->Port = 587;
                   $mail->setFrom($email,'Admin');
@@ -45,16 +45,16 @@ function doMailAttactment($email,$subject,$message)
                   $mail->Host = 'smtp.gmail.com';
                   $mail->SMTPAuth = true;
                   // Gmail ID which you want to use as SMTP server
-                  $mail->Username = 'yatri.shah03@gmail.com';
+                  $mail->Username = 'yatritatvsoft@gmail.com';
                   // Gmail Password
-                  $mail->Password = '2000ys26';
+                  $mail->Password = 'yatri2603';
                   $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                   $mail->Port = 587;
                   $mail->setFrom($email);
                   $mail->addAddress($email);
                  $mail->addAddress('drashyatri1726@gmail.com');
 
-                  $mail->addAttachment($_FILES['file']['tmp_name'],$_FILES['file']['name']);
+                //  $mail->addAttachment($_FILES['file']['tmp_name'],$_FILES['file']['name']);
 
                   $mail->isHTML(true);
                   $mail->Subject = $subject;
@@ -69,4 +69,37 @@ function doMailAttactment($email,$subject,$message)
                 }
  }
 
+ function forgotPassword($email,$subject,$message)
+{  
+ try{
+  // use PHPMailer\PHPMailer\PHPMailer;
+       $mail = new PHPMailer(true);
+
+  $mail->isSMTP();
+               $mail->Host = 'smtp.gmail.com';
+               $mail->SMTPAuth = true;
+               // Gmail ID which you want to use as SMTP server
+               $mail->Username = 'yatritatvsoft@gmail.com';
+               // Gmail Password
+               $mail->Password = 'yatri2603';
+               $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+               $mail->Port = 587;
+               $mail->setFrom($email);
+               $mail->addAddress($email);
+               $mail->addAddress('drashyatri1726@gmail.com');
+               $mail->isHTML(true);
+               $mail->Subject = $subject;
+               $mail->Body = $message;
+                $mail->send();
+              // header('Location:./views/contact us.php');
+             }
+           catch (Exception $e) {
+              echo '<div class="alert alert-danger">
+                     <h5>' . $e->getMessage() . '</h5>
+                   </div>';
+             }
+
+
+   
+  }
           ?>

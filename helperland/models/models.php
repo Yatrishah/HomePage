@@ -24,23 +24,26 @@ class Models
        $result= mysqli_query($this->conn,$sql);
     }
 
-    function customer_insert($table,$name,$lastname ,$email,$password,$phonenumber,$userTypeId,$currentDateTime,$isApproved)
+    function customer_insert($table,$name,$lastname ,$email,$password,$phonenumber,$userTypeId,$ZipCode,
+    $currentDateTime,$isApproved)
     {
-          $query1="INSERT INTO $table (FirstName,LastName,Email,Password,Mobile,userTypeId,CreatedDate,isApproved)values('$name','$lastname ','$email','$password','$phonenumber','$userTypeId','$currentDateTime','$isApproved')";
+          $query1="INSERT INTO $table (FirstName,LastName,Email,Password,Mobile,userTypeId,ZipCode,CreatedDate,
+          isApproved)values('$name','$lastname ','$email','$password','$phonenumber','$userTypeId','$ZipCode','$currentDateTime','$isApproved')";
                  $result= mysqli_query($this->conn,$query1);
 
     }
 
 
-     function serviceProvider_insert($table,$name,$lastname ,$email,$password,$phonenumber,$userTypeId,$currentDateTime,$isApproved)
+     function serviceProvider_insert($table,$name,$lastname ,$email,$password,$phonenumber,$userTypeId,$ZipCode,$currentDateTime,$isApproved)
      {
-          $query1="INSERT INTO user(FirstName,LastName,Email,Password,Mobile,userTypeId,CreatedDate,isApproved)values('$name','$lastname ','$email','$password','$phonenumber','$userTypeId','$currentDateTime','$isApproved')";
+          $query1="INSERT INTO $table(FirstName,LastName,Email,Password,Mobile,userTypeId,ZipCode,CreatedDate,
+          isApproved)values('$name','$lastname ','$email','$password','$phonenumber','$userTypeId','$ZipCode','$currentDateTime','$isApproved')";
             $result= mysqli_query($this->conn,$query1);
      }
 
      function CheckLogin($email,$password){
      
-        $sql = "select * from user where email = '$email' and Password= '$password' ";
+        $sql = "select * from user where email = '$email'and  Password= '$password' ";
             $result= mysqli_query($this->conn,$sql);
             return $result;
 
@@ -73,13 +76,23 @@ class Models
         }
     }
 
+    function getEmailOfServiceProvider($id)
+    {
 
+        $qry = "SELECT *FROM servicerequest WHERE ServiceRequestId = $id";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        } else {
+            return $result;
+        }
+    }
  
     function postalcode($postalcode){
         $_SESSION["postalcode"] = $postalcode;
 
         $qry = "SELECT * FROM `user` INNER JOIN useraddress ON user.UserId = useraddress.UserId 
-                WHERE user.IsRegisteredUser=0 AND user.ZipCode = $postalcode";
+                WHERE  user.ZipCode = $postalcode";
 
   
                 $result= mysqli_query($this->conn,$qry);
@@ -115,21 +128,38 @@ class Models
             $modifieddate = $createddate;
             $pets = $servicerequest["pets"];
             $comments = $servicerequest["comments"];
-            $discount=$servicerequest["discount"];
+            $providerId = $servicerequest["ServiceProviderId"];
+        echo $providerId;
 
-
+        if ($providerId == 0) {
             $qry = "INSERT INTO servicerequest (`ServiceRequestId`, `UserId`, `ServiceId`, `ServiceStartDate`, `ZipCode`, `ServiceFrequency`,
-                    `ServiceHourlyRate`, `ServiceHours`, `ExtraHours`, `SubTotal`, `Discount`, `TotalCost`, `Comments`, `PaymentTransactionRefNo`,
+                    `ServiceHourlyRate`, `ServiceHours`, `ExtraHours`, `SubTotal`, `TotalCost`, `Comments`, `PaymentTransactionRefNo`,
                     `PaymentDue`, `JobStatus`, `ServiceProviderId`, `SPAcceptedDate`, `HasPets`, `Status`, `CreatedDate`, `ModifiedDate`,
                     `ModifiedBy`, `RefundedAmount`, `Distance`, `HasIssue`, `PaymentDone`, `RecordVersion`)
                     VALUES (NULL, $userid, $serviceid, '$service_start_date', $zipcode, NULL, $charge_per_hr,
                     $service_hr,
-                    $extra_service_hr, $subtotal,  $discount, $totalcost, '$comments', NULL, '0', 
-                    NULL, NULL, NULL, $pets, NULL, '$createddate', '$modifieddate', NULL, NULL, 0, NULL,
+                    $extra_service_hr, $subtotal,   $totalcost, '$comments', NULL, '0', 
+                    NULL, NULL, NULL, $pets, '0', '$createddate', '$modifieddate', NULL, NULL, 0, NULL,
                     NULL, NULL);";
+        }
+        else{
+            $qry = "INSERT INTO servicerequest (`ServiceRequestId`, `UserId`, `ServiceId`, `ServiceStartDate`, `ZipCode`, `ServiceFrequency`,
+            `ServiceHourlyRate`, `ServiceHours`, `ExtraHours`, `SubTotal`, `TotalCost`, `Comments`, `PaymentTransactionRefNo`,
+            `PaymentDue`, `JobStatus`, `ServiceProviderId`, `SPAcceptedDate`, `HasPets`, `Status`, `CreatedDate`, `ModifiedDate`,
+            `ModifiedBy`, `RefundedAmount`, `Distance`, `HasIssue`, `PaymentDone`, `RecordVersion`)
+            VALUES (NULL, $userid, $serviceid, '$service_start_date', $zipcode, NULL, $charge_per_hr,
+            $service_hr,
+            $extra_service_hr, $subtotal, $totalcost, '$comments', NULL, '0', 
+            NULL, $providerId, '$createddate', $pets, '0', '$createddate', '$modifieddate', NULL, NULL, 0, NULL,
+            NULL, NULL);";  
+        }
                     $result= mysqli_query($this->conn,$qry);
                     if (!$result) {
                     die("Query Failed"  .mysqli_error($this->conn));
+                    
+    }
+    else {
+        echo "Query Successfully Run";
     }
 
 }
@@ -247,6 +277,46 @@ function insertuseraddress($useraddress)
         return $targetuserid;
     }
     
+    function fetchtargetServiceProvider($userid)
+    {
+      
+
+        $blockuserid = [];
+        $qry = "SELECT TargetUserId  FROM favoriteandblocked WHERE UserId = $userid AND IsBlocked = 1";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        } else {
+            while ($row = mysqli_fetch_assoc($result)) {
+                array_push($blockuserid, $row["TargetUserId"]);
+            }
+        }
+
+        $qry1 = "SELECT UserId  FROM favoriteandblocked WHERE TargetUserId = $userid AND IsBlocked = 1";
+        $result1 = mysqli_query($this->conn, $qry1);
+        if (!$result1) {
+            die("Query Failed" . mysqli_error($this->conn));
+        } else {
+            while ($row = mysqli_fetch_assoc($result1)) {
+                array_push($blockuserid, $row["UserId"]);
+            }
+        }
+        // return $blockuserid;
+
+        $allproviderid = [];
+        $qry1 = "SELECT UserId  FROM favoriteandblocked WHERE TargetUserId = $userid";
+        $result1 = mysqli_query($this->conn, $qry1);
+        if (!$result1) {
+            die("Query Failed" . mysqli_error($this->conn));
+        } else {
+            while ($row = mysqli_fetch_assoc($result1)) {
+                array_push($allproviderid, $row["UserId"]);
+            }
+        }
+
+        $validserviceprovider = array_diff($allproviderid,$blockuserid);
+        return $validserviceprovider;
+    }
     function fetchServiceProviderName($id){
 
         $qry = "SELECT FirstName,LastName FROM user where UserId = $id";
@@ -874,6 +944,12 @@ function getUpcomingService_Sp($userid, $offset, $limit){
                 if (!$result1) {
                     die("Query Failed" . mysqli_error($this->conn));
                 }
+                $qry2 = "INSERT INTO favoriteandblocked (`Id`, `UserId`, `TargetUserId`, `IsFavorite`, `IsBlocked`) 
+                VALUES (NULL, $customerId, $userid, 1, 0);";
+    $result2 = mysqli_query($this->conn, $qry2);
+    if (!$result2) {
+        die("Query Failed" . mysqli_error($this->conn));
+    }
             }
         }
     }
@@ -963,7 +1039,241 @@ function getUpcomingService_Sp($userid, $offset, $limit){
         }
         return $serviceprovideremail;
     }
+   
+    function fetchAllServiceRequestDetails($condition){
+      
 
+        $qry = "SELECT S.Status,S.ServiceRequestId,S.ServiceId,S.ServiceStartDate,S.TotalCost,S.ServiceHours,S.ExtraHours,
+                   S.ServiceProviderId,S.UserId,U.email  FROM servicerequest S LEFT JOIN user U on S.UserId = 
+                   U.UserId WHERE $condition;";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        }else{
+            return $result;
+        }
+    }
+
+    function fetchTotalServiceRequestDetails($condition)
+    {
+
+        $qry = "SELECT * FROM servicerequest S LEFT JOIN user U on S.UserId = U.UserId WHERE $condition;";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        } else {
+            return $result;
+        }
+    }
+    function fetchAllServiceRequestDetails_Options($condition){
+      
+
+        $qry = "SELECT S.Status,S.ServiceRequestId,S.ServiceId,S.ServiceStartDate,S.TotalCost,S.ServiceHours,S.ExtraHours,
+                   S.ServiceProviderId,S.UserId,U.email  FROM servicerequest S LEFT JOIN user U on S.UserId = 
+                   U.UserId WHERE $condition;";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        }else{
+            return $result;
+        }
+    }
+   
+    function getAllUserDetails($condition,$offset,$limit)
+    {
+
+        $qry = "SELECT *FROM user WHERE $condition LIMIT $offset,$limit";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        } else {
+            return $result;
+        }
+    }
+    function fetchtotalRecord_UM(){
+
+        $condition = $_POST["reason"];
+        $result = $this->modal->getAllUserDetails_UM($condition);
+  
+        echo mysqli_num_rows($result);
+     }
+
+    function getAllUserDetails_UM($condition)
+    {
+
+        $qry = "SELECT *FROM user WHERE $condition ORDER BY FirstName";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        } else {
+            return $result;
+        }
+    }
+
+    function updateServiceAddress($address)
+    {
+        $streetName = $_POST["streetName"];
+        $houseNo = $_POST["houseNo"];
+        $zipcode = $_POST["Zipcode"];
+        $city = $_POST["City"];
+        $id = $_POST["serviceid"];
+       
+
+
+        $qry = "UPDATE servicerequestaddress SET AddressLine1 = '$houseNo',AddressLine2 = '$streetName',City = '$city'
+                    ,PostalCode = '$zipcode' WHERE ServiceRequestId = $id";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        }
+    }
+
+    function UpdateActiveStatus($userid, $activestatus){
+
+        $qry = "UPDATE user SET IsActive = $activestatus WHERE UserId = $userid";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        }
+    }
+    function updatedatetimeservice($id, $datetime)
+    {
+       
+
+        $qry = "UPDATE servicerequest SET ServiceStartDate = '$datetime' WHERE ServiceRequestId = $id";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function getFavBlockCustomerList($userid)
+    {
+   
+
+        $qry = "SELECT *FROM favoriteandblocked WHERE UserId = $userid ";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        } else {
+            return $result;
+        }
+    }
+
+    function getFavBlockCustomerListtotal($userid)
+    {
+      
+
+        $qry = "SELECT *FROM favoriteandblocked WHERE UserId = $userid";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        } else {
+            return mysqli_num_rows($result);
+        }
+    }
+
+
+
+    function setOrRemoveFav($favblockId)
+    {
+
+        $qry = "SELECT *FROM favoriteandblocked WHERE Id = $favblockId";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        } else {
+            $row = mysqli_fetch_assoc($result);
+            return $row;
+        }
+    }
+
+    function setUnfavourite($favblockId)
+    {
+
+        $qry = "UPDATE favoriteandblocked SET IsFavorite = 0 WHERE Id = $favblockId";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        }
+    }
+
+    function setfavourite($favblockId)
+    {
+
+        $qry = "UPDATE favoriteandblocked SET IsFavorite = 1 WHERE Id = $favblockId";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        }
+    }
+
+    function totalcleaningbyProvider($userid, $serviceproviderid)
+    {
+
+        $qry = "SELECT *FROM servicerequest WHERE UserId = $userid AND ServiceProviderId = $serviceproviderid AND `Status` = 1";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        } else {
+            return mysqli_num_rows($result);
+        }
+    }
+
+    function averageratingSp($userid, $serviceproviderid)
+    {
+
+        $qry = "SELECT *FROM rating WHERE RatingFrom = $userid AND RatingTo = $serviceproviderid";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        } else {
+            return $result;
+        }
+    }
+
+    
+    function updateRefundedValue($id,$refundedAmount){
+
+
+        $qry = "UPDATE servicerequest SET RefundedAmount = $refundedAmount WHERE ServiceRequestId = $id";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        }
+    }
+
+    
+    function getallevents($userid){
+
+        $qry = "SELECT *FROM servicerequest WHERE ServiceProviderId = $userid";
+        $result = mysqli_query($this->conn, $qry);
+        if (!$result) {
+            die("Query Failed" . mysqli_error($this->conn));
+        }else{
+            return $result;
+        }
+    }
 }
 
 
