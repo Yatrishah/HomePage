@@ -1149,24 +1149,6 @@ function getUpcomingService_Sp($userid, $offset, $limit){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     function getFavBlockCustomerList($userid)
     {
    
