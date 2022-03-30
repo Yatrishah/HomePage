@@ -1,4 +1,3 @@
-
 <?php
     use PHPMailer\PHPMailer\PHPMailer;
 session_start();
@@ -62,8 +61,8 @@ class HomeController
                $temp= $this->modal->customer_insert('user',$name,$lastname ,$email,$password,$phonenumber,
                $userTypeId,$ZipCode,
                $currentDateTime,$isApproved);
-               $_SESSION['status_msg1']="Inserted User Data Sucessfully And Mail is Sended To your Account";
-               doMail($email,'Account Created','Congratulation ' .$name. ' your account is created sucessfully!!');
+             //  $_SESSION['status_msg1']="Inserted User Data Sucessfully And Mail is Sended To your Account";
+              // doMail($email,'Account Created','Congratulation ' .$name. ' your account is created sucessfully!!');
               
                }  
                else{
@@ -93,8 +92,8 @@ class HomeController
           $temp= $this->modal->customer_insert('user',$name,$lastname ,$email,$password,$phonenumber,
           $userTypeId,$ZipCode,
           $currentDateTime,$isApproved);
-          $_SESSION['status_msg1']="Inserted User Data Sucessfully And Mail is Sended To your Account";
-          doMail($email,'Account Created','Congratulation ' . $name.' your account is created sucessfully!!');
+        // $_SESSION['status_msg1']="Inserted User Data Sucessfully And Mail is Sended To your Account";
+         //doMail($email,'Account Created','Congratulation ' . $name.' your account is created sucessfully!!');
         }  
         else{
               $_SESSION['status_msg1']="Password Does Not match!! Please Try Again";
@@ -114,8 +113,9 @@ class HomeController
           if($result){
             if(mysqli_num_rows($result) > 0){
               while ($row = mysqli_fetch_array($result)) {
+                //die(print_r($row));
                 if($row['IsApproved'] == 1){
-
+                     if(($row['IsActive']==1)){
                   if(($_POST['email'] == $row['email']) && ($_POST['password'] == $row['Password'])){
                      
                          $_SESSION['UserId'] = $row['UserId'];
@@ -130,6 +130,16 @@ class HomeController
                         header('Location:./views/index.php');
  
                       }
+                     }
+                  
+
+                  }
+                  else{
+                     $_SESSION['login']='<script>
+                     alert("Sorry!! Admin Does not approve your account")
+                     </script>';
+                     header('Location:./views/index.php');
+
 
                   }
          }
@@ -1501,7 +1511,7 @@ if (($ServiceDateStart < $ServiceStartComp && $ServiceDateEnd < $ServiceStartCom
       // $offset = $parameterarr[0];
       // $limit = $parameterarr[1];
 
-     //$user_arr_range = array_slice($userarr);
+     //  $user_arr_range = array_slice($userarr);
 
       $output = "";
       foreach($userarr as $customerId){
@@ -1709,8 +1719,8 @@ if (($ServiceDateStart < $ServiceStartComp && $ServiceDateEnd < $ServiceStartCom
          $customerid = $row["UserId"];
          // $row1 = $this->model->getAddress_SP($customerid);
          $row1 = $this->modal->getAddress_SD($servicerequestid);
-         $customer_address = $row1["AddressLine2"] . ", " . $row1["AddressLine1"] . " " . $row1["City"] . " " . $row1["PostalCode"];
-
+         $customer_address = $row1["AddressLine2"] . ", " . $row1["AddressLine1"] . ", " . $row1["City"] . ", " . $row1["PostalCode"];
+         
          $row2 = $this->modal->fetchuserdetails($customerid);
 
          $fname = $row2["FirstName"];
