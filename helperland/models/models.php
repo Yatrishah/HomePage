@@ -27,19 +27,41 @@ class Models
     function customer_insert($table,$name,$lastname ,$email,$password,$phonenumber,$userTypeId,$ZipCode,
     $currentDateTime,$isApproved)
     {
-          $query1="INSERT INTO $table (FirstName,LastName,Email,Password,Mobile,userTypeId,ZipCode,CreatedDate,
-          isApproved)values('$name','$lastname ','$email','$password','$phonenumber','$userTypeId','$ZipCode','$currentDateTime','$isApproved')";
-                 $result= mysqli_query($this->conn,$query1);
+         
+        $sql1 = mysqli_query($this->conn, "SELECT * FROM `user` WHERE email='{$email}'");
+        if(mysqli_num_rows($sql1) == 0) {
+         $query1="INSERT INTO $table (FirstName,LastName,Email,Password,Mobile,userTypeId,ZipCode,
+         CreatedDate, isApproved)
+          values('$name','$lastname ','$email','$password','$phonenumber','$userTypeId','$ZipCode',
+          '$currentDateTime','$isApproved')";
+           $result= mysqli_query($this->conn,$query1);
+             $_SESSION['status_msg1']="Inserted User Data Sucessfully And Mail is Sended To your Account";
+            doMail($email,'Account Created','Congratulation ' . $name.' your account is created sucessfully!!');
+
+        }
+        else {
+
+            $_SESSION['status_msg1'] = 'Email alreay exist';
+          }
 
     }
 
 
      function serviceProvider_insert($table,$name,$lastname ,$email,$password,$phonenumber,$userTypeId,$ZipCode,$currentDateTime,$isApproved)
      {
+        $sql1 = mysqli_query($this->conn, "SELECT * FROM `user` WHERE email='{$email}'");
+        if(mysqli_num_rows($sql1) == 0) {
           $query1="INSERT INTO $table(FirstName,LastName,Email,Password,Mobile,userTypeId,ZipCode,CreatedDate,
           isApproved)values('$name','$lastname ','$email','$password','$phonenumber','$userTypeId','$ZipCode','$currentDateTime','$isApproved')";
             $result= mysqli_query($this->conn,$query1);
+             $_SESSION['status_msg1']="Inserted User Data Sucessfully And Mail is Sended To your Account";
+         doMail($email,'Account Created','Congratulation ' . $name.' your account is created sucessfully!!');
      }
+     else {
+
+        $_SESSION['status_msg1'] = 'Email alreay exist';
+      }
+    }
 
      function CheckLogin($email,$password){
      
