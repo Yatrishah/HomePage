@@ -77,7 +77,7 @@ $error=($_SESSION['status_msg1']);
                 <input class="form-control" name="email" placeholder="Email Address" type="email"
                     required title="Email Address   " />
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6"  style="padding-bottom: 15px;">
+            <div class="col-lg-6 col-md-6 col-sm-6"  style="padding-bottom:15px;">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text">+46</div>
@@ -92,8 +92,8 @@ $error=($_SESSION['status_msg1']);
                 <input class="form-control" name="password" placeholder="Password" type="text"
                 required autofocus />
             </div>
-             <div class="col-lg-6 col-md-6 col-sm-6"  style="padding-bottom: 15px;">
-                <input class="form-control" name="cpassword" placeholder="Confirm Password" type="text"
+
+            <input class="form-control" name="cpassword" placeholder="Confirm Password" type="text"
                  required title="Confirm Password " />
             </div>
          </div>

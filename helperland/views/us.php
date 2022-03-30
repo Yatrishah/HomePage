@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -15,7 +15,8 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css"> -->
+    <?php include '../views/include/header_service.php'; ?> 
 
     <title>Service Provider_Upcoming</title>
 </head>
@@ -25,7 +26,7 @@ session_start();
   <!------------------------------------------------------------------- Model For Login ---------------------------------------------------->
 
   
- <?php include 'header4.php' ?>
+ <?php include '../views/include/header4.php' ?>
 <!------------------------------------------------------ Model For Service Cancel ------------------------------->
 <div class="modal fade" id="exampleModalServiceCancel" tabindex="-1" aria-labelledby="exampleModalLabel1"
         aria-hidden="true">
@@ -839,19 +840,21 @@ session_start();
 
  <!-- --------------------------------------------------Footer ------------------------------------------------------------  -->
 
- <?php include 'footer.php';?>
+ <?php include '../views/include/footer.php';?>
 
 
  <!-- -------------------------------------------------- End of Footer ------------------------------------------------------------  -->
 
   </body>
-<script type="text/javascript" src="../assets/css/bootstrap/js/bootstrap.min.js"></script>
+  <?php include '../views/include/footer_js.php';?>
+
+<!-- <script type="text/javascript" src="../assets/css/bootstrap/js/bootstrap.min.js"></script> -->
     <script type="text/javascript" src="../assets/css/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.js"></script> -->
 
     <script>
         function change_avatar(src) {
@@ -1364,7 +1367,7 @@ function setting_set_details_sp() {
     PostalCode = $('#postalcode_sp').val().trim();
     City = $('#city_sp').val().trim();
 
-    if (fname == "" || lname == "" || email == "" || phoneNo == "" || StreetName == "" || HouseNo == "" || PostalCode == "" || City == "") {
+    if (fname == "" || lname == "" ||  phoneNo == "" || StreetName == "" || HouseNo == "" || PostalCode == "" || City == "") {
         $('.save_details_error_sp').html("Please enter all details");
         $('.save_details_sucess_sp').html("");
     } else if (phoneNo.length != 10) {
@@ -1373,14 +1376,8 @@ function setting_set_details_sp() {
     } else if (PostalCode.length != 6) {
         $('.save_details_error_sp').html("Please enter correct postal code");
         $('.save_details_sucess_sp').html("");
-    } else if (!String(email)
-        .toLowerCase()
-        .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        )) {
-        $('.save_details_error_sp').html("Please enter email in correct format");
-        $('.save_details_sucess_sp').html("");
-    } else {
+    }
+     else {
         $.ajax({
             type: "POST",
             url: "http://localhost/project/?function=updatedetails_sp",

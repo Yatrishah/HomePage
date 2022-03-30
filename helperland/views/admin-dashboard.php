@@ -159,7 +159,7 @@ session_start() ;
                                     <div class="col-3">
                                         <select class="form-select" aria-label="Default select example" id="user_type_um">
                                         <option value="user_type" disabled selected>User Type</option>
-                            <option value=0>Service Provider</option>
+                            <option value=2>Service Provider</option>
                             <option value=1>Customer</option>
                                         </select>
                                     </div>
